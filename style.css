@@ -3015,7 +3015,7 @@ body {
 
 .clients-love-desc {
     font-family: var(--font-body);
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 400;
     color: #555555;
     line-height: 1.5;
@@ -5104,7 +5104,7 @@ textarea:focus {
 /* Main container */
 .Mobile_App_Development_Platform_Main {
     margin: 0 auto;
-    width: 70%;
+    width: 80%;
     margin-top: 10rem;
     display: flex;
     flex-direction: column;
@@ -8014,7 +8014,8 @@ label {
 /* ====== Grid ====== */
 .blog-card-listing {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 cards default */
+    grid-template-columns: repeat(3, 1fr);
+    /* 3 cards default */
     gap: 30px;
 }
 
@@ -8026,6 +8027,7 @@ label {
     padding: 1px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .blog-card_ValuesBlog:hover {
@@ -8069,7 +8071,7 @@ label {
     font-size: 18px;
     border: none;
     border-radius: 1rem;
-    padding: 10px 10px;
+    padding: 5px 10px;
     width: fit-content;
     cursor: pointer;
 }
@@ -8122,6 +8124,7 @@ label {
     .blog-card-listing {
         grid-template-columns: repeat(2, 1fr);
     }
+
     .top-trending-blogs {
         width: 90%;
     }
@@ -8136,5 +8139,1292 @@ label {
     .top-trending-blogs {
         width: 95%;
         padding: 20px 0;
+    }
+}
+
+/* ============================================================================================================================================================ */
+/* ======================================================================== HOME BLOG SECTION ====================================================================== */
+/* ============================================================================================================================================================ */
+
+/* ====== Blog Section ====== */
+.HomeBlog_Section {
+    width: 100%;
+    padding: 80px 0;
+    background: #fff;
+}
+
+.HomeBlog_Container {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+/* ====== Heading ====== */
+.HomeBlog_HeadingWrapper {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.HomeBlog_Heading {
+    font-size: 60px;
+    font-weight: 600;
+    color: #000000;
+    margin-bottom: 15px;
+    font-family: var(--font-body);
+}
+
+.HomeBlog_Description {
+    font-size: 20px;
+    color: #555555;
+    line-height: 1.7;
+    font-family: var(--font-body);
+}
+
+/* ====== Blog Cards Layout ====== */
+.HomeBlog_Cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: stretch;
+    /* ✅ Ensures equal height between left & right */
+}
+
+/* ====== Common Card Styles ====== */
+.HomeBlog_Card {
+    background: #ffffff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border: 1px solid #023be280;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.HomeBlog_Card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+}
+
+/* ====== Left Card (with image) ====== */
+.HomeBlog_LeftCard .HomeBlog_Card {
+    height: 100%;
+}
+
+.HomeBlog_Image {
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+}
+
+.HomeBlog_Meta {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex-grow: 1;
+}
+
+/* ====== Blog Title + Meta ====== */
+.HomeBlogtittle {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.HomeBlog_Tag_main {
+    background: #00a1c514;
+    width: fit-content;
+    padding: 6px 12px;
+    border-radius: 1rem;
+    cursor: pointer;
+}
+
+.HomeBlog_Tag {
+    color: #00a1c5;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.homeblogstar {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.HomeBlogtittleSub {
+    color: #555555;
+    font-family: var(--font-body);
+    font-size: 16px;
+    font-weight: 500;
+}
+
+/* ====== Left Blog Title ====== */
+.HomeBlog_LeftTitle {
+    font-size: 22px;
+    font-weight: 600;
+    color: #000;
+    line-height: 1.6;
+    font-family: var(--font-body);
+}
+
+/* ====== Learn More ====== */
+.HomeBlog_LearnMore {
+    display: inline-block;
+    color: #023be2;
+    font-weight: 600;
+    text-decoration: none;
+    margin-top: 8px;
+    transition: color 0.3s ease;
+    font-size: 18px;
+    font-family: var(--font-body);
+}
+
+.HomeBlog_LearnMore:hover {
+    color: #1e40af;
+}
+
+/* ====== Right Blog Cards ====== */
+.HomeBlog_RightCards {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+    height: 100%;
+}
+
+.HomeBlog_RightCards .HomeBlog_Card {
+    padding: 24px;
+    border-radius: 12px;
+    flex-grow: 1;
+}
+
+.HomeBlog_Title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #111827;
+    line-height: 1.6;
+}
+
+/* ====== Responsive ====== */
+@media (max-width: 1200px) {
+    .HomeBlog_Heading {
+        font-size: 48px;
+    }
+
+    .HomeBlog_Description {
+        font-size: 18px;
+    }
+
+    .HomeBlog_Cards {
+        gap: 30px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .HomeBlog_Container {
+        width: 90%;
+    }
+
+    .HomeBlog_Cards {
+        grid-template-columns: 1fr;
+    }
+
+    .HomeBlog_LeftCard,
+    .HomeBlog_RightCards {
+        width: 100%;
+    }
+}
+
+@media (max-width: 640px) {
+    .HomeBlog_Heading {
+        font-size: 2rem;
+    }
+
+    .HomeBlog_Description {
+        font-size: 1rem;
+    }
+
+    .HomeBlog_Title,
+    .HomeBlog_LeftTitle {
+        font-size: 1rem;
+    }
+
+    .HomeBlog_Image {
+        height: auto;
+    }
+}
+
+/* ============================================================================================================================================================ */
+/* ========================================================================  Blog detail  ====================================================================== */
+/* ============================================================================================================================================================ */
+
+/* ====== Blog Detail Heading Section ====== */
+.blogdetailheading {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 7rem;
+    padding: 0 1rem;
+    /* Add some padding for small screens */
+    text-align: center;
+    /* Center text inside container */
+}
+
+/* Container for heading */
+.blogdetailheadingValues {
+    max-width: 900px;
+    /* Limit width on large screens */
+    width: 100%;
+    margin-top: 3rem;
+}
+
+/* Heading styles */
+.HeadingBlogdetail {
+    color: #000;
+    font-size: 60px;
+    font-weight: 600;
+    line-height: 1.2;
+    margin: 0;
+    font-family: var(--font-heading);
+}
+
+/* ====== Responsive Typography ====== */
+@media (max-width: 1200px) {
+    .HeadingBlogdetail {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .HeadingBlogdetail {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .HeadingBlogdetail {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .HeadingBlogdetail {
+        font-size: 1.5rem;
+        line-height: 1.3;
+    }
+}
+
+/* ====== Blog Detail Second Section ====== */
+.blogdetailsectiontwomain {
+    width: 100%;
+    padding: 3rem 0;
+    display: flex;
+    justify-content: center;
+}
+
+/* Main content container */
+.blogdetailsectiontwomainContent {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2rem;
+    border-radius: 1rem;
+    padding: 2rem;
+    min-height: 450px;
+    background-image: url(./images/1.png);
+    background-repeat: no-repeat;
+    position: relative;
+    box-sizing: border-box;
+    background-size: cover;
+}
+
+/* ====== Blog Detail Blogdetailthirdsectionmain Third Section ====== */
+
+.Blogdetailthirdsectionmain {
+    width: 100%;
+    padding: 50px 0;
+    margin-top: 3rem;
+}
+
+.BlogdetailthirdsectionmainCard {
+    width: 80%;
+    margin: auto;
+    border-radius: 10px;
+}
+
+.BlogdetailthirdsectionmainCardListing {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+/* ===== Left Column Container ===== */
+.BlogdetailthirdsectionmainCardListingLeft {
+    width: 25%;
+    padding: 20px;
+    border-radius: 1rem;
+    background: #ffffff21;
+    border: 1px solid #023be280;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    /* spacing between title and list */
+    box-sizing: border-box;
+}
+
+/* ===== Left Column Title ===== */
+.BlogdetailthirdsectionmainCardListingLeftTittle {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 28px;
+    color: #023be2;
+    margin: 0;
+}
+
+.BlogdetailthirdsectionmainCardListingLeftTittlecardtwo {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 1.5;
+    margin: 0;
+    /* remove default h6 margins */
+    background: linear-gradient(90.38deg, #023be2 2.06%, #00a1c5 99.67%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+}
+
+/* ===== TOC Items Container ===== */
+.BlogdetailthirdsectionmainCardListingLeftContentlisting {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    /* spacing between TOC items */
+    width: 100%;
+}
+
+/* ===== TOC Item - Gradient ===== */
+.contentlistblogdetail {
+    display: flex;
+    gap: 12px;
+    /* spacing between circle and text */
+    width: 100%;
+}
+
+/* ===== TOC Item - Normal Color ===== */
+.contentlistblogdetailNormalclor {
+    display: flex;
+    gap: 12px;
+    width: 100%;
+}
+
+/* ===== Circle Gradient ===== */
+.blogdetailcontentcircle {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: linear-gradient(90.38deg, #023be2 2.06%, #00a1c5 99.67%);
+    flex-shrink: 0;
+    margin-top: 0.4rem;
+}
+
+/* ===== Circle Normal ===== */
+.blogdetailcontentcircleNormalclor {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #918f8f;
+    flex-shrink: 0;
+    margin-top: 0.4rem;
+}
+
+/* ===== Gradient Text ===== */
+.blogdetaillefttittle {
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 0;
+    /* remove default h6 margins */
+    background: linear-gradient(90.38deg, #023be2 2.06%, #00a1c5 99.67%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+}
+
+/* ===== Normal Text ===== */
+.blogdetaillefttittleNormalclor {
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 0;
+    color: #918f8f;
+}
+
+.blogdetailsectiontwomainContentCardtwo {
+    display: flex;
+    gap: 2rem;
+    border-radius: 1rem;
+    padding: 2rem;
+    min-height: 250px;
+    background-image: url(./images/1.png);
+    background-repeat: no-repeat;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+}
+
+/* ===== Hover effect (optional) ===== */
+.contentlistblogdetail:hover .blogdetaillefttittle,
+.contentlistblogdetailNormalclor:hover .blogdetaillefttittleNormalclor {
+    cursor: pointer;
+}
+
+/* ===== Responsive Adjustment ===== */
+@media screen and (max-width: 1024px) {
+    .BlogdetailthirdsectionmainCardListingLeft {
+        width: 30%;
+        padding: 15px;
+    }
+
+    .BlogdetailthirdsectionmainCardListingLeftTittle {
+        font-size: 24px;
+    }
+
+    .blogdetaillefttittle,
+    .blogdetaillefttittleNormalclor {
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .BlogdetailthirdsectionmainCardListingLeft {
+        width: 100%;
+        padding: 15px;
+        margin-bottom: 20px;
+    }
+
+    .BlogdetailthirdsectionmainCardListingLeftTittle {
+        text-align: center;
+    }
+}
+
+/* Center column */
+.BlogdetailthirdsectionmainCardListingCenter {
+    width: 50%;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.BlogdetailthirdsectionmainCardListingCenterCardOne {
+    background: #023be208;
+    border: 1px solid #023be280;
+    padding: 30px;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.blogdetailcentercontent {
+    color: #000000;
+    font-weight: 500;
+    font-family: var(--font-body);
+    font-size: 18px;
+}
+
+.blogdetailcentercontentCardtwo {
+    color: #555555;
+    font-weight: 500;
+    font-family: var(--font-body);
+    font-size: 18px;
+}
+
+/* Right column */
+.BlogdetailthirdsectionmainCardListingRight {
+    width: 25%;
+    background-color: #fff;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-direction: column;
+}
+
+.BlogdetailthirdsectionmainCardListingCenterCardTwo {
+    border: 1px solid #023be280;
+    padding: 30px;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.BlogdetailthirdsectionmainCardListingRightSectionone {
+    display: flex;
+    flex-direction: column;
+    border-radius: 1rem;
+    border: 1px solid #023be280;
+    padding: 30px 0px;
+}
+
+.RelatedPosts {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 28px;
+    color: #023be2;
+    padding: 0px 30px;
+}
+
+.contentlistblogdetailright {
+    padding: 0px 30px 10px 30px;
+    display: flex;
+    gap: 12px;
+    /* spacing between circle and text */
+    width: 100%;
+    border-bottom: 1px solid #023be233;
+}
+
+.BlogdetailthirdsectionmainCardListingRightSectiontwo {
+    display: flex;
+    flex-direction: column;
+    border-radius: 1rem;
+    border: 1px solid #023be280;
+    padding: 30px 0px;
+}
+
+.RelatedServices_list {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    gap: 30px;
+    margin-top: 1rem;
+}
+
+.tittlewithimagerightside {
+    border-bottom: 1px solid #023be233;
+    display: flex;
+    align-items: center;
+    padding: 0px 30px 10px 30px;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.chatappbuild {
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 0;
+
+    background: linear-gradient(90.38deg, #023be2 2.06%, #00a1c5 99.67%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+}
+
+.tittlewithimagerightsideimagevalues {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s ease;
+    /* Smooth animation */
+}
+
+.tittlewithimagerightside:hover .tittlewithimagerightsideimagevalues {
+    transform: rotate(45deg);
+}
+
+.blogdertailform {
+    display: flex;
+    flex-direction: column;
+    padding: 0px 30px 0 30px;
+    margin-top: 1rem;
+}
+
+/* ============================
+   Tablet (≤1024px)
+   ============================ */
+
+@media screen and (max-width: 1024px) {
+    .BlogdetailthirdsectionmainCardListing {
+        flex-wrap: wrap;
+    }
+
+    .BlogdetailthirdsectionmainCardListingLeft,
+    .BlogdetailthirdsectionmainCardListingCenter,
+    .BlogdetailthirdsectionmainCardListingRight {
+        width: 100%;
+    }
+
+    .BlogdetailthirdsectionmainCardListingLeft {
+        padding: 15px;
+        margin-bottom: 20px;
+    }
+
+    .BlogdetailthirdsectionmainCardListingCenter {
+        padding: 0;
+    }
+
+    .BlogdetailthirdsectionmainCardListingRight {
+        padding: 0;
+    }
+
+    .BlogdetailthirdsectionmainCardListingLeftTittle {
+        font-size: 24px;
+        text-align: center;
+    }
+
+    .blogdetaillefttittle,
+    .blogdetaillefttittleNormalclor,
+    .chatappbuild {
+        font-size: 15px;
+    }
+
+    .RelatedPosts {
+        font-size: 24px;
+        text-align: center;
+    }
+
+    .blogdetailcentercontent,
+    .blogdetailcentercontentCardtwo {
+        font-size: 16px;
+    }
+}
+
+/* ============================
+   Mobile (≤768px)
+   ============================ */
+
+@media screen and (max-width: 768px) {
+    .BlogdetailthirdsectionmainCardListing {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .BlogdetailthirdsectionmainCardListingLeft,
+    .BlogdetailthirdsectionmainCardListingCenter,
+    .BlogdetailthirdsectionmainCardListingRight {
+        width: 100%;
+    }
+
+    .BlogdetailthirdsectionmainCardListingLeftTittle,
+    .RelatedPosts {
+        text-align: center;
+        font-size: 22px;
+    }
+
+    .blogdetaillefttittle,
+    .blogdetaillefttittleNormalclor,
+    .chatappbuild {
+        font-size: 14px;
+    }
+
+    .blogdetailcentercontent,
+    .blogdetailcentercontentCardtwo {
+        font-size: 15px;
+    }
+
+    .tittlewithimagerightside {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .tittlewithimagerightsideimagevalues {
+        width: 24px;
+        height: 24px;
+    }
+
+    .blogdetailsectiontwomainContentCardtwo {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+        min-height: 100px;
+        background-position: center;
+        background-size: cover;
+    }
+
+    .blogdertailform {
+        padding: 0 20px;
+    }
+}
+
+/* ============================================================================================================================================================ */
+/* ======================================================================== <<<< ABOUT PAGE >>>> ====================================================================== */
+/* ============================================================================================================================================================ */
+
+/* ======================================================================== <<<< ABOUT PAGE SECTION ONE  >>>> ====================================================================== */
+
+.aboutsection {
+    width: 100%;
+    min-height: 650px;
+    position: relative;
+    margin-top: 5rem;
+    border-radius: 1rem;
+    z-index: 0;
+}
+
+.aboutsection__background {
+    width: 100%;
+    height: 100%;
+    background: url("./images/aboutmain.png") center/cover no-repeat;
+    border-radius: 1rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+/* Floating Card */
+.aboutsection__card {
+    width: 60%;
+    min-height: 250px;
+    position: absolute;
+    left: 20%;
+    bottom: -6rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 1rem;
+    background: url("./images/aboutbg.jpg") center/cover no-repeat;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    z-index: 5;
+    transition: all 0.3s ease;
+}
+
+/* Left Side */
+.aboutsection__card-left {
+    width: 55%;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 6;
+}
+
+.aboutsection__title {
+    font-size: 46px;
+    font-weight: 600;
+    font-family: var(--font-heading);
+    color: #000;
+    margin-bottom: 1rem;
+}
+
+.aboutsection__btn {
+    border: none;
+    background: transparent;
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    background: linear-gradient(90.38deg, #023be2 2.06%, #00a1c5 99.67%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.aboutsection__btn-icon {
+    width: 25px;
+    height: 25px;
+    margin-left: 8px;
+}
+
+/* Right Side */
+.aboutsection__card-right {
+    width: 45%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.aboutsection__card-right img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0.75rem;
+}
+
+/* -------- Responsive Styles -------- */
+
+/* Tablets */
+@media (max-width: 1024px) {
+    .aboutsection {
+        min-height: 550px;
+    }
+
+    .aboutsection__card {
+        width: 80%;
+        left: 10%;
+        bottom: -5rem;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 1rem 0;
+    }
+
+    .aboutsection__card-left,
+    .aboutsection__card-right {
+        width: 100%;
+        padding: 1.5rem;
+    }
+
+    .aboutsection__title {
+        font-size: 32px;
+    }
+
+    .aboutsection__card-right img {
+        width: 80%;
+        height: auto;
+    }
+}
+
+/* Mobile (landscape & portrait) */
+@media (max-width: 768px) {
+    .aboutsection {
+        min-height: 500px;
+        margin-top: 3rem;
+    }
+
+    .aboutsection__background {
+        background-size: cover;
+    }
+
+    .aboutsection__card {
+        width: 90%;
+        left: 5%;
+        bottom: -4rem;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .aboutsection__title {
+        font-size: 26px;
+    }
+
+    .aboutsection__btn {
+        justify-content: center;
+        font-size: 16px;
+    }
+
+    .aboutsection__card-right img {
+        width: 85%;
+    }
+}
+
+/* Small mobile screens (below 480px) */
+@media (max-width: 480px) {
+    .aboutsection {
+        min-height: 400px;
+    }
+
+    .aboutsection__card {
+        width: 95%;
+        left: 2.5%;
+        bottom: -10rem;
+        padding: 1rem;
+    }
+
+    .aboutsection__title {
+        font-size: 22px;
+    }
+
+    .aboutsection__btn {
+        font-size: 14px;
+    }
+
+    .aboutsection__card-right img {
+        width: 100%;
+    }
+}
+
+/* ======================================================================== <<<< ABOUT PAGE SECTION TWO   >>>> ====================================================================== */
+
+.Aboutpage_SectionTwoMain {
+    width: 65%;
+    margin: 11rem auto 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Centers horizontally */
+    text-align: center;
+    /* Centers text */
+    gap: 20px;
+}
+
+.aboutheadingsub {
+    width: 80%;
+    font-family: var(--font-body);
+    font-size: 24px;
+    font-weight: 400;
+    color: #555555;
+    margin: 0 auto;
+}
+
+.aboutsubdescriptiontext {
+    width: 90%;
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-size: 18px;
+    color: #000000;
+    line-height: 1.6;
+    margin: 0 auto;
+}
+
+/* ✅ Responsive for mobile screens */
+@media (max-width: 768px) {
+    .Aboutpage_SectionTwoMain {
+        width: 90%;
+        text-align: left;
+        /* Align text to left */
+        align-items: flex-start;
+        /* Align all content left */
+        margin-top: 6rem;
+    }
+
+    .aboutheadingsub,
+    .aboutsubdescriptiontext {
+        width: 100%;
+        margin: 0;
+    }
+
+    .global_heading {
+        font-size: 28px;
+    }
+
+    .aboutheadingsub {
+        font-size: 18px;
+    }
+
+    .aboutsubdescriptiontext {
+        font-size: 16px;
+    }
+}
+
+/* ======================================================================== <<<< ABOUT PAGE SECTION THREE   >>>> ====================================================================== */
+
+/* --- Section Styling --- */
+.Aboutsectionthree {
+    width: 100%;
+    padding: 50px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(90.38deg, rgba(2, 59, 226, 0.06) 2.06%, rgba(0, 161, 197, 0.06) 99.67%);
+    margin-top: 4rem;
+    box-sizing: border-box;
+}
+
+/* --- Header --- */
+.blog-section-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* --- Card List --- */
+.AboutsectionthreeCardList {
+    width: 70%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+/* --- Card --- */
+.AboutsectionthreeCardListCard {
+    border: 1px solid #023be280;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    border-radius: 1rem;
+    background: #ffffff;
+    transition: all 0.4s ease;
+    cursor: pointer;
+    transform: translateY(0);
+}
+
+/* --- Hover Animation --- */
+.AboutsectionthreeCardListCard:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 161, 197, 0.25);
+    border-color: #00a1c5;
+    background: linear-gradient(90.38deg, rgba(2, 59, 226, 0.05) 2.06%, rgba(0, 161, 197, 0.05) 99.67%);
+}
+
+/* --- Title + Image --- */
+.AboutsectionthreeCardListCardtittleandimage {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 15px;
+}
+
+.AboutsectionthreeCardListCardCircle {
+    background: linear-gradient(90.38deg, #023be2 2.06%, #00a1c5 99.67%);
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.AboutsectionthreeCardListCardimage {
+    width: 60%;
+    height: 60%;
+    object-fit: contain;
+}
+
+/* --- Title and Description --- */
+.AboutsectionthreeCardListCardTiitle {
+    font-family: var(--font-body, "Open Sans", sans-serif);
+    font-size: 20px;
+    color: #000;
+    font-weight: 600;
+}
+
+.AboutsectionthreeCardListCarddescription {
+    color: #555555;
+    font-weight: 400;
+    font-size: 16px;
+    font-family: var(--font-body, "Open Sans", sans-serif);
+    line-height: 1.5;
+}
+
+/* --- Responsive --- */
+
+/* 📱 Mobile: 1 column */
+@media (max-width: 768px) {
+    .AboutsectionthreeCardList {
+        grid-template-columns: 1fr;
+        /* ✅ One column for mobile */
+        width: 100%;
+    }
+
+    .AboutsectionthreeCardListCard {
+        padding: 20px;
+    }
+
+    .AboutsectionthreeCardListCardTiitle {
+        font-size: 18px;
+    }
+
+    .AboutsectionthreeCardListCarddescription {
+        font-size: 14px;
+    }
+}
+
+/* Small mobile tweaks */
+@media (max-width: 480px) {
+    .global_heading {
+        font-size: 1.5rem;
+    }
+
+    .AboutsectionthreeCardListCardCircle {
+        height: 45px;
+        width: 45px;
+    }
+}
+
+/* ======================================================================== <<<< ABOUT PAGE SECTION FOUR   >>>> ====================================================================== */
+
+.About_locationvalues {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    width: 100%;
+    flex-direction: column;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+.Aboutlocation {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    border-radius: 1rem;
+    overflow: hidden;
+    background-image: url("./images/aboutlocation1.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    /* ✅ ensures full image visibility */
+    aspect-ratio: 16 / 9;
+    /* ✅ keeps image proportionate on all screens */
+}
+
+/* SECTION CONTAINER */
+.Aboutlocation_CountryList {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(90.38deg, rgba(2, 59, 226, 0.1) 2.06%, rgba(0, 161, 197, 0.1) 99.67%);
+    padding: 40px 20px;
+    position: relative;
+}
+
+/* MAIN WRAPPER: Arrows + Slider */
+.Aboutlocation_CountryList_cardWrapperMain {
+    width: 78%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* ARROW BUTTONS */
+.Aboutlocation_CountryListleftArrow,
+.Aboutlocation_CountryListrightArrow {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    z-index: 2;
+}
+
+.Aboutlocation_CountryListleftArrow:hover,
+.Aboutlocation_CountryListrightArrow:hover {
+    transform: scale(1.1);
+}
+
+.Aboutlocation_CountryListArrowImage {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+}
+
+/* SLIDER OUTER WRAPPER: hides overflow */
+.Aboutlocation_sliderWrapper {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+/* SLIDER TRACK: the sliding flex row */
+.Aboutlocation_sliderTrack {
+    display: flex;
+    gap: 25px;
+    transition: transform 0.6s ease-in-out;
+    will-change: transform;
+}
+
+/* INDIVIDUAL CARD */
+.cardaboutlocation {
+    flex: 0 0 auto;
+    width: 250px;
+    background-color: #fff;
+    box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.1);
+    padding: 20px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border-radius: 1rem;
+    gap: 15px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.cardaboutlocationImage {
+    height: 50px;
+    width: 50px;
+    object-fit: contain;
+}
+
+.cardaboutlocation_tittl {
+    font-family: var(--font-body, sans-serif);
+    font-weight: 600;
+    font-size: 18px;
+    color: #000;
+    margin: 0;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 1024px) {
+    .cardaboutlocation {
+        width: 220px;
+    }
+
+    .Aboutlocation_CountryListArrowImage {
+        width: 28px;
+        height: 28px;
+    }
+}
+
+@media (max-width: 768px) {
+    .Aboutlocation_CountryList {
+        flex-direction: column;
+        padding: 30px 15px;
+    }
+
+    .Aboutlocation_CountryList_cardWrapperMain {
+        flex-direction: row;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .cardaboutlocation {
+        width: 200px;
+        padding: 15px 20px;
+    }
+
+    .cardaboutlocationImage {
+        height: 40px;
+        width: 40px;
+    }
+
+    .cardaboutlocation_tittl {
+        font-size: 16px;
+    }
+
+    .Aboutlocation_CountryListArrowImage {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .cardaboutlocation {
+        width: 160px;
+        gap: 10px;
+    }
+
+    .cardaboutlocation_tittl {
+        font-size: 14px;
+    }
+
+    .cardaboutlocationImage {
+        height: 35px;
+        width: 35px;
     }
 }

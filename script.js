@@ -96,21 +96,21 @@ const counterObserver = new IntersectionObserver((entries, observer) => {
 }, observerOptions);
 
 document.addEventListener("DOMContentLoaded", () => {
-    document.querySelectorAll(".happy-customer-card").forEach(card => counterObserver.observe(card));
+    document.querySelectorAll(".happy-customer-card").forEach((card) => counterObserver.observe(card));
 
     // Hover effect for happy customer cards
-    document.querySelectorAll(".happy-customer-card").forEach(card => {
-        card.addEventListener("mouseenter", () => card.style.transform = "translateY(-5px) scale(1.02)");
-        card.addEventListener("mouseleave", () => card.style.transform = "translateY(0) scale(1)");
+    document.querySelectorAll(".happy-customer-card").forEach((card) => {
+        card.addEventListener("mouseenter", () => (card.style.transform = "translateY(-5px) scale(1.02)"));
+        card.addEventListener("mouseleave", () => (card.style.transform = "translateY(0) scale(1)"));
     });
 
     // Tab functionality
-    document.querySelectorAll(".tab-item").forEach(btn => {
+    document.querySelectorAll(".tab-item").forEach((btn) => {
         btn.addEventListener("click", () => {
             const target = document.getElementById(btn.dataset.tab);
             if (!target) return;
-            document.querySelectorAll(".tab-item").forEach(b => b.classList.remove("active"));
-            document.querySelectorAll(".tab-content").forEach(c => c.classList.remove("active"));
+            document.querySelectorAll(".tab-item").forEach((b) => b.classList.remove("active"));
+            document.querySelectorAll(".tab-content").forEach((c) => c.classList.remove("active"));
             btn.classList.add("active");
             target.classList.add("active");
         });
@@ -153,20 +153,45 @@ document.documentElement.style.scrollBehavior = "smooth";
         index = idx;
     }
 
-    function nextSlide() { if (index < allSlides.length - 1) goToSlide(index + 1); }
-    function prevSlide() { if (index > 0) goToSlide(index - 1); }
+    function nextSlide() {
+        if (index < allSlides.length - 1) goToSlide(index + 1);
+    }
+    function prevSlide() {
+        if (index > 0) goToSlide(index - 1);
+    }
 
     track.addEventListener("transitionend", () => {
-        if (allSlides[index] === firstClone) { track.style.transition = "none"; index = 1; track.style.transform = `translateX(-${slideWidth * index}px)`; }
-        if (allSlides[index] === lastClone) { track.style.transition = "none"; index = slides.length; track.style.transform = `translateX(-${slideWidth * index}px)`; }
+        if (allSlides[index] === firstClone) {
+            track.style.transition = "none";
+            index = 1;
+            track.style.transform = `translateX(-${slideWidth * index}px)`;
+        }
+        if (allSlides[index] === lastClone) {
+            track.style.transition = "none";
+            index = slides.length;
+            track.style.transform = `translateX(-${slideWidth * index}px)`;
+        }
     });
 
     let autoSlide = setInterval(nextSlide, 3000);
-    function stopAuto() { clearInterval(autoSlide); autoSlide = null; }
-    function startAuto() { if (!autoSlide) autoSlide = setInterval(nextSlide, 3000); }
+    function stopAuto() {
+        clearInterval(autoSlide);
+        autoSlide = null;
+    }
+    function startAuto() {
+        if (!autoSlide) autoSlide = setInterval(nextSlide, 3000);
+    }
 
-    if (nextBtn) nextBtn.addEventListener("click", () => { nextSlide(); stopAuto(); });
-    if (prevBtn) prevBtn.addEventListener("click", () => { prevSlide(); stopAuto(); });
+    if (nextBtn)
+        nextBtn.addEventListener("click", () => {
+            nextSlide();
+            stopAuto();
+        });
+    if (prevBtn)
+        prevBtn.addEventListener("click", () => {
+            prevSlide();
+            stopAuto();
+        });
     if (container) {
         container.addEventListener("mouseenter", stopAuto);
         container.addEventListener("mouseleave", startAuto);
@@ -189,10 +214,16 @@ document.documentElement.style.scrollBehavior = "smooth";
     let index = visibleCount;
     let selectedCard = cards[0];
 
-    const firstClones = cards.slice(0, visibleCount).map(c => c.cloneNode(true));
-    const lastClones = cards.slice(-visibleCount).map(c => c.cloneNode(true));
-    firstClones.forEach((c, i) => { c.originalCard = cards[i]; track.appendChild(c); });
-    lastClones.reverse().forEach((c, i) => { c.originalCard = cards[totalCount - visibleCount + i]; track.prepend(c); });
+    const firstClones = cards.slice(0, visibleCount).map((c) => c.cloneNode(true));
+    const lastClones = cards.slice(-visibleCount).map((c) => c.cloneNode(true));
+    firstClones.forEach((c, i) => {
+        c.originalCard = cards[i];
+        track.appendChild(c);
+    });
+    lastClones.reverse().forEach((c, i) => {
+        c.originalCard = cards[totalCount - visibleCount + i];
+        track.prepend(c);
+    });
 
     const allSlides = Array.from(track.children);
 
@@ -209,8 +240,16 @@ document.documentElement.style.scrollBehavior = "smooth";
         highlightSelected();
     }
 
-    function nextSlider() { index++; moveSlider(); resetAuto(); }
-    function prevSlider() { index--; moveSlider(); resetAuto(); }
+    function nextSlider() {
+        index++;
+        moveSlider();
+        resetAuto();
+    }
+    function prevSlider() {
+        index--;
+        moveSlider();
+        resetAuto();
+    }
 
     track.addEventListener("transitionend", () => {
         if (index >= totalCount + visibleCount) index = visibleCount;
@@ -222,10 +261,13 @@ document.documentElement.style.scrollBehavior = "smooth";
     if (arrowLeft) arrowLeft.addEventListener("click", prevSlider);
 
     let autoSlide = setInterval(nextSlider, 300000000000000);
-    function resetAuto() { clearInterval(autoSlide); autoSlide = setInterval(nextSlider, 300000000000000); }
+    function resetAuto() {
+        clearInterval(autoSlide);
+        autoSlide = setInterval(nextSlider, 300000000000000);
+    }
 
     function highlightSelected() {
-        allSlides.forEach(slide => {
+        allSlides.forEach((slide) => {
             const inner = slide.querySelector(".slider-card");
             if (!inner) return;
             const original = slide.originalCard || slide;
@@ -247,7 +289,7 @@ document.documentElement.style.scrollBehavior = "smooth";
         highlightSelected();
     }
 
-    allSlides.forEach(slide => slide.addEventListener("click", () => selectCard(slide)));
+    allSlides.forEach((slide) => slide.addEventListener("click", () => selectCard(slide)));
     selectCard(selectedCard);
     moveSlider(false);
 })();
@@ -258,7 +300,9 @@ document.documentElement.style.scrollBehavior = "smooth";
 document.querySelectorAll(".cardfaq").forEach((card, idx, arr) => {
     if (idx === 0) card.classList.add("active"); // first open
     card.addEventListener("click", () => {
-        arr.forEach(c => { if (c !== card) c.classList.remove("active"); });
+        arr.forEach((c) => {
+            if (c !== card) c.classList.remove("active");
+        });
         card.classList.toggle("active");
     });
 });
@@ -271,7 +315,7 @@ document.querySelectorAll(".cardfaq").forEach((card, idx, arr) => {
     const videoFrame = document.getElementById("videoFrame");
     const closeBtn = document.querySelector(".modal .close");
 
-    document.querySelectorAll(".play-btn").forEach(btn => {
+    document.querySelectorAll(".play-btn").forEach((btn) => {
         btn.addEventListener("click", () => {
             if (!videoFrame || !modal) return;
             videoFrame.src = btn.getAttribute("data-video") + "?autoplay=1";
@@ -279,13 +323,14 @@ document.querySelectorAll(".cardfaq").forEach((card, idx, arr) => {
         });
     });
 
-    if (closeBtn) closeBtn.addEventListener("click", () => {
-        if (!modal || !videoFrame) return;
-        modal.style.display = "none";
-        videoFrame.src = "";
-    });
+    if (closeBtn)
+        closeBtn.addEventListener("click", () => {
+            if (!modal || !videoFrame) return;
+            modal.style.display = "none";
+            videoFrame.src = "";
+        });
 
-    window.addEventListener("click", e => {
+    window.addEventListener("click", (e) => {
         if (e.target === modal) {
             modal.style.display = "none";
             videoFrame.src = "";
@@ -296,7 +341,7 @@ document.querySelectorAll(".cardfaq").forEach((card, idx, arr) => {
 // ======================
 // INPUT PLACEHOLDER STAR POSITIONING
 // ======================
-document.querySelectorAll(".input-wrapper").forEach(wrapper => {
+document.querySelectorAll(".input-wrapper").forEach((wrapper) => {
     const input = wrapper.querySelector("input, textarea");
     const star = wrapper.querySelector(".required-star, .required-star-project-details");
     if (!input || !star) return;
@@ -331,7 +376,7 @@ document.querySelectorAll(".input-wrapper").forEach(wrapper => {
 // ======================
 // SERVICE OPTIONS (MULTI-SELECT)
 // ======================
-document.querySelectorAll(".service-option").forEach(option => {
+document.querySelectorAll(".service-option").forEach((option) => {
     option.addEventListener("click", () => option.classList.toggle("selected"));
 });
 
@@ -339,57 +384,65 @@ document.querySelectorAll(".service-option").forEach(option => {
 // BLOG SLIDER
 // ======================
 
-
 (function () {
     const wrapper = document.querySelector(".blog-slider-wrapper");
     if (!wrapper) return;
 
     const track = wrapper.querySelector(".blog-slider-track");
-    const cards = Array.from(wrapper.querySelectorAll(".blog-card_values"));
+    const originalCards = Array.from(track.querySelectorAll(".blog-card_values"));
 
     const leftBtn = document.querySelector(".left-arrow");
     const rightBtn = document.querySelector(".right-arrow");
-    if (!leftBtn || !rightBtn) return;
+    if (!leftBtn || !rightBtn || originalCards.length === 0) return;
 
     // Clone first and last card for infinite effect
-    const firstClone = cards[0].cloneNode(true);
-    const lastClone = cards[cards.length - 1].cloneNode(true);
+    const firstClone = originalCards[0].cloneNode(true);
+    const lastClone = originalCards[originalCards.length - 1].cloneNode(true);
     track.appendChild(firstClone);
-    track.insertBefore(lastClone, cards[0]);
+    track.insertBefore(lastClone, originalCards[0]);
 
     const allCards = Array.from(track.querySelectorAll(".blog-card_values"));
     let index = 1;
 
-    function updateWidth() {
-        const cardWidth = cards[0].getBoundingClientRect().width;
-        track.style.transition = "none";
-        track.style.transform = `translateX(${-index * (cardWidth + 40)}px)`; // 40 = gap
+    let isTransitioning = false;
+
+    function getCardWidthWithGap() {
+        const cardWidth = allCards[0].getBoundingClientRect().width;
+        const style = window.getComputedStyle(track);
+        const gap = parseInt(style.columnGap || style.gap) || 40; // fallback to 40 if no CSS gap
+        return cardWidth + gap;
     }
 
-    window.addEventListener("resize", updateWidth);
+    function updatePosition(noTransition = false) {
+        const offset = -index * getCardWidthWithGap();
+        if (noTransition) {
+            track.style.transition = "none";
+        } else {
+            track.style.transition = "transform 0.6s ease-in-out";
+        }
+        track.style.transform = `translateX(${offset}px)`;
+    }
 
-    function showSlide(idx) {
-        const cardWidth = cards[0].getBoundingClientRect().width + 40;
-        track.style.transition = "transform 0.7s ease-in-out";
-        track.style.transform = `translateX(${-idx * cardWidth}px)`;
-        index = idx;
+    function handleTransitionEnd() {
+        isTransitioning = false;
+        const current = allCards[index];
 
-        track.addEventListener(
-            "transitionend",
-            () => {
-                if (allCards[index].isSameNode(firstClone)) {
-                    track.style.transition = "none";
-                    index = 1;
-                    track.style.transform = `translateX(${-index * cardWidth}px)`;
-                }
-                if (allCards[index].isSameNode(lastClone)) {
-                    track.style.transition = "none";
-                    index = allCards.length - 2;
-                    track.style.transform = `translateX(${-index * cardWidth}px)`;
-                }
-            },
-            { once: true }
-        );
+        if (current === allCards[0]) {
+            // Reached clone of last, jump to real last
+            index = allCards.length - 2;
+            updatePosition(true);
+        } else if (current === allCards[allCards.length - 1]) {
+            // Reached clone of first, jump to real first
+            index = 1;
+            updatePosition(true);
+        }
+    }
+
+    function showSlide(newIndex) {
+        if (isTransitioning) return;
+        isTransitioning = true;
+        index = newIndex;
+        updatePosition();
     }
 
     rightBtn.addEventListener("click", () => {
@@ -402,13 +455,117 @@ document.querySelectorAll(".service-option").forEach(option => {
         resetAuto();
     });
 
-    // Auto slide
+    track.addEventListener("transitionend", handleTransitionEnd);
+
+    window.addEventListener("resize", () => {
+        updatePosition(true);
+    });
+
+    // Auto Slide
     let autoSlide = setInterval(() => showSlide(index + 1), 4000);
+
     function resetAuto() {
         clearInterval(autoSlide);
         autoSlide = setInterval(() => showSlide(index + 1), 4000);
     }
 
     // Initial setup
-    updateWidth();
+    updatePosition(true);
+})();
+
+// About country slide
+
+(function () {
+    const wrapper = document.querySelector(".Aboutlocation_sliderWrapper");
+    if (!wrapper) return;
+
+    const track = wrapper.querySelector(".Aboutlocation_sliderTrack");
+    const originalCards = Array.from(track.querySelectorAll(".cardaboutlocation"));
+
+    const leftBtn = document.querySelector(".Aboutlocation_CountryListleftArrow");
+    const rightBtn = document.querySelector(".Aboutlocation_CountryListrightArrow");
+    if (!leftBtn || !rightBtn || originalCards.length === 0) return;
+
+    // Clone first and last cards for infinite scroll effect
+    const firstClone = originalCards[0].cloneNode(true);
+    const lastClone = originalCards[originalCards.length - 1].cloneNode(true);
+    track.appendChild(firstClone);
+    track.insertBefore(lastClone, originalCards[0]);
+
+    const allCards = Array.from(track.querySelectorAll(".cardaboutlocation"));
+    let index = 1;
+
+    let isTransitioning = false;
+
+    function getCardWidth() {
+        const style = window.getComputedStyle(track);
+        const gap = parseInt(style.gap) || 0;
+        return allCards[0].getBoundingClientRect().width + gap;
+    }
+
+    function updatePosition(noTransition = false) {
+        const cardWidth = getCardWidth();
+        if (noTransition) {
+            track.style.transition = "none";
+        } else {
+            track.style.transition = "transform 0.6s ease-in-out";
+        }
+        track.style.transform = `translateX(${-index * cardWidth}px)`;
+    }
+
+    function handleTransitionEnd() {
+        isTransitioning = false;
+        const current = allCards[index];
+        if (current === allCards[0]) {
+            index = allCards.length - 2;
+            updatePosition(true);
+        } else if (current === allCards[allCards.length - 1]) {
+            index = 1;
+            updatePosition(true);
+        }
+    }
+
+    function slideNext() {
+        if (isTransitioning) return;
+        if (index < allCards.length - 1) {
+            index++;
+            isTransitioning = true;
+            updatePosition();
+        }
+    }
+
+    function slidePrev() {
+        if (isTransitioning) return;
+        if (index > 0) {
+            index--;
+            isTransitioning = true;
+            updatePosition();
+        }
+    }
+
+    rightBtn.addEventListener("click", () => {
+        slideNext();
+        resetAuto();
+    });
+
+    leftBtn.addEventListener("click", () => {
+        slidePrev();
+        resetAuto();
+    });
+
+    track.addEventListener("transitionend", handleTransitionEnd);
+
+    window.addEventListener("resize", () => {
+        updatePosition(true);
+    });
+
+    // Auto Slide (optional)
+    let autoSlide = setInterval(slideNext, 3000);
+    function resetAuto() {
+        clearInterval(autoSlide);
+        autoSlide = setInterval(slideNext, 3000);
+    }
+
+    // Initial position (after adding clones)
+    updatePosition(true);
 })();
