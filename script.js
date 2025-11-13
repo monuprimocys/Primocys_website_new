@@ -341,6 +341,7 @@ document.querySelectorAll(".cardfaq").forEach((card, idx, arr) => {
 // ======================
 // INPUT PLACEHOLDER STAR POSITIONING
 // ======================
+
 document.querySelectorAll(".input-wrapper").forEach((wrapper) => {
     const input = wrapper.querySelector("input, textarea");
     const star = wrapper.querySelector(".required-star, .required-star-project-details");
@@ -569,3 +570,119 @@ document.querySelectorAll(".service-option").forEach((option) => {
     // Initial position (after adding clones)
     updatePosition(true);
 })();
+
+//  ===== JavaScript for Scroll & Active Highlight =====
+
+(function () {
+    document.addEventListener("DOMContentLoaded", () => {
+        document.querySelectorAll(".Blogdetailthirdsectionmain").forEach((blogSection) => {
+            const tocItems = Array.from(blogSection.querySelectorAll(".contentlistblogdetailNormalclor, .contentlistblogdetail"));
+
+            const sections = tocItems
+                .map((item) => {
+                    const sel = item.getAttribute("data-target");
+                    return sel ? blogSection.querySelector(sel) : null;
+                })
+                .map((el, i) => ({ el, toc: tocItems[i] }))
+                .filter((x) => x.el);
+
+            if (sections.length === 0) return;
+
+            tocItems.forEach((i) => i.classList.remove("active"));
+            tocItems[0].classList.add("active");
+
+            let isScrollingByClick = false;
+            const OFFSET = 20;
+
+            function updateActive() {
+                if (isScrollingByClick) return;
+
+                let closestIndex = 0;
+                let minDistance = Infinity;
+
+                sections.forEach((pair, idx) => {
+                    const rect = pair.el.getBoundingClientRect();
+                    const distance = Math.abs(rect.top - OFFSET);
+                    if (distance < minDistance) {
+                        minDistance = distance;
+                        closestIndex = idx;
+                    }
+                });
+
+                tocItems.forEach((i) => i.classList.remove("active"));
+                const activeToc = sections[closestIndex]?.toc;
+                if (activeToc) activeToc.classList.add("active");
+            }
+
+            // ✅ Updated scroll behavior
+            sections.forEach(({ el, toc }) => {
+                toc.addEventListener("click", (ev) => {
+                    ev.preventDefault();
+
+                    tocItems.forEach((i) => i.classList.remove("active"));
+                    toc.classList.add("active");
+
+                    isScrollingByClick = true;
+
+                    const headerOffset = 100; // adjust for sticky header height
+                    const elementPosition = el.getBoundingClientRect().top + window.scrollY;
+                    const offsetPosition = elementPosition - headerOffset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: "smooth",
+                    });
+
+                    setTimeout(() => {
+                        isScrollingByClick = false;
+                        updateActive();
+                    }, 1000);
+                });
+            });
+
+            let ticking = false;
+            function onScroll() {
+                if (!ticking) {
+                    window.requestAnimationFrame(() => {
+                        updateActive();
+                        ticking = false;
+                    });
+                    ticking = true;
+                }
+            }
+
+            window.addEventListener("scroll", onScroll, { passive: true });
+            window.addEventListener("resize", updateActive);
+            updateActive();
+        });
+    });
+})();
+
+
+
+
+
+//  portfolio filter button active state
+(function () {
+    // Select all buttons with class 'portfolio-filter-btn'
+    const portfolioFilterBtns = document.querySelectorAll('.portfolio-filter-btn');
+
+    // Add click listener to each button
+    portfolioFilterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            // Remove 'active' class from all buttons
+            portfolioFilterBtns.forEach(b => b.classList.remove('active'));
+
+            // Add 'active' class to clicked button
+            btn.classList.add('active');
+        });
+    });
+
+})();
+
+
+
+//  NAVBAR MENU OPEN CLOSE ANIMATION
+
+
+

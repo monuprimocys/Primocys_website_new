@@ -1,41 +1,219 @@
-<!-- Header ============================================================================================================ -->
-<nav class="navbar navbar-expand-lg fixed-top ">
-	<!--  navbar values -->
-	<div class=" navbar_main">
-		<!-- Logo -->
-		<a class="navbar-brand fw-bold text-primary d-flex align-items-center" href="/index.html"> <img src="/images/Logo.svg" alt="Primocys" class="logo-img me-2"> </a>
-		<!-- Mobile Toggle Button -->
-		<!-- Mobile Toggle Button -->
-		<!-- Mobile Toggle Button -->
-		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation" style="border: none;"> <span class="navbar-toggler-icon"></span> </button>
-		<!-- Navbar Content -->
-		<div class="collapse navbar-collapse" id="mainNavbar">
-			<ul class="navbar-nav mx-auto align-items-lg-center">
-				<!-- Services Dropdown -->
-				<li class="nav-item  ">
-					<!-- Mobile toggle --><a class="nav-link  d-lg-none" href="#">Services</a>
-					<!-- Desktop hover --><a class="nav-link d-none d-lg-block" href="#">Services</a> </li>
-				<!-- Static Links -->
-				<li class="nav-item"> <a class="nav-link" href="#">Solutions</a> </li>
-				<li class="nav-item"> <a class="nav-link" href="#">Hire</a> </li>
-				<li class="nav-item"> <a class="nav-link" href="#">Portfolio</a> </li>
-				<li class="nav-item"> <a class="nav-link" href="./blogs.html">Blog</a> </li>
-				<li class="nav-item"> <a class="nav-link" href="/about.html">About</a> </li>
-				<!-- Contact Button -->
-				<div class=" mobile_screen">
-					<div class="d-flex action-buttons"> <a href="/contact.html" class="btn-gradient shimmer_btn_Global">
-                            Contact Us
-                            <img src="/images/Arrow.svg" class="arrow" alt="arrow">
-                        </a> </div>
-				</div>
-			</ul>
-		</div>
-		<!-- Contact Button -->
-		<div class=" large_screen">
-			<div class="d-flex action-buttons"> <a href="/contact.html" class="btn-gradient shimmer_btn_Global">
+<!-- Header  for destop and large screen -->
+<nav class="navbar navbar-expand-lg fixed-top">
+    <div class="navbar_main">
+        <!-- Logo -->
+        <a class="navbar-brand fw-bold text-primary d-flex align-items-center" href="/index.html">
+            <img src="/images/Logo.svg" alt="Primocys" class="logo-img me-2" />
+        </a>
+        <!-- Mobile Toggle Button -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation" style="border: none;">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- Navbar Links -->
+        <div class="collapse navbar-collapse" id="mainNavbar">
+            <ul class="navbar-nav mx-auto align-items-lg-center">
+                <!-- Services -->
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Services</a>
+                    <div class="mega-menu">
+                        <div class="mega-menu-contact-values">
+                            <!-- Left Side -->
+                            <div class="mega-menu-leftside">
+                                <div class="mega-menu-inner-content">
+                                    <strong class="mega-menu-inner-content-heading">Engineering Services</strong>
+                                </div>
+                                <div class="mega-menu-list-values-section">
+                                    <ul class="mega-menu-list-values-items">
+                                        <li class="itemsvalues" data-id="software">Software Engineering</li>
+                                        <li class="itemsvalues" data-id="web">Web Development</li>
+                                        <li class="itemsvalues" data-id="app">App Development</li>
+                                        <li class="itemsvalues" data-id="ai">AI & Machine Learning</li>
+                                        <li class="itemsvalues" data-id="cloud">Cloud Computing</li>
+                                        <li class="itemsvalues" data-id="web">Web Development</li>
+                                        <li class="itemsvalues" data-id="app">App Development</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- Right Side -->
+                            <div class="mega-menu-rightside">
+                                <!-- Heading -->
+                                <div class="mega-menu-inner-content">
+                                    <strong class="mega-menu-inner-content-heading">Software Engineering</strong>
+                                </div>
+                                <!-- List Section -->
+                                <div class="mega-menu-rightside-list-values-section">
+                                    <ul class="mega-menu-rightside-list-values-section-items">
+                                        <li>Custom Software Development</li>
+                                        <li>Web Development</li>
+                                        <li>App Development</li>
+                                        <li>Cloud Services</li>
+                                    </ul>
+                                </div>
+                                <!-- Bottom Card Section -->
+                                <div class="bottomeCard">
+                                    <!-- Left Section -->
+                                    <div class="bottomeCard-content-left">
+                                        <!-- Review Info -->
+                                        <div class="review-info">
+                                            <p>Reviewed on</p>
+                                            <img src="./images/clust.svg" alt="Clutch logo" />
+                                        </div>
+                                        <!-- Star Section -->
+                                        <div class="star-section">
+                                            <div class="star-section-images">
+                                                <img src="./images/star.svg" alt="star" />
+                                                <img src="./images/star.svg" alt="star" />
+                                                <img src="./images/star.svg" alt="star" />
+                                                <img src="./images/star.svg" alt="star" />
+                                                <img src="./images/star.svg" alt="star" />
+                                            </div>
+                                            <p class="textreviews">65 reviews</p>
+                                        </div>
+                                        <!-- Certificate Section -->
+                                        <div class="certificate-section">
+                                            <img src="./images/dun_and_brandstreet_1b7f223457.svg" alt="AWS Certificate" />
+                                            <img src="./images/certificate-cmmi-l3.svg" alt="CMMI L3" />
+                                            <img src="./images/certificate-aws-select-rier.svg" alt="AWS Certificate" />
+                                        </div>
+                                    </div>
+                                    <!-- Right Section -->
+                                    <div class="bottomeCard-content-right">
+                                        <button class="build-btn">Build your own team</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Solutions</a>
+                    <div class="mega-menu">
+                        <div class="mega-menu-contact-values">
+                            <!-- Left Side -->
+                            <div class="mega-menu-leftside">
+                                <div class="mega-menu-inner-content">
+                                    <strong class="mega-menu-inner-content-heading">Engineering Services</strong>
+                                </div>
+                                <div class="mega-menu-list-values-section">
+                                    <ul class="mega-menu-list-values-items">
+                                        <li class="itemsvalues" data-id="software">Software Engineering</li>
+                                        <li class="itemsvalues" data-id="web">Web Development</li>
+                                        <li class="itemsvalues" data-id="app">App Development</li>
+                                        <li class="itemsvalues" data-id="ai">AI & Machine Learning</li>
+                                        <li class="itemsvalues" data-id="cloud">Cloud Computing</li>
+                                        <li class="itemsvalues" data-id="web">Web Development</li>
+                                        <li class="itemsvalues" data-id="app">App Development</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- Right Side -->
+                            <div class="mega-menu-rightside">
+                                <!-- Heading -->
+                                <div class="mega-menu-inner-content">
+                                    <strong class="mega-menu-inner-content-heading">Software Engineering</strong>
+                                </div>
+                                <!-- List Section -->
+                                <div class="mega-menu-rightside-list-values-section">
+                                    <ul class="mega-menu-rightside-list-values-section-items">
+                                        <li>Custom Software Development</li>
+                                        <li>Web Development</li>
+                                        <li>App Development</li>
+                                        <li>Cloud Services</li>
+                                    </ul>
+                                </div>
+                                <!-- Bottom Card Section -->
+                                <div class="bottomeCard">
+                                    <!-- Left Section -->
+                                    <div class="bottomeCard-content-left">
+                                        <!-- Review Info -->
+                                        <div class="review-info">
+                                            <p>Reviewed on</p>
+                                            <img src="./images/clust.svg" alt="Clutch logo" />
+                                        </div>
+                                        <!-- Star Section -->
+                                        <div class="star-section">
+                                            <div class="star-section-images">
+                                                <img src="./images/star.svg" alt="star" />
+                                                <img src="./images/star.svg" alt="star" />
+                                                <img src="./images/star.svg" alt="star" />
+                                                <img src="./images/star.svg" alt="star" />
+                                                <img src="./images/star.svg" alt="star" />
+                                            </div>
+                                            <p class="textreviews">65 reviews</p>
+                                        </div>
+                                        <!-- Certificate Section -->
+                                        <div class="certificate-section">
+                                            <img src="./images/dun_and_brandstreet_1b7f223457.svg" alt="AWS Certificate" />
+                                            <img src="./images/certificate-cmmi-l3.svg" alt="CMMI L3" />
+                                            <img src="./images/certificate-aws-select-rier.svg" alt="AWS Certificate" />
+                                        </div>
+                                    </div>
+                                    <!-- Right Section -->
+                                    <div class="bottomeCard-content-right">
+                                        <button class="build-btn">Build your own team</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Hire</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./portfolio.html">Portfolio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./blogs.html">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/about.html">About</a>
+                </li>
+            </ul>
+
+            <!--  small screnn  -->
+
+            <div class="small_screen">
+                <ul class="small_screen_menu">
+                    <li class="small_screen_menu-item">
+                        Service
+                        <span class="toggle-icon">+</span>
+                        <ul class="small_screen_submenu">
+                            <li class="small_screen_submenu-item">Web Development</li>
+                            <li class="small_screen_submenu-item">App Development</li>
+                            <li class="small_screen_submenu-item">Software Solutions</li>
+                        </ul>
+                    </li>
+                    <li class="small_screen_menu-item">
+                        Solutions
+                        <span class="toggle-icon">+</span>
+                        <ul class="small_screen_submenu">
+                            <li class="small_screen_submenu-item">Cloud Services</li>
+                            <li class="small_screen_submenu-item">AI Solutions</li>
+                        </ul>
+                    </li>
+                    <li class="small_screen_menu-item">
+                        Hire
+                        <span class="toggle-icon">+</span>
+                        <ul class="small_screen_submenu">
+                            <li class="small_screen_submenu-item">Hire Developers</li>
+                            <li class="small_screen_submenu-item">Hire Designers</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- Contact Button (Desktop) -->
+        <div class="large_screen">
+            <div class="d-flex action-buttons">
+                <a href="/contact.html" class="btn-gradient shimmer_btn_Global">
                     Contact Us
-                    <img src="/images/Arrow.svg" class="arrow" alt="arrow">
-                </a> </div>
-		</div>
-	</div>
+                    <img src="/images/Arrow.svg" class="arrow" alt="arrow" />
+                </a>
+            </div>
+        </div>
+    </div>
 </nav>
+<!-- End of Header -->

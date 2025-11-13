@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- <title>My HTML Project</title> -->
+        <!-- Link CSS -->
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primocys - Transforming the Future with AI</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Saira+Condensed:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <div id="header"></div>
+    <!-- ============================================================================================================================================================ -->
+    <!-- ========================================================================  Portfolio heading     section   ====================================================================== -->
+    <!-- ============================================================================================================================================================ -->
+    <section class="portfolio-header-section">
+        <div class="portfolio-header-section-content">
+            <h2 class="global_heading">Building Success: A Journey Through My Mobile & Web Development Portfolio</h2>
+            <div class="portfolio-header-section-para">
+                <h5 class="global_description">Explore my mobile & web development journey, showcasing projects that drive success and deliver impactful results.</h5>
+            </div>
+        </div>
+        <div class="portfolio-header-section-btn-main">
+            <div class="portfolio-header-section-btn">
+                <button type="submit" class="Mobile_App_Development_Platform_SubmitBtn  shimmer_btn_Global">
+                    Let’s Connect
+                    <img src="./images/arrow-up.png" alt="Submit Icon" class="Mobile_App_Development_Platform_SubmitIcon">
+                </button>
+            </div>
+        </div>
+    </section>
+    <!-- ============================================================================================================================================================ -->
+    <!-- ========================================================================  Portfolio filtter      section   ====================================================================== -->
+    <!-- ============================================================================================================================================================ -->
+ <section class="portfolio-filter-section">
+  <div class="portfolio-filter-section-content">
+    <div class="portfolio-filter-section-content-inner">
+      <button class="portfolio-filter-btn active" data-filter="all">All</button>
+      <button class="portfolio-filter-btn" data-filter="mobile-apps">Mobile Apps</button>
+      <button class="portfolio-filter-btn" data-filter="web-development">Web</button>
+    </div>
+  </div>
+
+  <!--  All Card list  -->
+<div class="portfolio-filter-cards-section">
+
+</div>
+
+</section>
+
+
+    <!-- Footer -->
+    <div id="footer"></div>
+    <script>
+	document.addEventListener("DOMContentLoaded", () => {
+		// Load header
+		fetch("header.html").then(res => res.text()).then(data => document.getElementById("header").innerHTML = data).then(() => {
+			// Highlight active page link
+			const links = document.querySelectorAll('.nav-link');
+			links.forEach(link => {
+				if(link.href === window.location.href) {
+					link.classList.add('active');
+				}
+			});
+		}); 
+		// Load footer
+		fetch("footer.html").then(res => res.text()).then(data => document.getElementById("footer").innerHTML = data);
+	});
+    </script>
+    <script src="./script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
