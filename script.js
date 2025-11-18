@@ -2,7 +2,7 @@
 // HERO ANIMATIONS
 // ======================
 window.addEventListener("load", () => {
-    const growthH3 = document.querySelector(".growth-solution h3");
+    const growthH3 = document.querySelector(".growth-solution p");
     const growthBtns = document.querySelectorAll(".growth-btn");
     const heroTitle = document.querySelector(".hero-title");
     const heroSubtitle = document.querySelector(".hero-subtitle");
