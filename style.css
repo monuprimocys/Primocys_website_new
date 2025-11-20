@@ -71,29 +71,6 @@ body {
     color: var(--text-dark-gray);
 }
 
-/*  global btn */
-
-.Mobile_App_Development_Platform_SubmitBtn {
-    width: 80%;
-    height: 50px;
-    background: var(--gradient-blue);
-    border: none;
-    border-radius: 20px;
-    color: white;
-    font-size: 20px;
-    font-weight: 600;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    text-decoration: none;
-    /* Removes underline from anchor */
-    transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease,
-        background 0.3s ease;
-}
-
 /* ============================================================================================================================================================ */
 /* ======================================================================== NAVBAR ====================================================================== */
 /* ============================================================================================================================================================ */
@@ -101,7 +78,7 @@ body {
 .navbar {
     position: sticky;
     top: 0;
-    z-index: 5000;
+    z-index: 1000;
     height: 90px;
     padding: 1rem 0;
     backdrop-filter: blur(10px);
@@ -2342,7 +2319,6 @@ body {
     padding: 80px 0;
     background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
     overflow: hidden;
-    margin-bottom: 3rem;
 }
 
 /* ===========================
@@ -2701,6 +2677,7 @@ body {
     width: 100%;
     /* margin-bottom: 3rem; */
     position: relative;
+    height: auto;
 }
 
 /* Card */
@@ -6089,6 +6066,7 @@ textarea:focus {
     transition:
         transform 0.2s ease,
         box-shadow 0.2s ease;
+    text-decoration: none;
 }
 
 .Mobile_App_Development_Platform_SubmitBtn:hover {
@@ -7637,7 +7615,8 @@ label {
 
 .Features_Whatsapp {
     width: 100%;
-    padding: 3rem 0;
+    padding: 3rem 0 0 0;
+    /* Only top padding */
     background-color: #fff;
     display: flex;
     flex-direction: column;
@@ -7749,7 +7728,8 @@ label {
 /* Container grid */
 .Features_Content_Card {
     width: 67%;
-    margin: 2rem auto;
+    margin: 4rem auto 0 auto;
+    /* Only top margin */
     display: grid;
     grid-template-columns: 1fr;
     /* mobile: 1 card */
@@ -7961,7 +7941,7 @@ label {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding: 60px 00px;
+    padding: 12px 0px 60px 0px;
 }
 
 @media (max-width: 768px) {
@@ -8367,7 +8347,7 @@ label {
     background-repeat: no-repeat;
     background-size: cover;
     height: 600px;
-    border-radius: 1rem;
+    border-radius: 0.2rem;
 
     /* Center content */
     display: flex;
@@ -10637,13 +10617,20 @@ html {
 /* Main Section */
 
 .portfolio-filter-section {
-    width: 80%;
+    width: 67%;
     margin: 0 auto;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     gap: 20px;
+}
+
+/* For screens 1506px and below */
+@media (max-width: 1600px) {
+    .portfolio-filter-section {
+        width: 87% !important;
+    }
 }
 
 /* Outer Gradient Border */
@@ -10707,6 +10694,8 @@ html {
 
     .portfolio-filter-section-content-inner {
         gap: 15px;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
     }
 }
 
@@ -10718,6 +10707,7 @@ html {
     .portfolio-filter-btn {
         font-size: 16px;
         padding: 6px 12px;
+        width: 100%;
     }
 
     .portfolio-filter-section-content-inner {
@@ -10729,9 +10719,2196 @@ html {
 
 .portfolio-filter-cards-section {
     width: 100%;
-    margin: 4rem auto 8rem auto;
+    margin: 0rem auto 3rem auto;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 3rem;
+}
+
+/* Hidden state */
+.HireCustomeDeveloperAppDevelopemtmaincontentCard.hide {
+    display: none;
+}
+
+/* ============================================================================================================================================================ */
+/* ======================================================================== <<<< HIRE PAGE >>>> ====================================================================== */
+/* ============================================================================================================================================================ */
+.hireappbgcolor {
+    background: #023be20a !important;
+    width: 90%;
+    min-height: 502px;
+    border: 0px solid rgba(0, 161, 197, 0.5) !important;
+    border-radius: 40px;
+    padding: 30px;
+    margin: 0 auto;
+}
+
+.transparentcolor {
+    background: transparent !important;
+}
+
+.hirebtn {
+    width: 50% !important;
+    height: 50px;
+    background: var(--gradient-blue);
+    border: none;
+    border-radius: 20px;
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    margin: 30px 0 20px 0 !important; /* only TOP margin added */
+}
+
+/* Mobile Screen */
+@media (max-width: 768px) {
+    .hirebtn {
+        width: auto !important; /* auto width according to content */
+        padding: 0 20px !important; /* optional: keeps spacing around text */
+    }
+}
+
+/* Review Card */
+.clustechreview {
+    flex: 1 1 calc(50% - 20px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 10px;
+    padding: 20px;
+    min-height: 130px;
+
+    background: rgba(0, 161, 197, 0.04);
+    border-bottom: 13px solid #00a1c5;
+    border-radius: 20px;
+    cursor: pointer;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+/* Hover Effect */
+.clustechreview:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Icon */
+.ImageWeb {
+    width: 100px;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Review Stars / Text */
+.review-stars {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+
+.review-stars img {
+    width: 18px;
+    height: 18px;
+}
+
+.review-stars span {
+    font-size: 14px;
+    font-weight: 500;
+    color: #5c5c5c;
+    font-family: var(--font-body);
+}
+
+/* =================== Heading Section =================== */
+
+.bgcolorhire {
+    background-color: transparent !important;
+}
+
+.Hireheading {
+    width: 60% !important;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column !important;
+    align-items: center !important; /* horizontal center */
+    justify-content: center !important; /* vertical center */
+    gap: 20px;
+    text-align: center !important; /* center text */
+}
+
+/* =================== Mobile View =================== */
+@media (max-width: 480px) {
+    .Hireheading {
+        width: 100% !important;
+        align-items: flex-start !important; /* content start from LEFT */
+        text-align: left !important; /* text left */
+        padding: 0 16px; /* add small side padding */
+    }
+}
+
+/*  Hire desing Card  */
+
+/* Card Container */
+.HreCardDesing {
+    background: #ffffff;
+    border: 1px solid #dce6ff;
+    box-shadow: 0 4px 12px rgba(0, 88, 255, 0.12);
+    border-radius: 16px;
+    transition: 0.3s ease;
+    cursor: pointer;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    background: linear-gradient(258.54deg, #eef2fe -14.1%, #ffffff 97.93%);
+}
+
+/* Hover Effect */
+.HreCardDesing:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 18px rgba(0, 88, 255, 0.18);
+}
+
+/* Top Row (Left Text + Right Icon) */
+.CustomeCarddesing {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.Contenthire {
+    background: #023be280;
+    padding: 8px 14px;
+    border-radius: 0 20px 20px 0; /* Top-left 0 | Top-right 20 | Bottom-right 20 | Bottom-left 0 */
+    margin-left: 0;
+}
+
+/* Title Text */
+.ContenthireParagraph {
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 17px;
+    color: white;
+    margin: 0;
+}
+
+/* Right Circular Icon */
+.CircleimageHire {
+    height: 44px;
+    width: 44px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #bcd3ff;
+    background: #f4f8ff;
+    margin-right: 25px;
+}
+
+.CircleimageHire img {
+    height: 60%;
+    width: 60%;
+    object-fit: contain;
+}
+
+/* Bottom Description */
+.Hiredescription {
+    margin-top: 1rem !important;
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.6;
+    color: #4a4a4a;
+    text-align: left;
+    padding-left: 25px;
+}
+
+/* ============================================================================================================================================================ */
+/* ======================================================================== <<<< HIRE PAGE OurShowcaseHire >>>> ====================================================================== */
+/* ============================================================================================================================================================ */
+
+/* Outer Container */
+.OurShowcaseHire {
+    width: 67%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 20px;
+}
+
+/* For screens 1506px and below */
+@media (max-width: 1600px) {
+    .OurShowcaseHire {
+        width: 87% !important;
+    }
+}
+
+/* Left Column - 60% */
+.ShowCaseHireLeft {
+    width: 60%;
+    background: linear-gradient(90.38deg, #023be2 2.06%, #00a1c5 99.67%);
+    padding: 2px;
+    border-radius: 1rem;
+    height: auto;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.HireTittle {
+    font-family: var(--font-body);
+    color: #000;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.HireTittleDis {
+    font-family: var(--font-body);
+    color: #555555;
+    font-weight: 400;
+    font-size: 20px;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.ShowCaseHireLeft_Content {
+    background: #fff;
+    height: 100%; /* Fills full height */
+    border-radius: calc(1rem - 1px);
+    padding: 3rem;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.ShowCaseHireRight {
+    width: 40%;
+    border-radius: 1rem;
+    display: grid;
+    grid-template-columns: 1fr; /* Mobile → 1 column */
+    gap: 20px;
+}
+
+/* Large Screens → 2 columns grid (2×2 layout) */
+@media (min-width: 1024px) {
+    .ShowCaseHireRight {
+        grid-template-columns: 1fr 1fr; /* 2 columns */
+    }
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 768px) {
+    .OurShowcaseHire {
+        width: 90%;
+        flex-direction: column;
+    }
+
+    .ShowCaseHireLeft,
+    .ShowCaseHireRight {
+        width: 100%;
+        height: 200px; /* Keep same height on mobile */
+    }
+
+    .ShowCaseHireLeft_Content {
+        padding: 1rem 1.5rem;
+    }
+}
+
+/* =================== Card Container =================== */
+.RightItem {
+    width: 100%;
+    max-width: 350px; /* Optional: limit max width */
+    background: linear-gradient(90.38deg, #023be2 2.06%, #00a1c5 99.67%);
+    padding: 3px; /* Outer border spacing */
+    border-radius: 1rem;
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+    cursor: pointer;
+
+    /* Shadow on hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.RightItem:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* =================== Inner Card =================== */
+.RightItemContent {
+    background: #fff;
+    height: 100%;
+    border-radius: calc(1rem - 3px); /* Inner rounding to fit outer */
+    padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    text-align: center;
+}
+
+/* =================== Gradient Number =================== */
+.RightItemContentshado {
+    font-family: var(--font-heading, "Arial", sans-serif);
+    font-weight: 700;
+    font-size: 5rem; /* Large number */
+    line-height: 1.2;
+    color: transparent;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #023be2;
+
+    background: linear-gradient(180deg, rgba(2, 59, 226, 0.8) 0%, rgba(0, 161, 197, 0.8) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+/* =================== Gradient Text =================== */
+.RightItemText {
+    font-weight: 600;
+    font-size: 1.25rem;
+    color: transparent;
+    background: linear-gradient(90deg, #023be2, #00a1c5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.3s ease;
+}
+
+/* =================== Responsive =================== */
+@media (max-width: 640px) {
+    .RightItemContent {
+        padding: 1.5rem 1rem;
+    }
+    .RightItemContentshado {
+        font-size: 3rem;
+    }
+    .RightItemText {
+        font-size: 1rem;
+    }
+}
+
+/* ============================================================================================================================================================ */
+/* ======================================================================== <<<< HIRE PAGE certifiedhiredeveloper >>>> ====================================================================== */
+/* ============================================================================================================================================================ */
+
+.certifiedhiredeveloper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    flex-direction: column;
+}
+
+.certifiedhiredeveloperHeading {
+    width: 69% !important;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column !important;
+    align-items: center !important; /* horizontal center */
+    justify-content: center !important; /* vertical center */
+    gap: 20px;
+    text-align: center !important;
+}
+
+/* =================== Mobile View =================== */
+@media (max-width: 480px) {
+    .certifiedhiredeveloperHeading {
+        width: 100% !important;
+        align-items: flex-start !important; /* content start from LEFT */
+        text-align: left !important; /* text left */
+        padding: 0 16px; /* add small side padding */
+    }
+}
+
+.certifiedhiredevelopermain {
+    width: 70%; /* Container width */
+    margin: 0 auto; /* Center horizontally */
+    display: flex; /* Flex layout for two columns */
+    gap: 20px; /* Space between columns */
+    margin-top: 3rem;
+}
+
+/* For screens 1506px and below */
+@media (max-width: 1600px) {
+    .certifiedhiredevelopermain {
+        width: 87% !important;
+    }
+}
+
+/* Left column */
+.certifiedhiredevelopermainleft {
+    flex: 0 0 40%; /* 40% width on large screens */
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 8px;
+}
+
+.hirecontent {
+    font-family: var(--font-body);
+    font-size: 18px;
+    font-weight: 400;
+    color: #555555;
+}
+
+/* Wrapper */
+.hire-certifiedhiredevelopermainright {
+    width: 100%;
+    background-color: #023be20a;
+    padding: 30px;
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+/* Arrows */
+.hire-arrow {
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 20;
+}
+
+.hire-left-arrow {
+    left: -5px;
+}
+.hire-right-arrow {
+    right: -7px;
+}
+
+.hire-arrow img {
+    width: 28px;
+    height: 28px;
+}
+
+/* Cards viewport */
+.hire-cards-container {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.45s ease-in-out;
+    will-change: transform;
+}
+
+.hire-card {
+    min-width: calc(35% - 13px);
+    max-width: calc(35% - 13px);
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+
+    display: flex;
+    flex-direction: column;
+
+    /* Center content vertically & horizontally */
+    justify-content: center;
+    align-items: center;
+
+    gap: 10px;
+
+    /* Center text inside child elements */
+    text-align: center;
+}
+
+/* Title Wrap */
+.hire-card-title-wrap {
+    width: fit-content;
+    margin: 0 auto 10px;
+    position: relative;
+}
+
+.HireCardtittl {
+    font-weight: 700;
+    font-size: 28px;
+    background: linear-gradient(90deg, #023be2, #00a1c5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+    z-index: 2;
+}
+
+.hire-title-underline {
+    width: 100%;
+    height: 10px;
+    background: #86d8ee;
+    position: absolute;
+    bottom: 3px;
+    left: 0;
+    border-radius: 4px;
+}
+
+/* Description */
+.hiredescriptionText {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.5;
+}
+
+/* Mobile — show 1 card */
+@media (max-width: 768px) {
+    .hire-card {
+        min-width: 90%;
+        max-width: 90%;
+    }
+}
+
+/* ============================================================================================================================================================ */
+/* ======================================================================== <<<< HIRE PAGE  HIRE CUSTOME APPP DEVELOPER >>>> ====================================================================== */
+/* ============================================================================================================================================================ */
+
+/* MAIN WRAPPER */
+.HireCustomeDeveloperAppDevelopemtmaincontent {
+    width: 69%;
+    margin: 0 auto 3rem auto;
+}
+
+/* For screens 1506px and below */
+@media (max-width: 1600px) {
+    .HireCustomeDeveloperAppDevelopemtmaincontent {
+        width: 87% !important;
+    }
+}
+
+/* CARD OUTER BORDER */
+.HireCustomeDeveloperAppDevelopemtmaincontentCard {
+    width: 100%;
+    background: linear-gradient(90deg, #023be2, #00a1c5);
+    padding: 2px;
+    border-radius: 1rem;
+    margin-top: 3rem;
+}
+
+/* INNER CARD CONTENT */
+.HireCustomeDeveloperAppDevelopemtmaincontentCardContent {
+    background: #fff;
+    border-radius: 0.9rem;
+    padding: 2rem;
+    display: flex;
+    gap: 60px;
+    height: 100%;
+}
+
+/* LEFT IMAGE */
+.left-image {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.left-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* RIGHT CONTENT */
+.HireCustomeDeveloperAppDevelopemtmaincontentCardContentRightside {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding-right: 40px;
+}
+
+/* TAG BUTTONS */
+.serviceshire {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 10px;
+}
+
+.hireweb,
+.hireApp {
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 15px;
+    padding: 6px 24px;
+    border-radius: 1.2rem;
+    border: none;
+}
+
+.hireweb {
+    background-color: #ffe0e0;
+}
+
+.hireApp {
+    background-color: #ffdbf8;
+}
+
+/* HEADING */
+.hireheadingvalues {
+    font-family: var(--font-heading);
+    font-size: 40px;
+    font-weight: 600;
+    color: #000;
+    line-height: 1.3;
+}
+
+/* DESCRIPTION */
+.hiredescriptionvalues {
+    font-family: var(--font-body);
+    font-size: 20px;
+    color: #555;
+    line-height: 1.6;
+}
+
+.btnhire {
+    width: fit-content;
+}
+
+.arrowcolorrimage {
+    width: 30px;
+    height: 30px;
+}
+
+.hoverchnage:hover img {
+    rotate: 34deg;
+}
+
+/* ============================= */
+/* RESPONSIVE FIXES (IMPORTANT) */
+/* ============================= */
+
+/* Tablet layout */
+@media (max-width: 1024px) {
+    .HireCustomeDeveloperAppDevelopemtmaincontent {
+        width: 85%;
+    }
+
+    .HireCustomeDeveloperAppDevelopemtmaincontentCardContent {
+        gap: 40px;
+        padding: 1.5rem;
+    }
+
+    .hireheadingvalues {
+        font-size: 32px;
+    }
+
+    .hiredescriptionvalues {
+        font-size: 18px;
+    }
+}
+
+/* Mobile layout */
+@media (max-width: 768px) {
+    .HireCustomeDeveloperAppDevelopemtmaincontent {
+        width: 95%;
+    }
+
+    .HireCustomeDeveloperAppDevelopemtmaincontentCardContent {
+        flex-direction: column;
+        gap: 25px;
+        padding: 1.5rem;
+    }
+
+    .left-image {
+        width: 100%;
+    }
+
+    .left-image img {
+        height: auto;
+    }
+
+    .HireCustomeDeveloperAppDevelopemtmaincontentCardContentRightside {
+        width: 100%;
+        padding-right: 0;
+    }
+
+    .hireheadingvalues {
+        font-size: 26px;
+        text-align: left;
+    }
+
+    .hiredescriptionvalues {
+        font-size: 16px;
+        text-align: left;
+    }
+
+    .serviceshire {
+        justify-content: flex-start;
+    }
+}
+
+/* Small mobile */
+@media (max-width: 480px) {
+    .hireheadingvalues {
+        font-size: 22px;
+    }
+
+    .hiredescriptionvalues {
+        font-size: 15px;
+    }
+
+    .btnhire button {
+        padding: 8px 18px;
+    }
+}
+
+/* ============================================================================================================================================================ */
+/* ======================================================================== <<<< HIRE PAGE  HIRE  BANNER SECTION >>>> ====================================================================== */
+/* ============================================================================================================================================================ */
+/* Banner Section */
+
+/* MAIN BANNER SECTION */
+.hire-banner-section {
+    width: 69%;
+    margin: 0 auto;
+    height: 320px;
+    background-image: url("./images/hirebgimage.webp");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+}
+
+/* For screens 1506px and below */
+@media (max-width: 1600px) {
+    .hire-banner-section {
+        width: 87% !important;
+    }
+}
+
+/* BANNER HEADING */
+.hire-banner-heading {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 50px;
+    line-height: 1.2;
+    color: #fff;
+    max-width: 70%;
+    margin-bottom: 20px;
+}
+
+/* BUTTON - WHITE BACKGROUND */
+.hire-banner-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 12px 28px;
+    background: #ffffff; /* White background */
+    border-radius: 50px;
+    border: none;
+
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+/* GRADIENT TEXT */
+.hire-btn-text {
+    font-size: 18px;
+    font-weight: 600;
+    background: linear-gradient(90deg, #086ada, #00a1c5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* ICON INSIDE BUTTON */
+.hire-banner-btn img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+
+/* HOVER EFFECT */
+.hire-banner-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 480px) {
+    .hire-banner-section {
+        width: 90%;
+        height: auto;
+        padding: 40px 20px;
+    }
+
+    .hire-banner-heading {
+        font-size: 26px;
+        max-width: 100%;
+    }
+
+    .hire-banner-btn {
+        font-size: 16px;
+        padding: 10px 22px;
+        gap: 8px;
+    }
+
+    .hire-btn-text {
+        font-size: 16px;
+    }
+
+    .hire-banner-btn img {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+/* ============================================================================================================================================================ */
+/* ======================================================================== <<<< HIRE PAGE  HIRE  SKILLS SECTION >>>> ====================================================================== */
+/* ============================================================================================================================================================ */
+
+/* SECTION WRAPPER */
+.hireskillsection {
+    width: 100%;
+}
+
+/* MAIN CARD WRAPPER */
+.hireskillscardmain {
+    width: 70%;
+    margin: 40px auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+/* For screens 1506px and below */
+@media (max-width: 1600px) {
+    .hireskillscardmain {
+        width: 87% !important;
+    }
+}
+
+/* EACH CARD */
+.hireskillscard {
+    width: 48%; /* Desktop: 2 per row */
+    background: #ffffff;
+    padding: 25px;
+    border: 1px solid #023be240;
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+/* CARD HOVER */
+.hireskillscard:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+/* ICON */
+.hireskillscard img {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+}
+
+/* TEXT */
+.hireskillscardtitttle {
+    font-size: 18px;
+    font-weight: 500;
+    color: #000;
+    line-height: 1.4;
+}
+
+/* ------------------------------- */
+/* TABLET SCREENS (max-width: 1024px) */
+/* ------------------------------- */
+@media (max-width: 1024px) {
+    .hireskillscardmain {
+        width: 85%;
+        gap: 20px;
+    }
+
+    .hireskillscard {
+        width: 48%; /* Still 2 per row */
+        padding: 20px;
+    }
+
+    .hireskillscardtitttle {
+        font-size: 17px;
+    }
+}
+
+/* ------------------------------- */
+/* LARGE MOBILE (max-width: 768px) */
+/* ------------------------------- */
+@media (max-width: 768px) {
+    .hireskillscardmain {
+        width: 90%;
+    }
+
+    .hireskillscard {
+        width: 100%; /* 1 card per row */
+        padding: 18px;
+    }
+
+    .hireskillscard img {
+        width: 42px;
+        height: 42px;
+    }
+
+    .hireskillscardtitttle {
+        font-size: 17px;
+    }
+}
+
+/* ------------------------------- */
+/* SMALL MOBILE (max-width: 480px) */
+/* ------------------------------- */
+@media (max-width: 480px) {
+    .hireskillscardmain {
+        width: 95%;
+    }
+
+    .hireskillscard {
+        padding: 16px;
+        gap: 12px;
+    }
+
+    .hireskillscardtitttle {
+        font-size: 16px;
+    }
+}
+
+/* ------------------------------- */
+/* BUTTON SECTION */
+/* ------------------------------- */
+.btnsklills {
+    width: 100%;
+    margin: 30px auto;
+    display: flex;
+    justify-content: center;
+}
+
+/* Bottom Button Styling */
+.btnhirebottome {
+    padding: 0.75rem 3.5rem !important;
+}
+
+@media (max-width: 768px) {
+    .btnhirebottome {
+        padding: 0.65rem 2.5rem !important;
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .btnhirebottome {
+        padding: 0.6rem 2rem !important;
+        font-size: 14px;
+    }
+}
+
+/* ============================================================================================================================================================ */
+/* ======================================================================== <<<< HIRE   PROCESS >>>> ====================================================================== */
+/* ============================================================================================================================================================ */
+
+.hireprocess {
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Horizontal center */
+    align-items: center; /* Vertical center */
+    flex-direction: column; /* Align content vertically */
+    text-align: center; /* Center text */
+}
+
+/* MAIN ROW */
+.hire-development-process-row {
+    width: 67%;
+    margin: auto;
+    background: #023be20a;
+    padding: 3rem;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: relative;
+    flex-wrap: wrap;
+}
+
+/* For screens 1506px and below */
+@media (max-width: 1600px) {
+    .hire-development-process-row {
+        width: 87% !important;
+    }
+}
+
+/* Step */
+.hire-development-step {
+    width: 23%;
+    text-align: center;
+    position: relative;
+}
+
+/* Step Circle */
+.hire-step-circle {
+    width: 55px;
+    height: 55px;
+    margin: 0 auto 12px auto;
+    border-radius: 50%;
+    background: linear-gradient(90deg, #023be2, #00a1c5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-weight: 700;
+    z-index: 2;
+}
+
+/* ----------------------------- */
+/*    DESKTOP HORIZONTAL ARROW   */
+/* ----------------------------- */
+.hire-development-step:not(:nth-last-child(-n + 2))::after {
+    content: "";
+    position: absolute;
+    top: 18px; /* center align with circle */
+    left: calc(141px + 20px); /* starts after circle */
+    width: calc(100% - 20px);
+    height: 24px;
+    background-image: url("./images/LineArrowimage.webp");
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: left center;
+    z-index: 1;
+}
+
+/* Title */
+.hire-step-title {
+    font-weight: 700;
+    font-size: 22px;
+}
+
+.hire-step-description {
+    font-size: 15px;
+    color: #555;
+    font-weight: 400;
+}
+
+/* ---------------------------------- */
+/* TABLETS — 2 STEPS PER ROW */
+/* ---------------------------------- */
+@media (max-width: 992px) {
+    .hire-development-process-row {
+        width: 90%;
+        padding: 2rem;
+    }
+
+    .hire-development-step {
+        width: 48%;
+        margin-bottom: 60px;
+    }
+
+    /* Tablet Arrow (shorter but connected) */
+    .hire-development-step:not(:last-child)::after {
+        top: 28px;
+        left: 85px;
+        width: calc(100% - 100px);
+        height: 20px;
+        background-size: 100% auto;
+    }
+
+    /* Remove arrow after 2nd & 4th step (end of row) */
+    .hire-development-step:nth-child(2n)::after {
+        display: none;
+    }
+}
+
+/* ---------------------------------- */
+/* MOBILE — VERTICAL ARROWS */
+/* ---------------------------------- */
+@media (max-width: 768px) {
+    .hire-development-process-row {
+        flex-direction: column;
+        width: 95%;
+        padding: 2rem;
+    }
+
+    .hire-development-step {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* PERFECT vertical connection */
+    .hire-development-step:not(:nth-last-child(-n + 2))::after {
+        content: "";
+        position: absolute;
+        top: 75px; /* 100% perfect under circle */
+        left: 50%;
+        transform: translateX(-50%) rotate(90deg);
+        width: 80px; /* large enough */
+        height: 22px;
+        background-image: url("./images/LineArrowimage.webp");
+        background-repeat: no-repeat;
+        background-size: 100% auto;
+        background-position: center;
+        z-index: 1;
+    }
+
+    .hire-step-title {
+        font-size: 18px;
+    }
+}
+
+/* ---------------------------------- */
+/* SMALL MOBILE FIXES */
+/* ---------------------------------- */
+@media (max-width: 480px) {
+    .hire-step-circle {
+        width: 48px;
+        height: 48px;
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+
+    .hire-development-step:not(:nth-last-child(-n + 2))::after {
+        top: 163px;
+        width: 70px;
+        height: 18px;
+    }
+
+    .hire-step-title {
+        font-size: 16px;
+    }
+
+    .hire-step-description {
+        font-size: 14px;
+    }
+}
+
+/* Background Section */
+.hirebgimageprocess {
+    width: 100%;
+    padding: 40px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+
+    background-image: url("./images/Frame\ 1410116592.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    border-radius: 1rem;
+    box-sizing: border-box;
+}
+
+/* Left Content Box */
+.hire-left-box {
+    width: 60%;
+    text-align: left; /* ⬅ ALWAYS LEFT */
+}
+
+/* Title */
+.leftsidebgcontenttitttle {
+    font-family: var(--font-heading);
+    color: #fff;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 1.2;
+    margin-bottom: 10px;
+    text-align: left; /* ⬅ ALWAYS LEFT */
+}
+
+/* Description */
+.leftsidebgcontentdes {
+    font-family: var(--font-body);
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.4;
+    text-align: left; /* ⬅ ALWAYS LEFT */
+}
+
+/* Right Button Box */
+.rightsidecontent {
+    width: 40%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* Button */
+.hire-banner-btn {
+    background-color: #fff;
+    color: #000;
+    padding: 12px 22px;
+    border-radius: 8px;
+    border: none;
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    cursor: pointer;
+    gap: 10px;
+}
+
+/* Tablets */
+@media (max-width: 1024px) {
+    .hirebgimageprocess {
+        flex-direction: column;
+        align-items: flex-start; /* ⬅ Content stays LEFT */
+        padding: 30px 20px;
+    }
+
+    .hire-left-box,
+    .rightsidecontent {
+        width: 100%;
+    }
+
+    .rightsidecontent {
+        justify-content: flex-start; /* ⬅ Button also LEFT */
+    }
+
+    .leftsidebgcontenttitttle {
+        font-size: 30px;
+    }
+
+    .leftsidebgcontentdes {
+        font-size: 16px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    .hirebgimageprocess {
+        padding: 20px;
+    }
+
+    .leftsidebgcontenttitttle {
+        font-size: 24px;
+    }
+
+    .leftsidebgcontentdes {
+        font-size: 14px;
+    }
+
+    .hire-banner-btn {
+        padding: 10px 18px;
+    }
+}
+
+/* ============================================================================================================================================================ */
+/* ======================================================================== <<<< HIRE   COMPETITORS  >>>> ====================================================================== */
+/* ============================================================================================================================================================ */
+
+.hirecompetitors {
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Horizontal center */
+    align-items: center;
+    flex-direction: column; /* Align content vertically */
+    text-align: center; /* Center text */
+    background-color: #5d5d5d08;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.hirecompetitorsCard {
+    width: 67%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 30px 70px; /* 30px = Y direction, 70px = X direction */
+    flex-wrap: wrap; /* allow wrapping */
+}
+
+/* For screens 1506px and below */
+@media (max-width: 1600px) {
+    .hirecompetitorsCard {
+        width: 87% !important;
+    }
+}
+
+/* Card */
+.card-box {
+    position: relative;
+    background: #ffffff;
+    padding: 30px 28px 30px 30px;
+    border-radius: 18px;
+    box-shadow: 4px 4px 13.6px 0px #00000040;
+
+    flex: 1 1 calc(50% - 70px); /* 2 cards per row on large screens */
+    box-sizing: border-box;
+    transition: all 0.35s ease;
+    cursor: pointer;
+}
+
+.card-box:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0px 18px 35px rgba(0, 0, 0, 0.15);
+}
+
+/* Floating Icon */
+.icon-wrapper {
+    position: absolute;
+    left: -35px;
+    top: 50px;
+    width: 70px;
+    height: 70px;
+    background: #ffffff;
+    box-shadow: -5px 4px 22px 0px #00000030;
+    border-radius: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+}
+
+.icon-wrapper img {
+    width: 36px;
+    height: 36px;
+}
+
+/* Text Content */
+.text-content {
+    text-align: left;
+    padding-left: 1.5rem;
+}
+
+.text-content h3 {
+    margin: 0;
+    font-size: 30px;
+    font-weight: 600;
+    font-family: var(--font-heading);
+    background: linear-gradient(90.38deg, #023be2 2.06%, #00a1c5 99.67%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding-bottom: 0.5rem;
+}
+
+.text-content p {
+    margin-top: 8px;
+    font-size: 18px;
+    font-family: var(--font-body);
+    line-height: 1.55;
+    color: #555555;
+}
+
+/* -----------------------------
+   📱 Mobile & Tablet Responsive 
+   ----------------------------- */
+
+/* Max width 1024px (medium screens) → 1 card per row */
+@media (max-width: 1024px) {
+    .hirecompetitorsCard {
+        width: 90%;
+        gap: 30px;
+    }
+
+    .card-box {
+        flex: 1 1 100%; /* full width */
+    }
+
+    .icon-wrapper {
+        left: -25px;
+        top: 40px;
+        width: 60px;
+        height: 60px;
+    }
+
+    .icon-wrapper img {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+/* Max width 600px (small mobile) */
+@media (max-width: 600px) {
+    .hirecompetitorsCard {
+        width: 95%;
+        gap: 20px;
+    }
+
+    .card-box {
+        padding: 25px;
+    }
+
+    .text-content h3 {
+        font-size: 24px;
+    }
+
+    .text-content p {
+        font-size: 16px;
+    }
+}
+
+
+
+/* =======================================================================
+   MODAL OVERLAY
+========================================================================== */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.55);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+  z-index: 1100;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* =======================================================================
+   MODAL BOX
+========================================================================== */
+.modal-box {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.85);
+  background-color: #fff;
+  background-image: url('./images/modalimage.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.35s ease;
+  z-index: 12000;
+  width: 80%;
+  max-width: 1400px;
+  height: 740px;
+  overflow: hidden;
+  color: #fff;
+}
+
+.modal-box.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* Close Icon */
+.modal-close {
+  position: absolute;
+  top: 12px;
+  right: 18px;
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 1300;
+}
+
+/* =======================================================================
+   LAYOUT WRAPPER
+========================================================================== */
+.showmodalmain {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  gap: 20px;
+  padding-left: 60px;
+  box-sizing: border-box;
+}
+
+/* =======================================================================
+   LEFT SIDE – TEXT CONTENT
+========================================================================== */
+.leftsidecontent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  align-items: flex-start;
+  height: 100%;
+  padding-right: 20px;
+}
+
+.leftsidecontentheading {
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 1.5;
+  margin-bottom: 12px;
+  font-family: var(--font-heading);
+   display: -webkit-box;
+  -webkit-line-clamp: 2;     /* Show only 2 lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.leftsidecontentdes {
+  font-size: 20px;
+  line-height: 1.5;
+  font-family: var(--font-body);
+
+  display: -webkit-box;
+  -webkit-line-clamp: 2;     /* Show only 2 lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+/* Slider Wrapper */
+.modalcardslidemain {
+  width: 100%;
+  max-width: 420px;
+  overflow: hidden;
+  position: relative;
+  margin-top: 3rem;
+}
+
+/* Slider Row */
+.card-slider {
+  display: flex;
+  transition: transform 0.45s ease;
+}
+
+/* Each Card */
+.carddesign {
+  flex: 0 0 100%;
+ background: linear-gradient(350.78deg, #0D1520 33.5%, #375986 304.55%); 
+  border-radius: 16px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: #fff;
+  font-family: var(--font-body);
+}
+
+/* Card Profile */
+.carddesignprofile {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.carddesignprofile img {
+  width: 55px;
+  height: 55px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #fff;
+}
+
+/* Text */
+.profiletext .name {
+  font-size: 20px;
+  font-weight: 700;
+  font-family: var(--font-heading);
+}
+
+.profiletext .role {
+  font-size: 15px;
+  color: #B4B4B4;
+  font-family: var(--font-body);
+}
+
+.divider {
+  height: 1px;
+  background: rgba(255,255,255,0.3);
+}
+
+/* Description */
+.description {
+  font-size: 16px;
+  line-height: 1.5;
+  font-family: var(--font-body);
+  font-weight: 400;
+}
+
+/* =======================================================================
+   SLIDER INDICATORS
+========================================================================== */
+.slider-indicators {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 16px;
+  padding-bottom: 1rem;
+}
+
+.slider-indicators span {
+  width: 10px;
+  height: 10px;
+  background: rgba(255,255,255,0.4);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.slider-indicators .active {
+  background: #fff;
+  transform: scale(1.3);
+  box-shadow: 0 0 10px #fff;
+}
+
+/* =======================================================================
+   RESPONSIVE BREAKPOINTS
+========================================================================== */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .modal-box {
+    width: 100%;
+    height: auto;
+    padding: 10px 0;
+    
+  }
+
+  .showmodalmain {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .leftsidecontent {
+    align-items: center;
+    text-align: center;
+    padding-right: 0;
+  }
+
+  .leftsidecontentheading {
+    font-size: 40px;
+  }
+
+  .leftsidecontentdes {
+    font-size: 18px;
+  }
+
+  .rightsidemodalvalues {
+    padding: 20px;
+  }
+}
+
+/* Large Mobile */
+@media (max-width: 768px) {
+  .modal-box {
+    width: 95%;
+    height: auto;
+  }
+
+  .leftsidecontentheading {
+    font-size: 32px;
+  }
+
+  .leftsidecontentdes {
+    font-size: 17px;
+  }
+
+  .modalcardslidemain {
+    max-width: 100%;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .showmodalmain {
+    gap: 10px;
+  }
+  .modal-box{
+    position: fixed;
+    top: 55% !important;     
+    transform: translate(-50%, -50%) !important;
+    height: 100vh !important;  /* full height */
+    width: 100% !important;
+    border-radius: 1rem !important;          /* avoid clipped corners */
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    max-width: 100% !important;
+   
+  }
+
+  .leftsidecontentheading {
+    font-size: 26px;
+  }
+
+  .leftsidecontentdes {
+    font-size: 16px;
+  }
+
+  .carddesign {
+    padding: 16px;
+  }
+
+  .carddesignprofile img {
+    width: 45px;
+    height: 45px;
+  }
+}
+
+
+
+
+
+/* =======================================================================
+   RIGHT SIDE – FORM VALUES
+========================================================================== */
+.rightsidemodalvalues {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #FFFFFF10;
+  backdrop-filter: blur(60px);
+  border-radius: 22px;
+  padding: 25px;
+  width: 100%;
+  height: 100%;
+}
+
+
+
+
+
+/* =======================================================================
+   RIGHT SIDE – Heading & Description
+========================================================================== */
+
+
+.HeadingDes{
+     text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.formheadingmodal{
+    font-size: 43px;
+    font-weight: 600;
+    color: #fff;
+    font-family: var(--font-heading);
+}
+
+
+.formdesmodal{
+    font-size: 24px;
+    color: #f0f0f0;
+    font-family: var(--font-body);
+    font-weight: 400;
+}
+
+
+.modal-form-wrapper{
+    width: 100%;
+}
+
+/* Form Container */
+.modal-form {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.modal-row {
+    display: flex;
+    gap: 20px;
+}
+
+
+
+/* Outlined Input */
+.modal-input,
+.modal-textarea {
+    width: 100%;
+    padding: 18px 14px 10px;
+    border: 1.8px solid rgba(255,255,255,0.35);
+    border-radius: 10px;
+    background: transparent;
+    color: white;
+    font-size: 16px;
+    outline: none;
+    transition: border 0.25s ease;
+}
+
+
+
+/* Focus Border */
+.modal-input:focus,
+.modal-textarea:focus {
+    border-color: #4da3ff;
+}
+/* GROUP WRAPPER */
+.modal-group {
+    position: relative;
+    width: 100%;
+}
+
+/* OUTLINE CUT EFFECT */
+.modal-group::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 14px;                 /* start from label padding */
+    height: 10px;               /* cut height */
+    width: 0;                   /* hidden by default */
+    background: red;        /* modal background */
+    z-index: 2;
+    transition: width 0.25s ease;
+}
+
+/* On focus OR when input has text */
+.modal-input:focus ~ .modal-label,
+.modal-input:not(:placeholder-shown) ~ .modal-label {
+background: linear-gradient(90deg, #232428 0%, #303030 100%);
+    padding: 0px 4px;
+}
+
+/* Expand CUT on focus */
+.modal-input:focus ~ .modal-label,
+.modal-input:not(:placeholder-shown) ~ .modal-label {
+    top: -6px;
+    left: 12px;
+    font-size: 12px;
+    color: #4da3ff;
+}
+
+.modal-input:focus ~ .modal-label ~ .cut,
+.modal-input:not(:placeholder-shown) ~ .modal-label ~ .cut {
+    width: 60px;                /* match label width */
+}
+
+/* OUTLINE INPUT */
+.modal-input {
+    width: 100%;
+    padding: 18px 14px 10px;
+    border: 1.8px solid  white;
+    border-radius: 10px;
+    background: transparent;
+    color: white;
+    font-size: 16px;
+    outline: none;
+    transition: border 0.25s ease;
+}
+
+.modal-input:focus {
+    border-color: #4da3ff;
+}
+
+/* FLOATING LABEL */
+.modal-label {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    color: rgba(255,255,255,0.55);
+    font-size: 15px;
+    pointer-events: none;
+    transition: 0.25s ease;
+    z-index: 3;
+}
+
+/* THE CUT LAYER */
+.cut {
+    position: absolute;
+    top: 0;
+    left: 12px;
+    height: 10px;
+    width: 0;
+    background: linear-gradient(90deg, #232428 0%, #303030 100%);
+    z-index: 1;
+    transition: width 0.25s ease;
+}
+
+
+.modal-form-red{
+    color: red;
+}
+
+/* Remove placeholder text for detection */
+.modal-input::placeholder,
+.modal-textarea::placeholder {
+    color: transparent;
+}
+
+/* Textarea */
+.modal-textarea {
+    height: 120px;
+    resize: none;
+}
+
+/* Phone Flag */
+.modal-flag-group {
+    position: relative;
+}
+
+.modal-flag {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+}
+/* -------------------------------------------------------
+   MODAL FORM – RESPONSIVE + FLOATING LABEL + CUT EFFECT
+------------------------------------------------------- */
+
+.HeadingDes{
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.formheadingmodal{
+    font-size: 43px;
+    font-weight: 600;
+    color: #fff;
+    font-family: var(--font-heading);
+}
+
+.formdesmodal{
+    font-size: 24px;
+    color: #f0f0f0;
+    font-family: var(--font-body);
+    font-weight: 400;
+}
+
+
+/* WRAPPER */
+.modal-form-wrapper{
+    width: 100%;
+}
+
+/* FORM CONTAINER */
+.modal-form {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.modal-row {
+    display: flex;
+    gap: 20px;
+}
+
+
+/* GROUP WRAPPER */
+.modal-group {
+    position: relative;
+    width: 100%;
+}
+
+
+/* ------------------------------
+   OUTLINE INPUT + LABEL + CUT
+------------------------------ */
+
+.modal-input,
+.modal-textarea {
+    width: 100%;
+    padding: 18px 14px 10px;
+    border: 1.8px solid rgba(255,255,255,0.40);
+    border-radius: 10px;
+    background: transparent;
+    color: white;
+    font-size: 16px;
+    outline: none;
+    transition: border 0.25s ease;
+}
+
+
+/* ON FOCUS */
+.modal-input:focus,
+.modal-textarea:focus {
+    border-color: #4da3ff;
+}
+
+/* FLOAT LABEL */
+.modal-label {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    color: rgba(255,255,255,0.55);
+    font-size: 15px;
+    pointer-events: none;
+    transition: 0.25s ease;
+    z-index: 3;
+}
+
+/* CUT EFFECT */
+.cut {
+    position: absolute;
+    top: 0;
+    left: 10px;
+    height: 10px;
+    width: 0;
+    background: #232428;
+    z-index: 1;
+    transition: width 0.25s ease;
+}
+
+/* LABEL FLOAT + CUT EXPAND */
+.modal-input:focus ~ .modal-label,
+.modal-input:not(:placeholder-shown) ~ .modal-label {
+    top: -6px;
+    left: 12px;
+    font-size: 12px;
+    background: linear-gradient(90deg, #232428 0%, #303030 100%);
+    padding: 0px 4px;
+    color: #4da3ff;
+}
+
+.modal-input:focus ~ .cut,
+.modal-input:not(:placeholder-shown) ~ .cut {
+    width: 55px; /* adjust based on label text */
+}
+
+
+/* TEXTAREA */
+.modal-textarea {
+    height: 120px;
+    resize: none;
+}
+
+.modal-input::placeholder,
+.modal-textarea::placeholder {
+    color: transparent;
+}
+
+
+/* PHONE FLAG */
+.modal-flag-group {
+    position: relative;
+}
+
+.modal-flag {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+}
+
+.modal-input-flag {
+    padding-left: 44px;
+}
+
+.modal-form-red{
+    color: red;
+}
+
+
+/* ------------------------------
+        SUBMIT BUTTON
+------------------------------ */
+
+.modal-btn-wrapper {
+    width: 60%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+
+.modal-btn {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(90.38deg, #023BE2 2.06%, #00A1C5 99.67%);
+    border: none;
+    border-radius: 12px;
+    font-size: 17px;
+    font-weight: 600;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: 
+        background 0.3s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.modal-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 18px rgba(0, 161, 197, 0.35);
+}
+
+.modal-btn-icon img {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+    transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 1.2);
+}
+.modal-btn:hover .modal-btn-icon img {
+    transform: rotate(38deg);
+}
+
+
+
+/* -------------------------------------------------------
+            RESPONSIVENESS FOR ALL SCREENS
+------------------------------------------------------- */
+
+/* TABLET (max-width: 1024px) */
+@media (max-width: 1024px) {
+    .formheadingmodal { font-size: 36px; }
+    .formdesmodal { font-size: 20px; }
+    .modal-btn-wrapper { width: 70%; }
+}
+
+/* MOBILE LARGE (max-width: 768px) */
+@media (max-width: 768px) {
+    .modal-row { flex-direction: column; }
+    .formheadingmodal { font-size: 32px; }
+    .formdesmodal { font-size: 18px; }
+    .modal-btn-wrapper { width: 80%; }
+}
+
+/* MOBILE SMALL (max-width: 480px) */
+@media (max-width: 480px) {
+    .formheadingmodal { font-size: 28px; }
+    .formdesmodal { font-size: 16px; }
+    
+    .modal-input,
+    .modal-textarea {
+        font-size: 14px;
+        padding: 16px 12px 8px;
+    }
+
+    
+.modal-btn{
+    margin-bottom: 3rem !important;
+}
+    .modal-label {
+        font-size: 14px;
+    }
+
+    .modal-btn-wrapper { width: 100%; }
+}
+
+/* EXTRA SMALL (max-width: 360px) */
+@media (max-width: 360px) {
+    .formheadingmodal { font-size: 24px; }
+    .modal-row { gap: 12px; }
+    .modal-btn { font-size: 15px; padding: 13px; }
 }

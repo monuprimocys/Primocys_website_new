@@ -18,11 +18,14 @@ window.addEventListener("load", () => {
 
     // Animate buttons sequentially
     growthBtns.forEach((btn, index) => {
-        setTimeout(() => {
-            btn.style.opacity = "1";
-            btn.style.transform = "translateY(0)";
-            btn.style.transition = "opacity 0.8s ease, transform 0.8s ease";
-        }, 200 * (index + 1));
+        setTimeout(
+            () => {
+                btn.style.opacity = "1";
+                btn.style.transform = "translateY(0)";
+                btn.style.transition = "opacity 0.8s ease, transform 0.8s ease";
+            },
+            200 * (index + 1)
+        );
     });
 
     // Animate Hero Title
@@ -576,7 +579,9 @@ document.querySelectorAll(".service-option").forEach((option) => {
 (function () {
     document.addEventListener("DOMContentLoaded", () => {
         document.querySelectorAll(".Blogdetailthirdsectionmain").forEach((blogSection) => {
-            const tocItems = Array.from(blogSection.querySelectorAll(".contentlistblogdetailNormalclor, .contentlistblogdetail"));
+            const tocItems = Array.from(
+                blogSection.querySelectorAll(".contentlistblogdetailNormalclor, .contentlistblogdetail")
+            );
 
             const sections = tocItems
                 .map((item) => {
@@ -658,31 +663,771 @@ document.querySelectorAll(".service-option").forEach((option) => {
     });
 })();
 
-
-
-
-
 //  portfolio filter button active state
 (function () {
     // Select all buttons with class 'portfolio-filter-btn'
-    const portfolioFilterBtns = document.querySelectorAll('.portfolio-filter-btn');
+    const portfolioFilterBtns = document.querySelectorAll(".portfolio-filter-btn");
 
     // Add click listener to each button
-    portfolioFilterBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
+    portfolioFilterBtns.forEach((btn) => {
+        btn.addEventListener("click", () => {
             // Remove 'active' class from all buttons
-            portfolioFilterBtns.forEach(b => b.classList.remove('active'));
+            portfolioFilterBtns.forEach((b) => b.classList.remove("active"));
 
             // Add 'active' class to clicked button
-            btn.classList.add('active');
+            btn.classList.add("active");
         });
+    });
+})();
+
+document.addEventListener("DOMContentLoaded", () => {
+    const hireCardsContainer = document.querySelector(".hire-cards-container");
+    const hireCards = document.querySelectorAll(".hire-card");
+    const hireLeftArrow = document.querySelector(".hire-left-arrow");
+    const hireRightArrow = document.querySelector(".hire-right-arrow");
+
+    const visibleCards = 2;
+    let currentIndex = 0;
+
+    function updateSlider() {
+        const cardWidth = hireCards[0].offsetWidth + 20; // width + gap
+        hireCardsContainer.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+
+        updateArrows();
+    }
+
+    function updateArrows() {
+        // Hide left arrow on first slide
+        if (currentIndex === 0) {
+            hireLeftArrow.style.opacity = "0.3";
+            hireLeftArrow.style.pointerEvents = "none";
+        } else {
+            hireLeftArrow.style.opacity = "1";
+            hireLeftArrow.style.pointerEvents = "auto";
+        }
+
+        // Hide right arrow on last slide
+        if (currentIndex >= hireCards.length - visibleCards) {
+            hireRightArrow.style.opacity = "0.3";
+            hireRightArrow.style.pointerEvents = "none";
+        } else {
+            hireRightArrow.style.opacity = "1";
+            hireRightArrow.style.pointerEvents = "auto";
+        }
+    }
+
+    hireRightArrow.addEventListener("click", () => {
+        if (currentIndex < hireCards.length - visibleCards) {
+            currentIndex++;
+            updateSlider();
+        }
+    });
+
+    hireLeftArrow.addEventListener("click", () => {
+        if (currentIndex > 0) {
+            currentIndex--;
+            updateSlider();
+        }
+    });
+
+    window.addEventListener("resize", updateSlider);
+
+    // Initial state
+    updateSlider();
+});
+
+// ====================== filter website cards ======================
+
+// Select buttons and cards
+const portfolioFilterBtns = document.querySelectorAll(".portfolio-filter-btn");
+const portfolioCards = document.querySelectorAll(".HireCustomeDeveloperAppDevelopemtmaincontentCard");
+
+// Add click event to each button
+portfolioFilterBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+        // Remove 'active' from all buttons
+        portfolioFilterBtns.forEach((b) => b.classList.remove("active"));
+        // Add 'active' to clicked button
+        btn.classList.add("active");
+
+        const filter = btn.getAttribute("data-filter");
+
+        // Show/Hide cards
+        portfolioCards.forEach((card) => {
+            if (filter === "all") {
+                card.classList.remove("hide");
+            } else {
+                card.classList.toggle("hide", card.getAttribute("data-category") !== filter);
+            }
+        });
+    });
+});
+
+
+
+
+
+
+//  This is NAV MENU JS
+
+(function () {
+  document.addEventListener("DOMContentLoaded", () => {
+    loadHeader();
+    loadFooter();
+  });
+
+  // ==========================
+  // LOAD HEADER
+  // ==========================
+  function loadHeader() {
+    fetch("header.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("header").innerHTML = data;
+
+        highlightActiveLink();
+        initNavbarScripts();
+        initPhoneSubmenu();
+      });
+  }
+
+  // ==========================
+  // LOAD FOOTER
+  // ==========================
+  function loadFooter() {
+    fetch("footer.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("footer").innerHTML = data;
+      });
+  }
+
+  // ==========================
+  // ACTIVE LINK HIGHLIGHT
+  // ==========================
+  function highlightActiveLink() {
+    document.querySelectorAll(".nav-link").forEach(link => {
+      if (link.href === window.location.href) {
+        link.classList.add("active");
+      }
+    });
+  }
+
+  // ======================================================
+  // NAVBAR + MEGA MENU LOGIC
+  // ======================================================
+  function initNavbarScripts() {
+    initMobileMenu();
+    initMegaMenu();
+  }
+
+  // ======================================================
+  // MOBILE MENU
+  // ======================================================
+  function initMobileMenu() {
+    const menuToggle = document.getElementById("mobile-menu");
+    const navMenu = document.querySelector(".nav-menu");
+
+    if (!menuToggle || !navMenu) return;
+
+    menuToggle.addEventListener("click", (e) => {
+      e.stopPropagation();
+      menuToggle.classList.toggle("open");
+      navMenu.classList.toggle("active");
+    });
+
+    document.addEventListener("click", (e) => {
+      const inside = menuToggle.contains(e.target) || navMenu.contains(e.target);
+      if (!inside) {
+        menuToggle.classList.remove("open");
+        navMenu.classList.remove("active");
+      }
+    });
+  }
+
+  // ======================================================
+  // MEGA MENU DATA
+  // ======================================================
+  const menuData = {
+    software: {
+      title: "Software Engineering",
+      items: [
+        "Custom Software Development",
+        "Software Modernization",
+        "Software Consulting",
+        "Quality Assurance & Testing",
+        "DevOps Services",
+        "Cloud Application Development",
+        "Enterprise Software Solutions",
+      ]
+    },
+    web: {
+      title: "Web Development",
+      items: [
+        "Frontend Development",
+        "Backend Development",
+        "Full Stack Solutions",
+        "E-commerce Development",
+        "CMS Integration",
+        "Website Performance Optimization"
+      ]
+    },
+    app: {
+      title: "App Development",
+      items: [
+        "iOS App Development",
+        "Android App Development",
+        "Cross-Platform Apps",
+        "Progressive Web Apps",
+        "App Maintenance & Support"
+      ]
+    },
+    ai: {
+      title: "AI & Machine Learning",
+      items: [
+        "ML Model Development",
+        "Chatbots & NLP",
+        "Computer Vision",
+        "Predictive Analytics"
+      ]
+    },
+    cloud: {
+      title: "Cloud Computing",
+      items: [
+        "Cloud Migration Services",
+        "AWS & Azure Development",
+        "Serverless Architecture",
+        "DevOps & CI/CD Integration"
+      ]
+    }
+  };
+
+  // ======================================================
+  // MEGA MENU LOGIC
+  // ======================================================
+  function initMegaMenu() {
+    document.querySelectorAll(".nav-item").forEach(navItem => {
+      const megaMenu = navItem.querySelector(".mega-menu");
+      if (!megaMenu) return;
+
+      navItem.addEventListener("click", (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+
+        document.querySelectorAll(".nav-item.active")
+          .forEach(item => item !== navItem && item.classList.remove("active"));
+
+        navItem.classList.toggle("active");
+
+        if (navItem.classList.contains("active")) {
+          initializeDefaultMegaMenu(navItem);
+        }
+      });
+
+      megaMenu.addEventListener("click", e => e.stopPropagation());
+    });
+
+    document.addEventListener("click", () => {
+      document.querySelectorAll(".nav-item.active")
+        .forEach(item => item.classList.remove("active"));
+    });
+  }
+
+  // ======================================================
+  // LEFT SIDE CLICK SETUP
+  // ======================================================
+  function setupLeftSideClicks(navItem) {
+    const leftItems = navItem.querySelectorAll(".itemsvalues");
+    const rightTitle = navItem.querySelector(".mega-menu-inner-content-heading");
+    const rightList = navItem.querySelector(".mega-menu-rightside-list-values-section-items");
+
+    leftItems.forEach(item => {
+      item.addEventListener("click", (e) => {
+        e.stopPropagation();
+
+        const id = item.getAttribute("data-id");
+        const data = menuData[id];
+
+        leftItems.forEach(i => i.classList.remove("active"));
+        item.classList.add("active");
+
+        if (data) {
+          rightTitle.textContent = data.title;
+          rightList.innerHTML = data.items
+            .map(val => {
+              const slug = val.toLowerCase().replace(/\s+/g, "-") + ".html";
+              return `
+                <li class="listname">
+                  <a href="${slug}" class="listname">${val}</a>
+                </li>
+              `;
+            })
+            .join("");
+        }
+      });
+    });
+
+    // Auto select first item
+    if (leftItems[0]) leftItems[0].click();
+  }
+
+  // ======================================================
+  // DEFAULT FIRST TAB
+  // ======================================================
+  function initializeDefaultMegaMenu(navItem) {
+    const leftItems = navItem.querySelectorAll(".itemsvalues");
+    const first = leftItems[0];
+    if (!first) return;
+
+    first.click();
+    setupLeftSideClicks(navItem);
+  }
+
+  // ======================================================
+  // PHONE SUBMENU LOGIC
+  // ======================================================
+  function initPhoneSubmenu() {
+    document.querySelectorAll(".menu-label").forEach(label => {
+      label.addEventListener("click", (e) => {
+        if (label.querySelector("a")) return;
+
+        e.stopPropagation();
+
+        const parentItem = label.closest(".small_screen_menu-item");
+        const submenu = parentItem.querySelector(":scope > .small_screen_submenu");
+
+        if (!submenu) return;
+
+        [...parentItem.parentElement.children]
+          .filter(sib => sib !== parentItem)
+          .forEach(sib => sib.classList.remove("active"));
+
+        parentItem.classList.toggle("active");
+      });
+    });
+
+    document.addEventListener("click", () => {
+      document.querySelectorAll(".small_screen_menu-item.active")
+        .forEach(item => item.classList.remove("active"));
+    });
+  }
+})();
+
+
+
+
+
+
+// ======================
+// USER AND ADMIN  SIDE TAB CHANGE CONTENT CHANGE
+// ======================
+
+
+(function () {
+
+    const userBtn = document.getElementById("userBtn");
+    const adminBtn = document.getElementById("adminBtn");
+    const contentBox = document.getElementById("Features_Content");
+
+ 
+    // Card content
+    const userCards = `
+  <div class="Features_Content_CardListing">
+    <div class="Features_Content_CardListing_content">
+      <div class="Features_Content_CardListing_Heading">
+        <!-- Circle -->
+        <div class="Features_Content_CardListing_content_circle">1</div>
+        <!-- Title -->
+        <h3 class="Features_Content_CardListing_content_circle_tittle">
+          Android Development
+        </h3>
+      </div>
+      <!-- Description -->
+      <p class="Features_Content_CardListing_content_des">
+        Our team builds secure, scalable, and user-friendly Android apps tailored for smartphones.
+      </p>
+    </div>
+  </div>
+   <div class="Features_Content_CardListingOtherbordercolor">
+    <div class="Features_Content_CardListing_content">
+      <div class="Features_Content_CardListing_Heading">
+        <div class="Features_Content_CardListing_content_circle">2</div>
+        <h4 class="Features_Content_CardListing_content_circle_tittle">
+          iOS Development
+        </h4>
+      </div>
+      <p class="Features_Content_CardListing_content_des">
+        Building elegant, smooth, and performance-driven iOS apps for iPhone and iPad.
+      </p>
+    </div>
+  </div>
+
+    <div class="Features_Content_CardListing">
+    <div class="Features_Content_CardListing_content">
+      <div class="Features_Content_CardListing_Heading">
+        <!-- Circle -->
+        <div class="Features_Content_CardListing_content_circle">1</div>
+        <!-- Title -->
+        <h3 class="Features_Content_CardListing_content_circle_tittle">
+          Android Development
+        </h3>
+      </div>
+      <!-- Description -->
+      <p class="Features_Content_CardListing_content_des">
+        Our team builds secure, scalable, and user-friendly Android apps tailored for smartphones.
+      </p>
+    </div>
+  </div>
+    <!-- Duplicate more cards as needed -->
+  <div class="Features_Content_CardListingOtherbordercolor">
+    <div class="Features_Content_CardListing_content">
+      <div class="Features_Content_CardListing_Heading">
+        <div class="Features_Content_CardListing_content_circle">2</div>
+        <h4 class="Features_Content_CardListing_content_circle_tittle">
+          iOS Development
+        </h4>
+      </div>
+      <p class="Features_Content_CardListing_content_des">
+        Building elegant, smooth, and performance-driven iOS apps for iPhone and iPad.
+      </p>
+    </div>
+  </div>
+   <div class="Features_Content_CardListing">
+    <div class="Features_Content_CardListing_content">
+      <div class="Features_Content_CardListing_Heading">
+        <!-- Circle -->
+        <div class="Features_Content_CardListing_content_circle">1</div>
+        <!-- Title -->
+        <h3 class="Features_Content_CardListing_content_circle_tittle">
+          Android Development
+        </h3>
+      </div>
+      <!-- Description -->
+      <p class="Features_Content_CardListing_content_des">
+        Our team builds secure, scalable, and user-friendly Android apps tailored for smartphones.
+      </p>
+    </div>
+  </div>
+    <!-- Duplicate more cards as needed -->
+  <div class="Features_Content_CardListingOtherbordercolor">
+    <div class="Features_Content_CardListing_content">
+      <div class="Features_Content_CardListing_Heading">
+        <div class="Features_Content_CardListing_content_circle">2</div>
+        <h4 class="Features_Content_CardListing_content_circle_tittle">
+          iOS Development
+        </h4>
+      </div>
+      <p class="Features_Content_CardListing_content_des">
+        Building elegant, smooth, and performance-driven iOS apps for iPhone and iPad.
+      </p>
+    </div>
+  </div>
+   <div class="Features_Content_CardListing">
+    <div class="Features_Content_CardListing_content">
+      <div class="Features_Content_CardListing_Heading">
+        <!-- Circle -->
+        <div class="Features_Content_CardListing_content_circle">1</div>
+        <!-- Title -->
+        <h3 class="Features_Content_CardListing_content_circle_tittle">
+          Android Development
+        </h3>
+      </div>
+      <!-- Description -->
+      <p class="Features_Content_CardListing_content_des">
+        Our team builds secure, scalable, and user-friendly Android apps tailored for smartphones.
+      </p>
+    </div>
+  </div>
+    <!-- Duplicate more cards as needed -->
+  <div class="Features_Content_CardListingOtherbordercolor">
+    <div class="Features_Content_CardListing_content">
+      <div class="Features_Content_CardListing_Heading">
+        <div class="Features_Content_CardListing_content_circle">2</div>
+        <h4 class="Features_Content_CardListing_content_circle_tittle">
+          iOS Development
+        </h4>
+      </div>
+      <p class="Features_Content_CardListing_content_des">
+        Building elegant, smooth, and performance-driven iOS apps for iPhone and iPad.
+      </p>
+    </div>
+  </div>
+   <div class="Features_Content_CardListing">
+    <div class="Features_Content_CardListing_content">
+      <div class="Features_Content_CardListing_Heading">
+        <!-- Circle -->
+        <div class="Features_Content_CardListing_content_circle">1</div>
+        <!-- Title -->
+        <h3 class="Features_Content_CardListing_content_circle_tittle">
+          Android Development
+        </h3>
+      </div>
+      <!-- Description -->
+      <p class="Features_Content_CardListing_content_des">
+        Our team builds secure, scalable, and user-friendly Android apps tailored for smartphones.
+      </p>
+    </div>
+  </div>  <!-- Duplicate more cards as needed -->
+  <div class="Features_Content_CardListingOtherbordercolor">
+    <div class="Features_Content_CardListing_content">
+      <div class="Features_Content_CardListing_Heading">
+        <div class="Features_Content_CardListing_content_circle">2</div>
+        <h4 class="Features_Content_CardListing_content_circle_tittle">
+          iOS Development
+        </h4>
+      </div>
+      <p class="Features_Content_CardListing_content_des">
+        Building elegant, smooth, and performance-driven iOS apps for iPhone and iPad.
+      </p>
+    </div>
+  </div> 
+  
+  <div class="Features_Content_CardListing">
+    <div class="Features_Content_CardListing_content">
+      <div class="Features_Content_CardListing_Heading">
+        <!-- Circle -->
+        <div class="Features_Content_CardListing_content_circle">1</div>
+        <!-- Title -->
+        <h3 class="Features_Content_CardListing_content_circle_tittle">
+          Android Development
+        </h3>
+      </div>
+      <!-- Description -->
+      <p class="Features_Content_CardListing_content_des">
+        Our team builds secure, scalable, and user-friendly Android apps tailored for smartphones.
+      </p>
+    </div>
+  </div> 
+   <!-- Duplicate more cards as needed -->
+  <div class="Features_Content_CardListingOtherbordercolor">
+    <div class="Features_Content_CardListing_content">
+      <div class="Features_Content_CardListing_Heading">
+        <div class="Features_Content_CardListing_content_circle">2</div>
+        <h4 class="Features_Content_CardListing_content_circle_tittle">
+          iOS Development
+        </h4>
+      </div>
+      <p class="Features_Content_CardListing_content_des">
+        Building elegant, smooth, and performance-driven iOS apps for iPhone and iPad.
+      </p>
+    </div>
+  </div>
+`;
+
+    const adminCards = `
+  <div class="Features_Content_CardListing">
+    <div class="Features_Content_CardListing_content">
+      <div class="Features_Content_CardListing_Heading">
+        <!-- Circle -->
+        <div class="Features_Content_CardListing_content_circle">1</div>
+        <!-- Title -->
+        <h3 class="Features_Content_CardListing_content_circle_tittle">
+          Admin Android Development
+        </h3>
+      </div>
+      <!-- Description -->
+      <p class="Features_Content_CardListing_content_des">
+        Our team builds secure, scalable, and user-friendly Android apps tailored for smartphones.
+      </p>
+    </div>
+  </div>
+    <!-- Duplicate more cards as needed -->
+  <div class="Features_Content_CardListingOtherbordercolor">
+    <div class="Features_Content_CardListing_content">
+      <div class="Features_Content_CardListing_Heading">
+        <div class="Features_Content_CardListing_content_circle">2</div>
+        <h4 class="Features_Content_CardListing_content_circle_tittle">
+          iOS Development
+        </h4>
+      </div>
+      <p class="Features_Content_CardListing_content_des">
+        Building elegant, smooth, and performance-driven iOS apps for iPhone and iPad.
+      </p>
+    </div>
+  </div>
+   <div class="Features_Content_CardListing">
+    <div class="Features_Content_CardListing_content">
+      <div class="Features_Content_CardListing_Heading">
+        <!-- Circle -->
+        <div class="Features_Content_CardListing_content_circle">1</div>
+        <!-- Title -->
+        <h3 class="Features_Content_CardListing_content_circle_tittle">
+          Android Development
+        </h3>
+      </div>
+      <!-- Description -->
+      <p class="Features_Content_CardListing_content_des">
+        Our team builds secure, scalable, and user-friendly Android apps tailored for smartphones.
+      </p>
+    </div>
+  </div>
+    <!-- Duplicate more cards as needed -->
+  <div class="Features_Content_CardListingOtherbordercolor">
+    <div class="Features_Content_CardListing_content">
+      <div class="Features_Content_CardListing_Heading">
+        <div class="Features_Content_CardListing_content_circle">2</div>
+        <h4 class="Features_Content_CardListing_content_circle_tittle">
+          iOS Development
+        </h4>
+      </div>
+      <p class="Features_Content_CardListing_content_des">
+        Building elegant, smooth, and performance-driven iOS apps for iPhone and iPad.
+      </p>
+    </div>
+  </div>
+   <div class="Features_Content_CardListing">
+    <div class="Features_Content_CardListing_content">
+      <div class="Features_Content_CardListing_Heading">
+        <!-- Circle -->
+        <div class="Features_Content_CardListing_content_circle">1</div>
+        <!-- Title -->
+        <h3 class="Features_Content_CardListing_content_circle_tittle">
+          Android Development
+        </h3>
+      </div>
+      <!-- Description -->
+      <p class="Features_Content_CardListing_content_des">
+        Our team builds secure, scalable, and user-friendly Android apps tailored for smartphones.
+      </p>
+    </div>
+  </div>
+    <!-- Duplicate more cards as needed -->
+  <div class="Features_Content_CardListingOtherbordercolor">
+    <div class="Features_Content_CardListing_content">
+      <div class="Features_Content_CardListing_Heading">
+        <div class="Features_Content_CardListing_content_circle">2</div>
+        <h4 class="Features_Content_CardListing_content_circle_tittle">
+          iOS Development
+        </h4>
+      </div>
+      <p class="Features_Content_CardListing_content_des">
+        Building elegant, smooth, and performance-driven iOS apps for iPhone and iPad.
+      </p>
+    </div>
+  </div>
+   <div class="Features_Content_CardListing">
+    <div class="Features_Content_CardListing_content">
+      <div class="Features_Content_CardListing_Heading">
+        <!-- Circle -->
+        <div class="Features_Content_CardListing_content_circle">1</div>
+        <!-- Title -->
+        <h3 class="Features_Content_CardListing_content_circle_tittle">
+          Android Development
+        </h3>
+      </div>
+      <!-- Description -->
+      <p class="Features_Content_CardListing_content_des">
+        Our team builds secure, scalable, and user-friendly Android apps tailored for smartphones.
+      </p>
+    </div>
+  </div>  <!-- Duplicate more cards as needed -->
+  <div class="Features_Content_CardListingOtherbordercolor">
+    <div class="Features_Content_CardListing_content">
+      <div class="Features_Content_CardListing_Heading">
+        <div class="Features_Content_CardListing_content_circle">2</div>
+        <h4 class="Features_Content_CardListing_content_circle_tittle">
+          iOS Development
+        </h4>
+      </div>
+      <p class="Features_Content_CardListing_content_des">
+        Building elegant, smooth, and performance-driven iOS apps for iPhone and iPad.
+      </p>
+    </div>
+  </div> 
+  
+  <div class="Features_Content_CardListing">
+    <div class="Features_Content_CardListing_content">
+      <div class="Features_Content_CardListing_Heading">
+        <!-- Circle -->
+        <div class="Features_Content_CardListing_content_circle">1</div>
+        <!-- Title -->
+        <h3 class="Features_Content_CardListing_content_circle_tittle">
+          Android Development
+        </h3>
+      </div>
+      <!-- Description -->
+      <p class="Features_Content_CardListing_content_des">
+        Our team builds secure, scalable, and user-friendly Android apps tailored for smartphones.
+      </p>
+    </div>
+  </div> 
+   <!-- Duplicate more cards as needed -->
+  <div class="Features_Content_CardListingOtherbordercolor">
+    <div class="Features_Content_CardListing_content">
+      <div class="Features_Content_CardListing_Heading">
+        <div class="Features_Content_CardListing_content_circle">2</div>
+        <h4 class="Features_Content_CardListing_content_circle_tittle">
+          iOS Development
+        </h4>
+      </div>
+      <p class="Features_Content_CardListing_content_des">
+        Building elegant, smooth, and performance-driven iOS apps for iPhone and iPad.
+      </p>
+    </div>
+  </div>
+    <div class="Features_Content_CardListing">
+    <div class="Features_Content_CardListing_content">
+      <div class="Features_Content_CardListing_Heading">
+        <!-- Circle -->
+        <div class="Features_Content_CardListing_content_circle">1</div>
+        <!-- Title -->
+        <h3 class="Features_Content_CardListing_content_circle_tittle">
+          Android Development
+        </h3>
+      </div>
+      <!-- Description -->
+      <p class="Features_Content_CardListing_content_des">
+        Our team builds secure, scalable, and user-friendly Android apps tailored for smartphones.
+      </p>
+    </div>
+  </div> 
+    <!-- Duplicate more cards as needed -->
+  <div class="Features_Content_CardListingOtherbordercolor">
+    <div class="Features_Content_CardListing_content">
+      <div class="Features_Content_CardListing_Heading">
+        <div class="Features_Content_CardListing_content_circle">2</div>
+        <h4 class="Features_Content_CardListing_content_circle_tittle">
+          iOS Development
+        </h4>
+      </div>
+      <p class="Features_Content_CardListing_content_des">
+        Building elegant, smooth, and performance-driven iOS apps for iPhone and iPad.
+      </p>
+    </div>
+  </div>
+`;
+
+
+    // Default Load
+    contentBox.innerHTML = userCards;
+
+    // ================================
+    // USER BTN CLICK
+    // ================================
+    userBtn.addEventListener("click", () => {
+        userBtn.classList.add("active");
+        adminBtn.classList.remove("active");
+        contentBox.innerHTML = userCards;
+    });
+
+    // ================================
+    // ADMIN BTN CLICK
+    // ================================
+    adminBtn.addEventListener("click", () => {
+        adminBtn.classList.add("active");
+        userBtn.classList.remove("active");
+        contentBox.innerHTML = adminCards;
     });
 
 })();
 
 
 
-//  NAVBAR MENU OPEN CLOSE ANIMATION
+
+
+
+
+
 
 
 
