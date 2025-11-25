@@ -40,14 +40,12 @@
     --font-heading: "Saira Condensed", Arial, sans-serif;
 }
 
-
 .form-select {
-  -webkit-appearance: none; /* Safari */
-  -moz-appearance: none; /* Firefox */
-  appearance: none; /* Standard */
-  background-image: none !important; /* Removes default icon */
+    -webkit-appearance: none; /* Safari */
+    -moz-appearance: none; /* Firefox */
+    appearance: none; /* Standard */
+    background-image: none !important; /* Removes default icon */
 }
-
 
 /* ================== Reset & Base ================== */
 * {
@@ -4816,8 +4814,6 @@ body {
     margin-bottom: 3rem;
 }
 
-
-
 /* Tablet (iPad: 768px - 1024px) */
 @media (max-width: 1024px) {
     .contactmainfirst {
@@ -4834,14 +4830,11 @@ body {
     }
 }
 
-
 /* Section width */
 .custom-width {
     width: 67%;
     margin: 0 auto;
 }
-
-
 
 @media (max-width: 1600px) {
     .custom-width {
@@ -5339,8 +5332,6 @@ textarea:focus {
     background: linear-gradient(90.38deg, rgba(2, 59, 226, 0.05) 2.06%, rgba(0, 161, 197, 0.05) 99.67%);
 }
 
-
-
 .contact-detail-values {
     width: 55%;
     padding: 30px;
@@ -5357,7 +5348,6 @@ textarea:focus {
     width: 71%;
     margin-left: auto;
 }
-
 
 @media (max-width: 1600px) {
     .contact-detail-values-card {
@@ -5761,9 +5751,8 @@ textarea:focus {
     margin: auto;
 }
 
-
 @media (max-width: 1600px) {
-   .card-client-review {
+    .card-client-review {
         width: 90% !important;
         margin-top: 2rem !important;
     }
@@ -7502,9 +7491,6 @@ label {
     padding: 20px 0px;
 }
 
-
-
-
 /* ✔ Mobile: content starts from left */
 @media (max-width: 768px) {
     .Messaging_Solutions {
@@ -8709,7 +8695,7 @@ label {
     display: flex;
     justify-content: center;
     align-items: center;
-margin: 10rem 1rem 3rem;
+    margin: 10rem 1rem 3rem;
     background-color: #f9fafc;
 }
 
@@ -10712,7 +10698,7 @@ html {
 /* === Responsive Adjustments === */
 @media (max-width: 768px) {
     .portfolio-header-section {
-        width: 90%;
+        width: 97%;
         margin-top: 10rem;
         margin-bottom: 3rem;
         text-align: left;
@@ -10792,6 +10778,7 @@ html {
     transition:
         transform 0.3s ease,
         box-shadow 0.3s ease;
+        overflow: hidden;
 }
 
 /* Inner White Background */
@@ -10827,6 +10814,32 @@ html {
 .portfolio-filter-btn.active {
     background: #023be221;
 }
+
+
+
+
+
+/* Button click animation */
+.portfolio-filter-btn.animate {
+    animation: btn-pop 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+@keyframes btn-pop {
+    0% {
+        transform: scale(1);
+    }
+    30% {
+        transform: scale(1.2); /* pop bigger */
+    }
+    60% {
+        transform: scale(0.95); /* small shrink for bounce */
+    }
+    100% {
+        transform: scale(1.05); /* settle slightly larger than original */
+    }
+}
+
+
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
@@ -11443,7 +11456,6 @@ html {
 .HireCustomeDeveloperAppDevelopemtmaincontentCardContent {
     background: #fff;
     border-radius: 0.9rem;
-    padding: 2rem;
     display: flex;
     gap: 60px;
     height: 100%;
@@ -11471,6 +11483,9 @@ html {
     flex-direction: column;
     gap: 15px;
     padding-right: 40px;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    padding-left: 2rem;
 }
 
 /* TAG BUTTONS */
@@ -13062,6 +13077,10 @@ html {
     justify-content: center;
     padding: 80px 0px;
     box-sizing: border-box;
+    background-image: url("./images/WebPortfolio.webp");
+    background-size: cover;
+    background-position: right center;
+    background-repeat: no-repeat;
 }
 
 /* BACKGROUND SECTION */
@@ -13071,12 +13090,8 @@ html {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    background-image: url("./images/WebPortfolio.webp");
-    background-size: cover;
-    background-position: right center;
-    background-repeat: no-repeat;
     border-radius: 20px;
-    padding: 60px 0 60px 60px; /* top right bottom left */
+    padding: 60px 0 60px 10px; /* top right bottom left */
     flex-wrap: wrap;
     box-sizing: border-box;
     margin-left: auto;
@@ -13190,22 +13205,8 @@ html {
     flex-direction: column;
 }
 
-.feature-title {
-    font-weight: 700;
-    font-size: 20px;
-    margin: 0;
-    background: linear-gradient(90deg, #086ada, #00a1c5);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
 
-.feature-subtitle {
-    font-size: 16px;
-    color: #918f8f;
-    margin-top: 4px;
-    font-weight: 400;
-    font-family: var(--font-body);
-}
+
 
 /* RIGHT IMAGE */
 .right-image {
@@ -13672,6 +13673,12 @@ html {
 .webtechstackcard {
     background: linear-gradient(270.52deg, #0146ae 0.49%, #ffffff 99.66%);
 }
+
+.newcardmarginleanercolor{
+    background: linear-gradient(89.87deg, #0146AE 1.17%, #FFFFFF 99%) !important;
+}
+ 
+
 .webtechstackcardsecondtype {
     background: linear-gradient(180deg, #0146ae 0%, #ffffff 100%);
 }
@@ -13855,4 +13862,1390 @@ html {
 /* Rotate on Hover */
 .portfolio-loadmore-btn:hover .portfolio-loadmore-icon {
     transform: rotate(45deg);
+}
+
+
+
+
+
+
+/* ============================================================================================================================================================ */
+/* ======================================================================== WEB PORTFOLIO  NLYTICAL KEY FEATURES ====================================================================== */
+/* ============================================================================================================================================================ */
+
+
+
+/* ===========================
+   SECTION WRAPPER
+=========================== */
+.nlytical-features {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  margin-top: 3rem;
+  align-items: center;
+}
+
+/* ===========================
+   FEATURE CARD
+=========================== */
+.nlytical-feature-card {
+  width: 100%;
+  display: flex;
+  align-items: stretch;
+  gap: 2rem;
+}
+
+/* NORMAL: text 60% | image 40% */
+.nlytical-feature-card .nlytical-feature-textbox {
+  flex: 60%;
+}
+
+
+
+.rightcontent{
+    width: 60%;
+    margin-right: auto;
+    padding-right: 4rem;
+}
+
+.leftsideinnercontent{
+    width: 70%;
+    margin-left: auto;
+    padding-right: 4rem;
+}
+
+
+/* ===========================
+   MOBILE RESPONSIVE FIX
+=========================== */
+@media (max-width: 768px) {
+
+  .rightcontent,
+  .leftsideinnercontent {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0; /* (optional) remove side padding on mobile and keep clean layout */
+    text-align: center; /* (optional) better alignment on mobile */
+  }
+}
+
+
+
+.nlytical-feature-card .feature-image-box {
+  flex: 40%;
+}
+
+/* REVERSE: text 60% (right) | image 40% (left) */
+.nlytical-feature-card.reverse {
+  flex-direction: row-reverse;
+}
+
+/* ===========================
+   TEXT AREA
+=========================== */
+.nlytical-feature-textbox {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+}
+
+/* Title Row */
+.feature-title-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.feature-title-box img {
+  width: 32px;
+  height: 32px;
+}
+
+/* Title Wrapper */
+.feature-title-wrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 6px;
+}
+
+/* Remove old underline style */
+.feature-title {
+  font-weight: 700;
+  font-size: 28px;
+  color: #000;
+  position: relative;
+  margin: 0;
+}
+
+/* Underline */
+.portfolio-underline {
+  position: absolute;
+  bottom: 10px;
+  left: -5px;
+  width: 118%;
+  height: 10px;
+  background: #86d8ee;
+  border-radius: 14px;
+  z-index: -1;
+}
+
+
+.feature-desc {
+  font-size: 19px;
+  line-height: 1.6;
+  color: #515151;
+}
+
+/* ===========================
+   IMAGE FULL WIDTH
+=========================== */
+.feature-image-box {
+  display: flex;
+  align-items: stretch;
+}
+
+.feature-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+@media (max-width: 1024px) {
+  .nlytical-feature-card {
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .nlytical-feature-card,
+  .nlytical-feature-card.reverse {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .nlytical-feature-card .nlytical-feature-textbox,
+  .nlytical-feature-card .feature-image-box {
+    flex: unset;
+    width: 100%;
+  }
+
+  .feature-title-box {
+    justify-content: center;
+  }
+
+  .feature-image {
+    height: auto;
+    object-fit: contain;
+    border-radius: 12px;
+  }
+}
+
+
+
+
+/* ============================================================================================================================================================ */
+/* ======================================================================== WEB PORTFOLIO   subscribe ====================================================================== */
+/* ============================================================================================================================================================ */
+
+
+
+.subscriptionweb{
+ width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 3rem 0;
+}
+
+
+
+
+/* Inner container */
+.subscriptionwebmain {
+    position: relative;
+    width: 100%;
+    margin: auto;
+    min-height: 344px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    color: #fff;
+    overflow: hidden;
+    text-align: center;
+}
+
+/* Background image */
+.subscriptionwebmain::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(./images/demo.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.2;
+    z-index: 1;
+}
+
+/* Gradient overlay */
+.subscriptionwebmain::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90.38deg, #023be2 2.06%, #00a1c5 99.67%);
+    z-index: 0;
+}
+.subscriptionwebmaincontent{
+    width: 67%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 2rem 0;
+    z-index: 1;
+        text-align: left; /* 👈 content starts from left */
+
+}
+
+
+.subscriptionwebmaincontentleftsidetitle{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    position: relative;
+}
+
+.subscriptionwebmaincontentleftsidetitle img{
+    width: 28px;
+    height: 28px;
+}
+
+
+.subscriptionwebmaincontentleftsidetitlevalues{
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 30px !important;
+}
+
+
+
+.subscriptionwebmaincontentleftsidetitleDes{
+    font-family: var(--font-body);
+    font-size: 18px;
+    font-weight: 400;
+    margin-top:1rem !important;
+    text-align: left !important;
+}
+
+/* Make both left & right equal responsive width */
+.subscriptionwebmaincontentleftside,
+.subscriptionwebmaincontentrightside{
+    flex: 1;
+}
+
+
+
+/* RIGHT IMAGE */
+.subscriptionwebmaincontentrightside img{
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+
+/* RESPONSIVE */
+@media (max-width: 1024px){
+    .subscriptionwebmaincontent{
+        width: 85%;
+    }
+}
+
+@media (max-width: 768px){
+    .subscriptionwebmaincontent{
+        flex-direction: column;
+        text-align: center;
+        width: 90%;
+    }
+
+    .subscriptionwebmaincontentrightside img{
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 480px){
+    .subscriptionwebmaincontentleftside h1{
+        font-size: 1.6rem;
+    }
+
+    .subscriptionwebmaincontentrightside img{
+        max-width: 220px;
+    }
+}
+
+
+
+/* For screens 1506px and below */
+@media (max-width: 1600px) {
+    .subscriptionwebmaincontent {
+        width: 87% !important;
+    }
+}
+
+
+
+
+
+
+
+
+/*  nlytical feature  */
+
+.nlytical-feature-bgimage {
+  width: 100%;
+  min-height: 350px; /* You can adjust */
+  background-image: url("./images/bgimageweb.webp");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  /* Makes image responsive on all screens */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  box-sizing: border-box;
+  flex-direction: column;
+}
+
+
+
+
+
+
+
+.nlyticaltype-container{
+    width: 67%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+    position: relative;
+    margin-top: 4rem;
+    
+}
+
+
+
+/* For screens 1506px and below */
+@media (max-width: 1600px) {
+    .nlyticaltype-container {
+        width: 87% !important;
+    }
+}
+
+
+/* Left + Right = 20% Each */
+.nlyticaltype-left,
+.nlyticaltype-right {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.nlyticaltype-left {
+    margin-top: -12rem;
+}
+
+
+.nlyticaltype-right{
+    margin-bottom: -12rem;
+}
+
+
+
+
+
+
+
+/* Center Image = 60% */
+.nlyticaltype-center{
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nlyticaltype-image{
+    width: 100%;
+    height: 500px;
+    object-fit: contain;
+}
+
+
+/* Card Container */
+.nlyticaltype-card {
+    background-color: rgba(2, 59, 226, 0.04); /* subtle translucent bg */
+    backdrop-filter: blur(5px);
+    padding: 1.5rem 0 1.5rem 1.5rem; /* top right bottom left */
+    height: auto; /* allow description to grow */
+    width: 100%;
+    border-radius: 1rem;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.nlyticaltype-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Card Header */
+.contentnlyticalcard {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+/* Text in Card Header */
+.card-text {
+    display: flex;
+    gap: 0.8rem;
+    align-items: center;
+}
+
+
+
+
+.card-number {
+    font-weight: 700;
+    font-size: 3rem; /* adjust as needed */
+    
+    /* Gradient text fill */
+  background: linear-gradient(181.39deg, rgba(2, 59, 226, 0.37) 23.73%, rgba(0, 161, 197, 0.01) 75.3%);
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent;
+    
+    /* Red outline */
+    -webkit-text-stroke: 2px #023BE25E; /* stroke width and color */
+    
+    display: inline-block;
+}
+  
+
+
+
+
+.card-title {
+    font-weight: 600;
+    font-size: 1.2rem;
+    /* Gradient text color */
+    background: linear-gradient(90.38deg, #023BE2 2.06%, #00A1C5 99.67%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    /* For Firefox */
+    background-clip: text;
+    color: transparent;
+    font-family: var(--font-body);
+}
+
+
+
+
+/* Search Icon Styling */
+.search-image {
+    background: linear-gradient(90.38deg, #023BE2 2.06%, #00A1C5 99.67%);
+    padding: 0.6rem 0.8rem;
+/* top-left, top-right, bottom-right, bottom-left */
+border-radius: 0.75rem 0 0 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-image img {
+    width: 1.2rem;
+    height: 1.2rem;
+}
+
+/* Card Description */
+.nlyticalcarddes {
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 1rem;
+    color: #555555;
+    margin-top: 1rem;
+    line-height: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+
+/* ---------------- Responsive ---------------- */
+
+@media(max-width: 1024px){
+    .nlyticaltype-container{
+        width: 85%;
+    }
+}
+
+@media(max-width: 768px){
+    .nlyticaltype-container{
+        width: 95%;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .nlyticaltype-center{
+        width: 100%;
+    }
+
+    .nlyticaltype-left,
+    .nlyticaltype-right{
+        width: 100%;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .nlyticaltype-card{
+        width: 45%;
+    }
+}
+
+@media(max-width: 480px){
+    .nlyticaltype-card{
+        width: 100%;
+    }
+
+    .nlyticaltype-image{
+        width: 80%;
+    }
+}
+
+
+
+
+
+/* ============================================================================================================================================================ */
+/* ======================================================================== NLYTICAL SUMMARY BG IMAGE  ====================================================================== */
+/* ============================================================================================================================================================ */
+
+
+.nlyticalsummarybgimage{
+    background: #023BE20A;
+    backdrop-filter: blur(5px);
+    padding: 1.5rem 0 1.5rem 1.5rem; /* top right bottom left */
+    height: auto; /* allow description to grow */
+    width: 100%;
+    border-radius: 1rem;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+/*  bg image values */
+
+
+
+
+
+.summarybgimage {
+    display: flex;
+    justify-content: space-between; /* space between left, center, right */
+    align-items: flex-start;        /* align images at top */
+    width: 90%;
+    margin: 0 auto;
+    padding: 1rem;
+    gap: 1rem;                      /* spacing between columns */
+    
+}
+
+
+.summary-left{
+    position: relative;
+}
+
+
+.storeviewimage{
+    position: absolute;
+    right: -14rem;
+    top: -3rem;
+}
+
+
+.storeviewimage img {
+    width: 400px !important;
+}
+
+
+.quickbgwebp{
+    position: absolute;
+    bottom: -80%;
+    left: 30%;
+}
+
+
+.quickbgwebp img {
+    height: 12rem !important;
+    width: 500px !important;
+}
+
+
+
+.storeviewimage img{
+    width: 100px;
+}
+
+
+.conttactwebp {
+    margin-top: 3rem;
+    margin-left: -5rem;
+}
+
+.conttactwebp img {
+    width: 300px !important;
+    height: 300px !important;
+}
+
+/* Each column styling */
+.summary-left,
+.summary-center,
+.summary-right {
+    display: flex;
+    flex-direction: column;         /* stack images vertically */
+    gap: 1rem;                      /* spacing between images */
+    text-align: center;
+}
+
+/* Width distribution */
+.summary-left,
+.summary-right {
+    flex: 1 1 20%;                  /* take 25% of space each, shrink if needed */
+}
+
+.summary-center {
+    flex: 2 1 50%;                  /* bigger center, but responsive */
+}
+
+
+.summary-center{
+    width: 60%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.summary-right{
+    position: relative;
+    height: 100%;
+}
+
+
+.graphwebp {
+    position: absolute;
+    top: -12rem;
+    right: 10rem;
+}
+
+
+.graphwebp img {
+    width: 400px !important;
+    height: 400px !important;
+}
+
+
+
+.typenlyticalwebp {
+    position: absolute;
+    bottom: 0;   /* stick to bottom */
+    right: 0;    /* stick to right */
+}
+
+.typenlyticalwebp img {
+    width: 400px;
+    height: 400px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*  nlyticalgemain */
+
+
+.nlyticalgemain{
+
+    padding: 1.5rem 0 1.5rem 1.5rem; /* top right bottom left */
+    height: auto; /* allow description to grow */
+    width: 100%;
+    border-radius: 1rem;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+
+
+
+
+.nlyticalgemaincardmain {
+    width: 67%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+/* Responsive: single column for mobile */
+@media (max-width: 768px) {
+    .nlyticalgemaincardmain {
+        grid-template-columns: 1fr;
+    }
+}
+
+.nlyticalgemaincardmaincard {
+  background: #023BE20A;
+    border-radius: 1rem;
+    padding: 2rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    justify-content: start;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    backdrop-filter: blur(4.800000190734863px);
+    overflow: hidden;
+}
+
+
+
+.startimagevalues{
+    position: absolute;
+    right: -2.8rem;
+    top: 5%;
+}
+
+.startimagevalues img{
+    width: 100px;
+
+}
+
+
+
+.startimagevaluessecond{
+    position: absolute;
+    left: -3rem;
+    bottom: 4%;
+    z-index: 1200;
+}
+
+.startimagevaluessecond img{
+    width: 100px;
+
+}
+ 
+
+
+
+
+.nlyticalgemaincardmaincard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 25px rgba(0,0,0,0.1);
+    /* Semi-transparent gradient for proper backdrop blur */
+    background: linear-gradient(
+        90.38deg, 
+        rgba(2, 59, 226, 0.7) 2.06%, 
+        rgba(0, 161, 197, 0.7) 99.67%
+    );
+    backdrop-filter: blur(8px); /* stronger blur for visible effect */
+}
+
+.card-number-title {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.card-number {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #86b8ff; /* gradient or accent color */
+}
+
+.card-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #023BE2;
+}
+
+.card-image img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 0.75rem;
+    margin-bottom: 1.5rem;
+    object-fit: cover;
+}
+
+.card-description {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #555555;
+    line-height: 1.6;
+    font-family: var(--font-body);
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+
+/* Change text color on hover */
+.nlyticalgemaincardmaincard:hover .card-number,
+.nlyticalgemaincardmaincard:hover .card-title,
+.nlyticalgemaincardmaincard:hover .card-description {
+    color: white !important;
+}
+
+
+
+
+/* Extra-large screens: 67% width */
+@media (min-width: 1200px) {
+    .nlyticalgemaincardmain {
+        width: 67%;
+    }
+}
+
+/* Large screens and tablets: 90% width (override if needed) */
+@media (max-width: 1199px) {
+    .nlyticalgemaincardmain {
+        width: 90%;
+    }
+}
+
+/* Responsive: single column for mobile */
+@media (max-width: 768px) {
+    .nlyticalgemaincardmain {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+
+
+
+
+/*  nlytical  hover card  desing */
+
+
+.nlyticalhoverimage{
+    padding: 2rem;
+    background: linear-gradient(90.38deg, #023BE2 2.06%, #00A1C5 99.67%);
+
+}
+
+
+.colorvalues{
+    color: white !important;
+} 
+
+.descolor{
+    color: #FFFFFFA8 !important;
+}
+
+
+
+
+
+/* LISTING CARD CONTAINER */
+.new-listingcard {
+    width: 67%;
+    margin: auto;
+}
+
+/* MAIN CONTAINER */
+.new-placebirdcardmain {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;     
+    gap: 1.5rem;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+/* CARD */
+.new-placebirdcardmaincard {
+    background: rgba(255, 255, 255, 0.32);
+    backdrop-filter: blur(15px);
+    height: 450px;
+    width: 220px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    transition:
+        transform 0.4s ease,
+        width 0.6s cubic-bezier(0.23, 1, 0.32, 1),
+        background 0.4s ease;
+}
+
+/* PSEUDO ELEMENT FOR BG IMAGE */
+.new-placebirdcardmaincard::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-image: url('./images/bgimagesimple.webp'); /* Replace with your image */
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    border-radius: 1rem;
+    z-index: 0; /* Behind card content */
+}
+
+/* CONTENT INSIDE CARD */
+.new-placebirdcardmaincard > * {
+    position: relative;
+    z-index: 1; /* Keep content above bg image */
+}
+
+/* EXPANSION & BG IMAGE ON HOVER */
+.new-placebirdcardmaincard:hover {
+    width: 380px;
+    transform: translateY(-5px);
+    background: white; /* Optional white overlay */
+}
+
+.new-placebirdcardmaincard:hover::before {
+    opacity: 1; /* Show the background image on hover */
+}
+
+/* TEXT CONTENT */
+.new-card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    transition:
+        opacity 0.4s ease,
+        transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+    z-index: 2;
+    color: white; /* default color */
+}
+
+.new-numbercontent {
+    font-size: 18rem;
+    font-weight: bold;
+    background: linear-gradient(181.18deg, #FFFFFF -68.97%, rgba(255, 255, 255, 0) 98.99%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-right: -8rem;
+}
+
+.new-contentwhite {
+    font-size: 1.5rem;
+    font-weight: 500;
+    text-align: center;
+    font-family: var(--font-body);
+    color: white;
+    padding-top: 3rem;
+}
+
+/* IMAGE */
+.new-card-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.4);
+    width: 80%;
+    height: auto;
+    object-fit: contain;
+    opacity: 0;
+    transition:
+        transform 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+        opacity 0.5s ease;
+    z-index: 1;
+}
+
+/* HOVER EFFECTS: hide text, show image */
+.new-placebirdcardmaincard:hover .new-card-content {
+    opacity: 0;            /* hide content */
+    pointer-events: none;  /* prevent interaction */
+    transform: scale(0);   /* optional: shrink smoothly */
+}
+
+.new-placebirdcardmaincard:hover .new-card-image {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .new-placebirdcardmaincard {
+        width: 100%;
+    }
+
+    .new-placebirdcardmaincard:hover {
+        width: 100%;
+    }
+
+    /* Keep text visible on mobile hover */
+    .new-placebirdcardmaincard:hover .new-card-content {
+        opacity: 1;
+        transform: scale(1);
+        position: relative;
+        top: 0;
+        left: 0;
+        align-items: center;
+        text-align: center;
+        pointer-events: auto;
+        color: white; /* text stays white on mobile */
+    }
+
+    .new-placebirdcardmaincard:hover .new-contentwhite {
+        color: white !important;
+    }
+}
+
+
+
+
+/* =========================
+   HIDE content-web-nlytical BY DEFAULT
+========================= */
+.content-web-nlytical {
+    position: absolute;
+    top: 10%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    pointer-events: none;
+    text-align: center;
+    z-index: 2;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* =========================
+   SHOW ON HOVER
+========================= */
+.new-placebirdcardmaincard:hover .content-web-nlytical {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1); /* optional scale effect */
+}
+
+/* =========================
+   NUMBERSHADO COLOR (Gradient + Stroke)
+========================= */
+.numbershadocolor {
+    font-weight: 700;
+    font-size: 3rem;
+    
+    /* Gradient text fill */
+    background: linear-gradient(181.39deg, rgba(2, 59, 226, 0.37) 23.73%, rgba(0, 161, 197, 0.01) 75.3%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    /* Red outline / stroke */
+    -webkit-text-stroke: 2px rgba(2, 59, 226, 0.37); /* adjust color/opacity as needed */
+
+    display: inline-block;
+}
+
+/* =========================
+   LINEAR COLOR TEXT (Gradient)
+========================= */
+.linearcolorvalues {
+    font-weight: 600;
+    font-size: 1.2rem;
+
+    /* Gradient text color */
+    background: linear-gradient(90.38deg, #023BE2 2.06%, #00A1C5 99.67%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    /* For Firefox */
+    background-clip: text;
+    color: transparent;
+
+    font-family: var(--font-body);
+}
+
+
+
+
+
+
+
+/* ============================================================================================================================================================ */
+/* ======================================================================== NLYTICAL  App Development  ====================================================================== */
+/* ============================================================================================================================================================ */
+
+/* MAIN CONTAINER */
+.secondsectioncarddesing {
+    width: 70%;                 
+    margin: auto;           
+    display: flex;               
+    gap: 1rem;                 
+    align-items: flex-start;
+}
+
+
+/* LEFT SECTION */
+.secondsectioncarddesingleft {
+    flex: 0 0 30%; /* Take 30% width, don't grow/shrink */
+    border-radius: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; 
+}
+
+/* IMAGE INSIDE LEFT SECTION */
+.secondsectioncarddesingleft img {
+    width: 100%;
+    height: 560px;
+    border-radius: 12px;
+    object-fit: contain; 
+    transition: transform 0.3s ease; 
+}
+
+
+
+/* RIGHT SECTION */
+.secondsectioncarddesingright {
+    flex: 0 0 70%;             
+    display: grid;              
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 1.5rem;                
+}
+
+
+
+
+
+
+/* ============================================================================================================================================================ */
+/* ======================================================================== NLYTICAL  nlyticalchallengesmain  ====================================================================== */
+/* ============================================================================================================================================================ */
+
+
+
+
+/* MAIN CONTAINER */
+.nlyticalchallengesmain {
+    width: 90%; /* use more width on smaller screens */
+    max-width: 1200px; /* limit max width */
+    margin: auto;
+    display: flex;
+    flex-direction: column; /* stack left and right on mobile */
+    gap: 2rem;
+}
+
+/* LEFT SIDE */
+.nlyticalchallengesmainleftside {
+    width: 100%;
+}
+
+/* GRID CONTAINER FOR CARDS */
+.cards-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* 1 card per row by default */
+    gap: 1.5rem;
+}
+
+@media screen and (min-width: 768px) {
+    .cards-grid {
+        grid-template-columns: 1fr 1fr; /* 2 cards per row on tablet */
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .cards-grid {
+        grid-template-columns: 1fr 1fr; /* 2 cards per row on desktop */
+    }
+}
+
+/* RIGHT SIDE - background image */
+.nlyticalchallengesmainrightside {
+    width: 100%;
+    min-height: 250px;
+    background-image: url('./images/mobilebgimagewithbg.webp');
+    background-size: cover;
+    background-position: center;
+    border-radius: 12px;
+    margin-top: 2rem;
+}
+
+@media screen and (min-width: 1024px) {
+    .nlyticalchallengesmain {
+        flex-direction: row; /* row on large screens */
+    }
+    .nlyticalchallengesmainleftside {
+        flex: 0 0 70%;
+    }
+    .nlyticalchallengesmainrightside {
+        flex: 0 0 30%;
+        margin-top: 0;
+    }
+}
+
+/* CARD STYLING */
+.nlyticalchallengesmainleftsidecardmain {
+    background: rgba(2, 59, 226, 0.04);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.nlyticalchallengesmainleftsidecardmain:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 25px rgba(0,0,0,0.15);
+}
+
+/* ICON AND NUMBER */
+.iconwithcontent {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.innercontentnuber {
+    border: none;
+    font-weight: 700;
+    font-size: 2rem;
+    background: linear-gradient(181.39deg, rgba(2, 59, 226, 0.37) 23.73%, rgba(0, 161, 197, 0.01) 75.3%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 1px rgba(2, 59, 226, 0.35);
+    cursor: default;
+}
+
+.circlewithimage {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #DEE5FF;
+}
+
+.circlewithimage img {
+    width: 50%;
+    height: 50%;
+    object-fit: contain;
+}
+
+/* CARD TEXT */
+.nlyticalchallengesmainleftsidecardmainheading {
+    font-weight: 600;
+    font-size: 1.4rem;
+    color: #0146AE;
+    margin: 0;
+}
+
+.nlyticalchallengesmainleftsidecardmaindes {
+    color: #555555;
+    font-weight: 400;
+    font-size: 0.95rem;
+    margin: 0;
+    line-height: 1.4rem;
+}
+
+/* RESPONSIVE TEXT SIZES */
+@media screen and (min-width: 768px) {
+    .innercontentnuber {
+        font-size: 2.2rem;
+    }
+    .nlyticalchallengesmainleftsidecardmainheading {
+        font-size: 1.5rem;
+    }
+    .nlyticalchallengesmainleftsidecardmaindes {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .innercontentnuber {
+        font-size: 2.5rem;
+    }
+    .nlyticalchallengesmainleftsidecardmainheading {
+        font-size: 1.6rem;
+    }
+    .nlyticalchallengesmainleftsidecardmaindes {
+        font-size: 1.05rem;
+        line-height: 1.6rem;
+    }
 }
