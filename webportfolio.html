@@ -751,7 +751,7 @@
 <section class="nlyticalsummarybgimage">
 <div class="Why_Choose_Us_Tittle">
             <h2 class="global_heading">
-             <span class="nlyticalwebstoreheadingsub">Nlytical</span> Feature
+             <span class="nlyticalwebstoreheadingsub">Nlytical</span>   Feature
             </h2>  
             <p class="global_description">
             For all your home fixes, just a tap away reliable, fast, and at your service.
@@ -762,40 +762,25 @@
 
  <!--  image -->
 
- <div class="summarybgimage">
-    <!-- LEFT SIDE -->
-    <div class="summary-left">
-          <div class="storeviewimage">
-          <img src="./images/storevisite.webp" alt="Left Image">
-      </div>
-      <div class="conttactwebp">
-          <img src="./images/contactwebbg.webp" alt="Left Image">
-      </div>
-      <div class="quickbgwebp">
-                <img src="./images/quickbg.webp" alt="Left Image">
+ 
+ <div class="summary-wrapper">
 
-      </div>
-    </div>
+  <!-- CENTER MAIN IMAGE -->
+  <div class="center-image">
+    <img src="./images/centerwebbgimage.webp" alt="Main Image">
+  </div>
 
-    <!-- CENTER -->
-    <div class="summary-center">
-        <img src="./images/centerwebbgimage.webp" alt="Center Image">
-    </div>
+  <!-- FLOATING DECOR IMAGES -->
+  <img src="./images/storevisite.webp" class="img-floating img-top-left" alt="">
+  <img src="./images/contactwebbg.webp" class="img-floating img-middle-left" alt="">
+  <img src="./images/quickbg.webp" class="img-floating img-bottom-left" alt="">
 
-    <!-- RIGHT SIDE -->
-    <div class="summary-right">
+  <img src="./images/numberofusergraph.webp" class="img-floating img-top-right" alt="">
+  <img src="./images/typebgweb.webp" class="img-floating img-bottom-right" alt="">
 
-<div class="graphwebp">
-            <img src="./images/numberofusergraph.webp" alt="Right Image">
-
-</div>     
-
-<div class="typenlyticalwebp">
-     <img src="./images/typebgweb.webp" alt="Right Image">
 </div>
 
-    </div>
-</div>
+
 
 
 </section>
@@ -1218,9 +1203,6 @@
 </section>
 
 
-
-
-
         <!-- Footer -->
 <div id="footer"></div>
 
@@ -1238,9 +1220,14 @@ buttons.forEach((btn) => {
     const target = btn.getAttribute("data-target");
 
     contents.forEach((content) => {
-      content.classList.remove("active");
+      content.classList.remove("active", "fade-in"); // remove animation
       if (content.id === target) {
         content.classList.add("active");
+
+        // restart animation
+        setTimeout(() => {
+          content.classList.add("fade-in");
+        }, 10);
       }
     });
   });

@@ -2674,18 +2674,25 @@ body {
 /* ======================================================================== OUR SHOWCASE ====================================================================== */
 /* ============================================================================================================================================================ */
 
+
+
 /* Container Section */
 .showcase-section {
-    background: linear-gradient(90deg, rgba(2, 59, 226, 0.2) 2%, rgba(0, 161, 197, 0.2) 100%);
+    background: linear-gradient(
+        90deg,
+        rgba(2, 59, 226, 0.2) 2%,
+        rgba(0, 161, 197, 0.2) 100%
+    );
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 5rem 0rem;
+    padding: 5rem 0;       /* top-bottom padding 5rem, left-right 0 */
     width: 100%;
-    /* margin-bottom: 3rem; */
     position: relative;
-    height: auto;
+    height: auto;          /* height adjusts according to content */
+    box-sizing: border-box; /* ensures padding is included in height */
 }
+
 
 /* Card */
 .showcase-card {
@@ -10898,6 +10905,16 @@ html {
     margin: 0 auto;
 }
 
+
+/* Small screens (phones) */
+@media (max-width: 640px) { /* You can adjust the breakpoint */
+    .hireappbgcolor {
+        width: 100%;
+        padding: 20px; /* optional, reduce padding on small screens */
+        border-radius: 20px; /* optional, smaller radius for small screens */
+    }
+}
+
 .transparentcolor {
     background: transparent !important;
 }
@@ -11089,39 +11106,35 @@ html {
 /* ======================================================================== <<<< HIRE PAGE OurShowcaseHire >>>> ====================================================================== */
 /* ============================================================================================================================================================ */
 
-/* Outer Container */
+
+
+/* =================== Outer Container =================== */
 .OurShowcaseHire {
-    width: 67%;
-    margin: auto;
+    width: 90%;
+    max-width: 1400px;
+    margin: 3rem auto;
     display: flex;
     justify-content: space-between;
     align-items: stretch;
     gap: 20px;
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
 }
 
-/* For screens 1506px and below */
-@media (max-width: 1600px) {
-    .OurShowcaseHire {
-        width: 87% !important;
-    }
-}
-
-/* Left Column - 60% */
+/* =================== Left Column =================== */
 .ShowCaseHireLeft {
-    width: 60%;
+    flex: 1 1 60%; /* Flexible width, 60% default */
     background: linear-gradient(90.38deg, #023be2 2.06%, #00a1c5 99.67%);
-    padding: 2px;
     border-radius: 1rem;
     height: auto;
-    transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    flex-direction: column;
 }
 
 .HireTittle {
     font-family: var(--font-body);
     color: #000;
-    font-size: 30px;
+    font-size: 2rem;
     font-weight: 600;
 }
 
@@ -11129,67 +11142,43 @@ html {
     font-family: var(--font-body);
     color: #555555;
     font-weight: 400;
-    font-size: 20px;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    font-size: 1.125rem;
+    padding: 1rem 0;
 }
 
 .ShowCaseHireLeft_Content {
     background: #fff;
-    height: 100%; /* Fills full height */
-    border-radius: calc(1rem - 1px);
+    border-radius: calc(1rem - 2px);
     padding: 3rem;
     font-weight: 600;
     font-size: 1rem;
     cursor: pointer;
+    flex-grow: 1;
 }
 
+/* =================== Right Column =================== */
 .ShowCaseHireRight {
-    width: 40%;
-    border-radius: 1rem;
+    flex: 1 1 35%; /* Flexible width, 35% default */
     display: grid;
-    grid-template-columns: 1fr; /* Mobile → 1 column */
+    grid-template-columns: 1fr;
     gap: 20px;
 }
 
-/* Large Screens → 2 columns grid (2×2 layout) */
+/* Large screens: 2×2 grid */
 @media (min-width: 1024px) {
     .ShowCaseHireRight {
-        grid-template-columns: 1fr 1fr; /* 2 columns */
-    }
-}
-
-/* MOBILE RESPONSIVE */
-@media (max-width: 768px) {
-    .OurShowcaseHire {
-        width: 90%;
-        flex-direction: column;
-    }
-
-    .ShowCaseHireLeft,
-    .ShowCaseHireRight {
-        width: 100%;
-        height: 200px; /* Keep same height on mobile */
-    }
-
-    .ShowCaseHireLeft_Content {
-        padding: 1rem 1.5rem;
+        grid-template-columns: 1fr 1fr;
     }
 }
 
 /* =================== Card Container =================== */
 .RightItem {
     width: 100%;
-    max-width: 350px; /* Optional: limit max width */
     background: linear-gradient(90.38deg, #023be2 2.06%, #00a1c5 99.67%);
-    padding: 3px; /* Outer border spacing */
+    padding: 3px;
     border-radius: 1rem;
-    transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease;
     cursor: pointer;
-
-    /* Shadow on hover */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -11198,11 +11187,10 @@ html {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
-/* =================== Inner Card =================== */
+/* Inner Card */
 .RightItemContent {
     background: #fff;
-    height: 100%;
-    border-radius: calc(1rem - 3px); /* Inner rounding to fit outer */
+    border-radius: calc(1rem - 3px);
     padding: 2rem 1.5rem;
     display: flex;
     flex-direction: column;
@@ -11212,22 +11200,21 @@ html {
     text-align: center;
 }
 
-/* =================== Gradient Number =================== */
+/* Gradient Number */
 .RightItemContentshado {
     font-family: var(--font-heading, "Arial", sans-serif);
     font-weight: 700;
-    font-size: 5rem; /* Large number */
+    font-size: 5rem;
     line-height: 1.2;
     color: transparent;
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: #023be2;
-
     background: linear-gradient(180deg, rgba(2, 59, 226, 0.8) 0%, rgba(0, 161, 197, 0.8) 100%);
     -webkit-background-clip: text;
     background-clip: text;
 }
 
-/* =================== Gradient Text =================== */
+/* Gradient Text */
 .RightItemText {
     font-weight: 600;
     font-size: 1.25rem;
@@ -11239,17 +11226,62 @@ html {
 }
 
 /* =================== Responsive =================== */
-@media (max-width: 640px) {
+
+/* Small screens */
+@media (max-width: 1024px) {
+    .OurShowcaseHire {
+        flex-direction: column;
+        width: 95%;
+    }
+
+    .ShowCaseHireLeft,
+    .ShowCaseHireRight {
+        width: 100%;
+    }
+
+    .ShowCaseHireLeft_Content {
+        padding: 2rem 1.5rem;
+    }
+
+    .RightItem {
+        max-width: 100%;
+    }
+
     .RightItemContent {
         padding: 1.5rem 1rem;
     }
+
     .RightItemContentshado {
         font-size: 3rem;
     }
+
     .RightItemText {
         font-size: 1rem;
     }
 }
+
+/* Extra small screens */
+@media (max-width: 640px) {
+    .HireTittle {
+        font-size: 1.5rem;
+    }
+    .HireTittleDis {
+        font-size: 1rem;
+    }
+
+    .ShowCaseHireLeft_Content {
+        padding: 1.5rem 1rem;
+    }
+
+    .RightItemContentshado {
+        font-size: 2.5rem;
+    }
+
+    .RightItemText {
+        font-size: 0.95rem;
+    }
+}
+
 
 /* ============================================================================================================================================================ */
 /* ======================================================================== <<<< HIRE PAGE certifiedhiredeveloper >>>> ====================================================================== */
@@ -11286,20 +11318,47 @@ html {
     }
 }
 
+
 .certifiedhiredevelopermain {
-    width: 70%; /* Container width */
-    margin: 0 auto; /* Center horizontally */
-    display: flex; /* Flex layout for two columns */
-    gap: 20px; /* Space between columns */
-    margin-top: 3rem;
+    width: 70%;                 /* Default width for large screens */
+    margin: 3rem auto 0 auto;   /* Center horizontally, top margin 3rem */
+    display: flex;
+    gap: 20px;                  /* Gap between child elements */
+    flex-direction: row;         /* Side by side on large screens */
 }
 
-/* For screens 1506px and below */
+/* Extra large screens: 1600px and below */
 @media (max-width: 1600px) {
     .certifiedhiredevelopermain {
-        width: 87% !important;
+        width: 87%;
     }
 }
+
+/* Laptops and smaller screens: 1024px and below */
+@media (max-width: 1024px) {
+    .certifiedhiredevelopermain {
+        flex-direction: column; /* Stack vertically */
+        width: 90%;
+        gap: 1.5rem;           /* Adjust spacing */
+    }
+}
+
+/* Tablets: 768px and below */
+@media (max-width: 768px) {
+    .certifiedhiredevelopermain {
+        width: 95%;             /* Almost full width */
+        gap: 1rem;
+    }
+}
+
+/* Small mobile screens: 480px and below */
+@media (max-width: 480px) {
+    .certifiedhiredevelopermain {
+        width: 100%;            /* Full width */
+        gap: 0.8rem;            /* Smaller spacing for tight screens */
+    }
+}
+
 
 /* Left column */
 .certifiedhiredevelopermainleft {
@@ -11421,9 +11480,17 @@ html {
 /* Mobile — show 1 card */
 @media (max-width: 768px) {
     .hire-card {
-        min-width: 90%;
+        min-width: 31%;
         max-width: 90%;
     }
+
+   .hire-arrow{
+    top:93%;
+   }
+
+   .hire-certifiedhiredevelopermainright{
+    padding: 10px !important;
+   }
 }
 
 /* ============================================================================================================================================================ */
@@ -11473,7 +11540,17 @@ html {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 12px;
+}
+
+.borderradiusglbal img{
+        border-radius: 12px 0 0 12px !important; /* top-left, top-right, bottom-right, bottom-left */
+}
+
+
+
+
+.borderradiusglbalright img{
+    border-radius: 0 12px 12px 0 !important;
 }
 
 /* RIGHT CONTENT */
@@ -11557,7 +11634,7 @@ html {
 
     .HireCustomeDeveloperAppDevelopemtmaincontentCardContent {
         gap: 40px;
-        padding: 1.5rem;
+        /* padding: 1.5rem;  */
     }
 
     .hireheadingvalues {
@@ -11578,7 +11655,7 @@ html {
     .HireCustomeDeveloperAppDevelopemtmaincontentCardContent {
         flex-direction: column;
         gap: 25px;
-        padding: 1.5rem;
+        /* padding: 1.5rem; */
     }
 
     .left-image {
@@ -13075,7 +13152,7 @@ html {
     width: 100%;
     display: flex;
     justify-content: center;
-    padding: 80px 0px;
+  padding: 80px 0 0 0;
     box-sizing: border-box;
     background-image: url("./images/WebPortfolio.webp");
     background-size: cover;
@@ -13096,6 +13173,65 @@ html {
     box-sizing: border-box;
     margin-left: auto;
 }
+
+
+
+
+
+/* -------------------------------------------------------- */
+/* -------- EXTRA LARGE SCREENS (>=1600px) ---------------- */
+/* -------------------------------------------------------- */
+@media (min-width: 1600px) {
+    .webportfolio {
+        width: 84%;
+    }
+}
+
+/* -------------------------------------------------------- */
+/* -------- LARGE DESKTOPS (1280px - 1599px) -------------- */
+/* -------------------------------------------------------- */
+@media (min-width: 1280px) and (max-width: 1599px) {
+    .webportfolio {
+        width: 96%;
+    }
+}
+
+/* -------------------------------------------------------- */
+/* -------- LAPTOP / MEDIUM SCREENS (1024px - 1279px) ----- */
+/* -------------------------------------------------------- */
+@media (min-width: 1024px) and (max-width: 1279px) {
+    .webportfolio {
+        width: 90%;
+    }
+}
+
+/* -------------------------------------------------------- */
+/* -------- TABLET (769px - 1023px) ----------------------- */
+/* -------------------------------------------------------- */
+@media (min-width: 769px) and (max-width: 1023px) {
+    .webportfolio {
+        width: 90%;
+    }
+}
+
+/* -------------------------------------------------------- */
+/* -------- MOBILE (481px - 768px) ------------------------ */
+/* -------------------------------------------------------- */
+@media (min-width: 481px) and (max-width: 768px) {
+    .webportfolio {
+        width: 95%;
+    }
+}
+
+/* -------------------------------------------------------- */
+/* -------- SMALL MOBILE (<=480px) ------------------------ */
+/* -------------------------------------------------------- */
+@media (max-width: 480px) {
+    .webportfolio {
+        width: 100%;
+    }
+}
+
 
 /* LEFT CONTENT */
 .left-content {
@@ -13456,85 +13592,173 @@ html {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding: 4rem 0;
+   padding: 4rem 0 0 0;
+
 }
+
+
+
 
 .nlyticalbgimageadmin {
     background-image: url("./images/nlyticalwebdetail.webp");
-    background-size: cover; /* make image cover container */
-    background-position: center; /* center image */
+    background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
-    width: 90%; /* default width for normal screens */
-    height: 500px; /* default height */
-    margin: 0 auto; /* center horizontally */
-    border-radius: 15px; /* optional rounding */
+    width: 68%; /* Default for ≥1600px */
+    height: 70vh; /* responsive height */
+    margin: 0 auto;
+    border-radius: 15px;
     transition: all 0.3s ease;
 }
 
-/* Extra large screens, e.g., desktops > 1200px */
-@media (min-width: 1200px) {
+/* 1280px – 1599px */
+@media (max-width: 1599px) {
     .nlyticalbgimageadmin {
-        width: 67%; /* smaller width for large screens */
-        height: 500px; /* fixed height */
+        width: 60%;
+        height: 55vh;
     }
 }
 
-/* Medium screens / tablets */
-@media (max-width: 1199px) and (min-width: 768px) {
+/* 1024px – 1279px */
+@media (max-width: 1279px) {
     .nlyticalbgimageadmin {
-        width: 90%; /* width 90% */
-        height: 450px; /* adjust height if needed */
+        width: 70%;
+        height: 50vh;
     }
 }
 
-/* Small screens / mobiles */
-@media (max-width: 767px) {
+/* 769px – 1023px */
+@media (max-width: 1023px) {
     .nlyticalbgimageadmin {
-        width: 90%; /* full width */
-        height: 300px; /* smaller height */
+        width: 85%;
+        height: 45vh;
     }
 }
 
+/* 481px – 768px */
+@media (max-width: 768px) {
+    .nlyticalbgimageadmin {
+        width: 95%;
+        height: 35vh;
+    }
+}
+
+/* ≤ 480px */
+@media (max-width: 480px) {
+    .nlyticalbgimageadmin {
+        width: 100%;
+        height: 24vh;
+        border-radius: 10px;
+    }
+}
+
+
+
+
+
+
+/* =========================================================
+   DEFAULT STYLE (Base desktop before breakpoints)
+========================================================= */
 .nlyticalbgimageadminimage {
     background-image: url("./images/nlytialadminbg.webp");
-    background-size: cover; /* make image cover container */
-    background-position: center; /* center image */
+    background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
-    width: 90%; /* default width for normal screens */
-    height: 500px; /* default height */
-    margin: 0 auto; /* center horizontally */
-    border-radius: 15px; /* optional rounding */
+    width: 90%;
+    height: 45vh;
+    min-height: 280px;
+    margin: 0 auto;
+    border-radius: 15px;
     transition: all 0.3s ease;
 }
 
-/* Extra large screens, e.g., desktops > 1200px */
-@media (min-width: 1200px) {
+
+/* =========================================================
+   EXTRA LARGE SCREENS (1600px+)
+========================================================= */
+@media (min-width: 1600px) {
     .nlyticalbgimageadminimage {
-        width: 67%; /* smaller width for large screens */
-        height: 500px; /* fixed height */
+        width: 80%;
+        height: 70vh;
+        min-height: 520px;
     }
 }
 
-/* Medium screens / tablets */
-@media (max-width: 1199px) and (min-width: 768px) {
+
+/* =========================================================
+   LARGE DESKTOPS (1280px - 1599px)
+========================================================= */
+@media (min-width: 1280px) and (max-width: 1599px) {
     .nlyticalbgimageadminimage {
-        width: 90%; /* width 90% */
-        height: 450px; /* adjust height if needed */
+        width: 89%;
+        height: 78vh;
+        min-height: 480px;
     }
 }
 
-/* Small screens / mobiles */
-@media (max-width: 767px) {
+
+/* =========================================================
+   LAPTOP / MEDIUM SCREENS (1024px - 1279px)
+========================================================= */
+@media (min-width: 1024px) and (max-width: 1279px) {
     .nlyticalbgimageadminimage {
-        width: 100%; /* full width */
-        height: 300px; /* smaller height */
+        width: 75%;
+        height: 55vh;
+        min-height: 430px;
     }
 }
+
+
+/* =========================================================
+   TABLET (769px - 1023px)
+========================================================= */
+@media (min-width: 769px) and (max-width: 1023px) {
+    .nlyticalbgimageadminimage {
+        width: 90%;
+        height: 40vh;
+        min-height: 350px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE (481px - 768px)
+========================================================= */
+@media (min-width: 481px) and (max-width: 768px) {
+    .nlyticalbgimageadminimage {
+        width: 100%;
+        height: 32vh;
+        min-height: 270px;
+        border-radius: 12px;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE (<=480px)
+========================================================= */
+@media (max-width: 480px) {
+    .nlyticalbgimageadminimage {
+        width: 100%;
+        height: 28vh;
+        min-height: 230px;
+        border-radius: 10px;
+    }
+}
+
+
+
 
 /* ============================================================================================================================================================ */
 /* ======================================================================== WEB PORTFOLIO  TECH STACK ====================================================================== */
 /* ============================================================================================================================================================ */
 
+
+
+/* =========================================================
+   DEFAULT (Base Desktop)
+========================================================= */
 .webtechstack {
     width: 100%;
     display: flex;
@@ -13552,28 +13776,78 @@ html {
     align-items: center;
     gap: 2rem;
     font-family: var(--font-heading);
+    transition: all .3s ease;
 }
 
-@media (max-width: 1400px) {
+
+/* =========================================================
+   EXTRA LARGE SCREENS (1600px+)
+========================================================= */
+@media (min-width: 1600px) {
+    .webtechstackmain {
+        width: 67%;
+        gap: 2.5rem;
+    }
+}
+
+
+/* =========================================================
+   LARGE DESKTOPS (1280px - 1599px)
+========================================================= */
+@media (min-width: 1280px) and (max-width: 1599px) {
     .webtechstackmain {
         width: 90%;
+        gap: 2.3rem;
     }
 }
 
-/* Tablet (1024px and below) → full responsive and centered */
-@media (max-width: 1024px) {
+
+/* =========================================================
+   LAPTOP / MEDIUM SCREENS (1024px - 1279px)
+========================================================= */
+@media (min-width: 1024px) and (max-width: 1279px) {
     .webtechstackmain {
         width: 90%;
+        gap: 2rem;
     }
 }
 
-/* Mobile screens (below 768px) → 100% with padding */
-@media (max-width: 768px) {
+
+/* =========================================================
+   TABLET (769px - 1023px)
+========================================================= */
+@media (min-width: 769px) and (max-width: 1023px) {
     .webtechstackmain {
-        width: 95%;
-        padding: 0 10px;
+        width: 90%;
+        gap: 1.8rem;
     }
 }
+
+
+/* =========================================================
+   MOBILE (481px - 768px)
+========================================================= */
+@media (min-width: 481px) and (max-width: 768px) {
+    .webtechstackmain {
+        width: 90%;
+        padding: 0 14px;
+        gap: 1.5rem;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE (<=480px)
+========================================================= */
+@media (max-width: 480px) {
+    .webtechstackmain {
+        width: 100%;
+        padding: 0 16px;
+        gap: 1.2rem;
+    }
+}
+
+
 
 /* Buttons container */
 .webtechstackbtn {
@@ -14001,6 +14275,16 @@ html {
   color: #515151;
 }
 
+
+@media (max-width: 480px) {
+   .feature-desc {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #515151;
+}
+}
+
+
 /* ===========================
    IMAGE FULL WIDTH
 =========================== */
@@ -14120,7 +14404,7 @@ html {
     gap: 2rem;
     padding: 2rem 0;
     z-index: 1;
-        text-align: left; /* 👈 content starts from left */
+    text-align: left; /* 👈 content starts from left */
 
 }
 
@@ -14174,7 +14458,7 @@ html {
 /* RESPONSIVE */
 @media (max-width: 1024px){
     .subscriptionwebmaincontent{
-        width: 85%;
+        width: 85% !important;
     }
 }
 
@@ -14182,7 +14466,7 @@ html {
     .subscriptionwebmaincontent{
         flex-direction: column;
         text-align: center;
-        width: 90%;
+        width: 90% !important;
     }
 
     .subscriptionwebmaincontentrightside img{
@@ -14194,9 +14478,14 @@ html {
     .subscriptionwebmaincontentleftside h1{
         font-size: 1.6rem;
     }
+     .subscriptionwebmaincontent{
+        flex-direction: column;
+        text-align: center;
+        width: 90% !important;
+    }
 
     .subscriptionwebmaincontentrightside img{
-        max-width: 220px;
+        max-width: 358px;
     }
 }
 
@@ -14205,7 +14494,7 @@ html {
 /* For screens 1506px and below */
 @media (max-width: 1600px) {
     .subscriptionwebmaincontent {
-        width: 87% !important;
+        width: 100% !important;
     }
 }
 
@@ -14240,8 +14529,12 @@ html {
 
 
 
-.nlyticaltype-container{
-    width: 67%;
+
+/* ================================
+   BASE CONTAINER
+================================ */
+.nlyticaltype-container {
+    width: 67%; /* Default (≥1600px) */
     margin: auto;
     display: flex;
     justify-content: space-between;
@@ -14249,20 +14542,45 @@ html {
     gap: 1.5rem;
     position: relative;
     margin-top: 4rem;
-    
+    transition: all 0.3s ease;
+    margin-bottom: 5rem;
 }
 
+/* RESPONSIVE WIDTH SYSTEM */
+/* 1280–1599px → 60% */
+@media (max-width: 1599px) {
+    .nlyticaltype-container { width: 90%; margin-bottom: 5rem; }
+}
 
+/* 1024–1279px → 70% */
+@media (max-width: 1279px) {
+    .nlyticaltype-container { width: 70%; }
+}
 
-/* For screens 1506px and below */
-@media (max-width: 1600px) {
+/* 769–1023px → 85% */
+@media (max-width: 1023px) {
+    .nlyticaltype-container { width: 85%; }
+}
+
+/* 481–768px → 95% */
+@media (max-width: 768px) {
     .nlyticaltype-container {
-        width: 87% !important;
+        width: 95%;
+        flex-direction: column;
+        gap: 2rem;
     }
 }
 
+/* ≤480px → 100% */
+@media (max-width: 480px) {
+    .nlyticaltype-container { width: 100%; }
+}
 
-/* Left + Right = 20% Each */
+
+
+/* ================================
+   LEFT + RIGHT COLUMN
+================================ */
 .nlyticaltype-left,
 .nlyticaltype-right {
     width: 60%;
@@ -14271,42 +14589,53 @@ html {
     gap: 1rem;
 }
 
-.nlyticaltype-left {
-    margin-top: -12rem;
+.nlyticaltype-left { margin-top: -12rem; }
+.nlyticaltype-right { margin-bottom: -12rem; }
+
+/* MOBILE ADJUSTMENT */
+@media (max-width: 768px) {
+    .nlyticaltype-left,
+    .nlyticaltype-right {
+        width: 100%;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin: 0;
+    }
 }
 
 
-.nlyticaltype-right{
-    margin-bottom: -12rem;
-}
 
-
-
-
-
-
-
-/* Center Image = 60% */
-.nlyticaltype-center{
+/* ================================
+   CENTER IMAGE
+================================ */
+.nlyticaltype-center {
     width: 60%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.nlyticaltype-image{
+.nlyticaltype-image {
     width: 100%;
-    height: 500px;
+    height: 50vh;
     object-fit: contain;
 }
 
+@media (max-width: 480px) {
+    .nlyticaltype-image { width: 100%; height: auto; }
+}
 
-/* Card Container */
+
+
+/* ================================
+   CARD STYLING
+================================ */
 .nlyticaltype-card {
-    background-color: rgba(2, 59, 226, 0.04); /* subtle translucent bg */
+    background-color: rgba(2, 59, 226, 0.04);
     backdrop-filter: blur(5px);
-    padding: 1.5rem 0 1.5rem 1.5rem; /* top right bottom left */
-    height: auto; /* allow description to grow */
+    padding: 1.5rem 0 1.5rem 1.5rem;
+    height: auto;
     width: 100%;
     border-radius: 1rem;
     cursor: pointer;
@@ -14321,65 +14650,58 @@ html {
     box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
 }
 
-/* Card Header */
+/* CARD SIZING RESPONSIVE */
+@media (max-width: 768px) {
+    .nlyticaltype-card { width: 45%; }
+}
+
+@media (max-width: 480px) {
+    .nlyticaltype-card { width: 100%; }
+}
+
+
+
+/* ================================
+   CARD HEADER
+================================ */
 .contentnlyticalcard {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
 }
 
-/* Text in Card Header */
+/* TITLE + NUMBER AREA */
 .card-text {
     display: flex;
     gap: 0.8rem;
     align-items: center;
 }
 
-
-
-
 .card-number {
     font-weight: 700;
-    font-size: 3rem; /* adjust as needed */
-    
-    /* Gradient text fill */
-  background: linear-gradient(181.39deg, rgba(2, 59, 226, 0.37) 23.73%, rgba(0, 161, 197, 0.01) 75.3%);
-    -webkit-background-clip: text; 
+    font-size: 3rem;
+    background: linear-gradient(181.39deg, rgba(2, 59, 226, 0.37) 23.73%, rgba(0, 161, 197, 0.01) 75.3%);
+    -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    
-    /* Red outline */
-    -webkit-text-stroke: 2px #023BE25E; /* stroke width and color */
-    
-    display: inline-block;
+    -webkit-text-stroke: 2px #023BE25E;
 }
-  
-
-
-
 
 .card-title {
     font-weight: 600;
     font-size: 1.2rem;
-    /* Gradient text color */
     background: linear-gradient(90.38deg, #023BE2 2.06%, #00A1C5 99.67%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    /* For Firefox */
-    background-clip: text;
     color: transparent;
     font-family: var(--font-body);
 }
 
 
-
-
-/* Search Icon Styling */
+/* SEARCH ICON */
 .search-image {
     background: linear-gradient(90.38deg, #023BE2 2.06%, #00A1C5 99.67%);
     padding: 0.6rem 0.8rem;
-/* top-left, top-right, bottom-right, bottom-left */
-border-radius: 0.75rem 0 0 0.75rem;
+    border-radius: 0.75rem 0 0 0.75rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -14390,61 +14712,16 @@ border-radius: 0.75rem 0 0 0.75rem;
     height: 1.2rem;
 }
 
-/* Card Description */
+/* DESCRIPTION */
 .nlyticalcarddes {
     font-family: var(--font-body);
     font-weight: 500;
     font-size: 1rem;
-    color: #555555;
+    color: #555;
     margin-top: 1rem;
     line-height: 1.5rem;
     padding-right: 1.5rem;
 }
-
-
-/* ---------------- Responsive ---------------- */
-
-@media(max-width: 1024px){
-    .nlyticaltype-container{
-        width: 85%;
-    }
-}
-
-@media(max-width: 768px){
-    .nlyticaltype-container{
-        width: 95%;
-        flex-direction: column;
-        gap: 2rem;
-    }
-
-    .nlyticaltype-center{
-        width: 100%;
-    }
-
-    .nlyticaltype-left,
-    .nlyticaltype-right{
-        width: 100%;
-        flex-direction: row;
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-
-    .nlyticaltype-card{
-        width: 45%;
-    }
-}
-
-@media(max-width: 480px){
-    .nlyticaltype-card{
-        width: 100%;
-    }
-
-    .nlyticaltype-image{
-        width: 80%;
-    }
-}
-
-
 
 
 
@@ -14474,123 +14751,150 @@ border-radius: 0.75rem 0 0 0.75rem;
 
 
 
-.summarybgimage {
-    display: flex;
-    justify-content: space-between; /* space between left, center, right */
-    align-items: flex-start;        /* align images at top */
-    width: 90%;
-    margin: 0 auto;
-    padding: 1rem;
-    gap: 1rem;                      /* spacing between columns */
-    
-}
 
-
-.summary-left{
+.summary-wrapper {
     position: relative;
-}
-
-
-.storeviewimage{
-    position: absolute;
-    right: -14rem;
-    top: -3rem;
-}
-
-
-.storeviewimage img {
-    width: 400px !important;
-}
-
-
-.quickbgwebp{
-    position: absolute;
-    bottom: -80%;
-    left: 30%;
-}
-
-
-.quickbgwebp img {
-    height: 12rem !important;
-    width: 500px !important;
-}
-
-
-
-.storeviewimage img{
-    width: 100px;
-}
-
-
-.conttactwebp {
-    margin-top: 3rem;
-    margin-left: -5rem;
-}
-
-.conttactwebp img {
-    width: 300px !important;
-    height: 300px !important;
-}
-
-/* Each column styling */
-.summary-left,
-.summary-center,
-.summary-right {
+    width: 100%;
+    max-width: 1600px;
+    margin: auto;
+    height: auto;
     display: flex;
-    flex-direction: column;         /* stack images vertically */
-    gap: 1rem;                      /* spacing between images */
-    text-align: center;
+    justify-content: center;
+    align-items: center;
+    padding: 5rem 0;
+    overflow: visible;
 }
 
-/* Width distribution */
-.summary-left,
-.summary-right {
-    flex: 1 1 20%;                  /* take 25% of space each, shrink if needed */
+/* CENTER IMAGE */
+.center-image img {
+    width: 70%;
+    display: block;
+    margin: auto;
+    z-index: 2;
 }
 
-.summary-center {
-    flex: 2 1 50%;                  /* bigger center, but responsive */
-}
-
-
-.summary-center{
-    width: 60%;
-    margin: 0 auto;
-    text-align: center;
-}
-
-.summary-right{
-    position: relative;
-    height: 100%;
-}
-
-
-.graphwebp {
+/* FLOATING BASE STYLE */
+.img-floating {
     position: absolute;
-    top: -12rem;
-    right: 10rem;
+    z-index: 3;
+    pointer-events: none;
+    object-fit: contain;
+    animation: floatY 4s ease-in-out infinite;
+}
+
+/* FLOATING ANIMATION */
+@keyframes floatY {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-18px); }
+    100% { transform: translateY(0); }
+}
+
+/* ---------- DEFAULT (Desktop 1280px - 1600px) ---------- */
+
+.img-top-left { width: 22vw; top: 5%; left: 4%; animation-duration: 3.5s; }
+.img-middle-left { width: 18vw; top: 32%; left: -4%; animation-duration: 5s; }
+.img-bottom-left { width: 30vw; bottom: 1%; left: -2%; animation-duration: 4.5s; }
+.img-top-right { width: 20vw; top: 5%; right: 1%; animation-duration: 3.8s; }
+.img-bottom-right { width: 20vw; bottom: 2%; right: 5%; animation-duration: 4.8s; }
+
+/* -------------------------------------------------------- */
+/* -------- EXTRA LARGE SCREENS (1600px+) ------------------ */
+/* -------------------------------------------------------- */
+@media (min-width:1600px) {
+    .center-image img { width: 60%; }
+
+    .img-floating {
+        transform: scale(1.1);
+    }
+
+    .img-top-left { width: 20vw; left: 6%; }
+    .img-middle-left { width: 16vw; left: -4%; top: 25%; }
+    .img-bottom-left { width: 40vw; left: -4%; bottom: -2.5%; }
+
+    .img-top-right { width: 18vw; right: 6%; top: 12%; }
+    .img-bottom-right { width: 20vw; right: 4%; bottom: -3%; }
 }
 
 
-.graphwebp img {
-    width: 400px !important;
-    height: 400px !important;
+/* -------------------------------------------------------- */
+/* -------- LARGE DESKTOPS (1280px - 1599px) -------------- */
+/* -------------------------------------------------------- */
+@media (min-width:1280px) and (max-width:1599px) {
+    .center-image img { width: 65%; }
+
+    .img-floating { transform: scale(1); }
+
+    .img-middle-left{
+        left: 4%;
+    }
+    .img-bottom-left{
+        left: 2%;
+    }
+
+    .img-top-right{
+        right: 10%;
+    }
 }
 
 
+/* -------------------------------------------------------- */
+/* -------- LAPTOP / MEDIUM SCREENS (1024px - 1279px) ----- */
+/* -------------------------------------------------------- */
+@media (max-width:1279px) {
+    .center-image img { width: 75%; }
 
-.typenlyticalwebp {
-    position: absolute;
-    bottom: 0;   /* stick to bottom */
-    right: 0;    /* stick to right */
+    .img-top-left { width: 24vw; }
+    .img-middle-left { width: 20vw; left: -8%; }
+    .img.bottom-left { width: 32vw; }
+
+    .img-top-right { width: 22vw; }
+    .img-bottom-right { width: 22vw; }
 }
 
-.typenlyticalwebp img {
-    width: 400px;
-    height: 400px;
+/* -------------------------------------------------------- */
+/* -------- TABLET (769px - 1023px) ----------------------- */
+/* -------------------------------------------------------- */
+@media(max-width:1023px){
+    .center-image img { width: 85%; }
+
+    .img-floating { width: 28vw; }
+
+    .img-middle-left { left: -12%; }
+    .img-bottom-left { left: -6%; }
 }
 
+/* -------------------------------------------------------- */
+/* -------- MOBILE (481px - 768px) ------------------------ */
+/* -------------------------------------------------------- */
+@media(max-width:768px){
+    .center-image img { width: 95%; }
 
+    .img-floating {
+        width: 30vw !important;
+        opacity: .95;
+    }
+
+    .img-middle-left { top: 45%; }
+
+    .img-top-left{
+        top: 20%;
+        left: -5%;
+    }
+}
+
+/* -------------------------------------------------------- */
+/* -------- SMALL MOBILE (<=480px) ------------------------ */
+/* -------------------------------------------------------- */
+@media(max-width:480px) {
+    .center-image img { width: 100%; }
+
+    .img-floating {
+        width: 40vw !important;
+        animation-duration: 6s;
+    }
+
+    .img-middle-left { display: none; }
+}
 
 
 
@@ -14622,7 +14926,7 @@ border-radius: 0.75rem 0 0 0.75rem;
 
 .nlyticalgemain{
 
-    padding: 1.5rem 0 1.5rem 1.5rem; /* top right bottom left */
+    /* padding: 1.5rem 0 1.5rem 1.5rem;  */
     height: auto; /* allow description to grow */
     width: 100%;
     border-radius: 1rem;
@@ -14631,6 +14935,12 @@ border-radius: 0.75rem 0 0 0.75rem;
     flex-direction: column;
     justify-content: space-between;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 3rem;
+}
+
+
+.appportfolio-content-web-nlytical-nlytical{
+    margin-top: 3rem;
 }
 
 
@@ -14740,6 +15050,8 @@ border-radius: 0.75rem 0 0 0.75rem;
     object-fit: cover;
 }
 
+
+
 .card-description {
     font-size: 1.2rem;
     font-weight: 400;
@@ -14761,27 +15073,67 @@ border-radius: 0.75rem 0 0 0.75rem;
 
 
 
-/* Extra-large screens: 67% width */
-@media (min-width: 1200px) {
+
+/* -------------------------------------------------------- */
+/* -------- EXTRA LARGE SCREENS (>=1600px) ---------------- */
+/* -------------------------------------------------------- */
+@media (min-width: 1600px) {
     .nlyticalgemaincardmain {
         width: 67%;
     }
 }
 
-/* Large screens and tablets: 90% width (override if needed) */
-@media (max-width: 1199px) {
+/* -------------------------------------------------------- */
+/* -------- LARGE DESKTOPS (1280px - 1599px) -------------- */
+/* -------------------------------------------------------- */
+@media (min-width: 1280px) and (max-width: 1599px) {
     .nlyticalgemaincardmain {
-        width: 90%;
+        width: 80%;
     }
 }
 
-/* Responsive: single column for mobile */
-@media (max-width: 768px) {
+/* -------------------------------------------------------- */
+/* -------- LAPTOP / MEDIUM SCREENS (1024px - 1279px) ----- */
+/* -------------------------------------------------------- */
+@media (min-width: 1024px) and (max-width: 1279px) {
     .nlyticalgemaincardmain {
+        width: 80%;
+    }
+}
+
+/* -------------------------------------------------------- */
+/* -------- TABLET (769px - 1023px) ----------------------- */
+/* -------------------------------------------------------- */
+@media (min-width: 769px) and (max-width: 1023px) {
+    .nlyticalgemaincardmain {
+        width: 85%;
+    }
+}
+
+/* -------------------------------------------------------- */
+/* -------- MOBILE (481px - 768px) ------------------------ */
+/* -------------------------------------------------------- */
+@media (min-width: 481px) and (max-width: 768px) {
+    .nlyticalgemaincardmain {
+        width: 95%;
+        display: grid;
         grid-template-columns: 1fr;
         gap: 20px;
     }
 }
+
+/* -------------------------------------------------------- */
+/* -------- SMALL MOBILE (<=480px) ------------------------ */
+/* -------------------------------------------------------- */
+@media (max-width: 480px) {
+    .nlyticalgemaincardmain {
+        width: 90%;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
 
 
 
@@ -14807,13 +15159,68 @@ border-radius: 0.75rem 0 0 0.75rem;
 
 
 
-
-
-/* LISTING CARD CONTAINER */
+/* Default (just in case) */
 .new-listingcard {
     width: 67%;
     margin: auto;
 }
+
+/* -------------------------------------------------------- */
+/* -------- EXTRA LARGE SCREENS (>=1600px) ---------------- */
+/* -------------------------------------------------------- */
+@media (min-width: 1600px) {
+    .new-listingcard {
+        width: 67%;
+    }
+}
+
+/* -------------------------------------------------------- */
+/* -------- LARGE DESKTOPS (1280px - 1599px) -------------- */
+/* -------------------------------------------------------- */
+@media (min-width: 1280px) and (max-width: 1599px) {
+    .new-listingcard {
+        width: 80%;
+    }
+}
+
+/* -------------------------------------------------------- */
+/* -------- LAPTOP / MEDIUM SCREENS (1024px - 1279px) ----- */
+/* -------------------------------------------------------- */
+@media (min-width: 1024px) and (max-width: 1279px) {
+    .new-listingcard {
+        width: 80%;
+    }
+}
+
+/* -------------------------------------------------------- */
+/* -------- TABLET (769px - 1023px) ----------------------- */
+/* -------------------------------------------------------- */
+@media (min-width: 769px) and (max-width: 1023px) {
+    .new-listingcard {
+        width: 85%;
+    }
+}
+
+/* -------------------------------------------------------- */
+/* -------- MOBILE (481px - 768px) ------------------------ */
+/* -------------------------------------------------------- */
+@media (min-width: 481px) and (max-width: 768px) {
+    .new-listingcard {
+        width: 95%;
+    }
+}
+
+/* -------------------------------------------------------- */
+/* -------- SMALL MOBILE (<=480px) ------------------------ */
+/* -------------------------------------------------------- */
+@media (max-width: 480px) {
+    .new-listingcard {
+        width: 100%;
+    }
+}
+
+
+
 
 /* MAIN CONTAINER */
 .new-placebirdcardmain {
@@ -14927,6 +15334,8 @@ border-radius: 0.75rem 0 0 0.75rem;
     z-index: 1;
 }
 
+
+
 /* HOVER EFFECTS: hide text, show image */
 .new-placebirdcardmaincard:hover .new-card-content {
     opacity: 0;            /* hide content */
@@ -14938,6 +15347,8 @@ border-radius: 0.75rem 0 0 0.75rem;
     transform: translate(-50%, -50%) scale(1);
     opacity: 1;
 }
+
+
 
 /* RESPONSIVE */
 @media (max-width: 768px) {
@@ -15044,46 +15455,141 @@ border-radius: 0.75rem 0 0 0.75rem;
 /* ======================================================================== NLYTICAL  App Development  ====================================================================== */
 /* ============================================================================================================================================================ */
 
-/* MAIN CONTAINER */
+
+/* ---------------- MAIN CONTAINER ---------------- */
 .secondsectioncarddesing {
-    width: 70%;                 
-    margin: auto;           
-    display: flex;               
-    gap: 1rem;                 
+    width: 70%;
+    margin: auto;
+    display: flex;
+    gap: 1rem;
     align-items: flex-start;
+    transition: 0.3s ease;
 }
 
-
-/* LEFT SECTION */
+/* ---------------- LEFT SIDE IMAGE ---------------- */
 .secondsectioncarddesingleft {
-    flex: 0 0 30%; /* Take 30% width, don't grow/shrink */
+    flex: 0 0 25%;
     border-radius: 16px;
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden; 
+    overflow: hidden;
+    
 }
 
-/* IMAGE INSIDE LEFT SECTION */
 .secondsectioncarddesingleft img {
     width: 100%;
     height: 560px;
     border-radius: 12px;
-    object-fit: contain; 
-    transition: transform 0.3s ease; 
 }
 
-
-
-/* RIGHT SECTION */
+/* ---------------- RIGHT GRID ---------------- */
 .secondsectioncarddesingright {
-    flex: 0 0 70%;             
-    display: grid;              
-    grid-template-columns: repeat(2, 1fr); 
-    gap: 1.5rem;                
+    flex: 0 0 75%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
 }
 
 
+/* -------------------------------------------------------- */
+/* -------- RESPONSIVE WIDTH BREAKPOINTS -------------------*/
+/* -------------------------------------------------------- */
+
+/* ≥1600px */
+@media (min-width: 1600px) {
+    .secondsectioncarddesing {
+        width: 67%;
+    }
+}
+
+/* 1280–1599px */
+@media (min-width: 1280px) and (max-width: 1599px) {
+    .secondsectioncarddesing {
+        width: 90%;
+    }
+}
+
+/* 1024–1279px */
+@media (min-width: 1024px) and (max-width: 1279px) {
+    .secondsectioncarddesing {
+        width: 70%;
+          flex-direction: column;
+        display: flex;
+        justify-content: center;
+    align-items: center;
+    }
+}
+
+/* 769–1023px → Tablet Mode */
+@media (min-width: 769px) and (max-width: 1023px) {
+    .secondsectioncarddesing {
+        width: 85%;
+        flex-direction: column;
+        gap: 2rem;
+          flex-direction: column;
+        display: flex;
+        justify-content: center;
+    align-items: center;
+    }
+
+    .secondsectioncarddesingleft,
+    .secondsectioncarddesingright {
+        width: 100%;
+        flex: unset;
+    }
+
+    .secondsectioncarddesingleft img {
+        height: unset;
+    }
+}
+
+/* 481–768px → Mobile Large */
+@media (min-width: 481px) and (max-width: 768px) {
+    .secondsectioncarddesing {
+        width: 95%;
+        flex-direction: column;
+        gap: 2rem;
+          flex-direction: column;
+        display: flex;
+        justify-content: center;
+    align-items: center;
+    }
+
+    .secondsectioncarddesingright {
+        grid-template-columns: 1fr;
+    }
+
+    .secondsectioncarddesingleft img {
+        height: 350px;
+    }
+}
+
+/* ≤480px → Mobile Small */
+@media (max-width: 480px) {
+    .secondsectioncarddesing {
+        width: 90%;
+        flex-direction: column;
+        display: flex;
+        justify-content: center;
+    align-items: center;
+    }
+
+    .secondsectioncarddesingright {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+   
+    .secondsectioncarddesingleft img {
+    height: 280px;
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+    object-fit: cover; /* optional – makes sure image looks good */
+}
+
+}
 
 
 
@@ -15095,14 +15601,37 @@ border-radius: 0.75rem 0 0 0.75rem;
 
 
 
+
+
 /* MAIN CONTAINER */
 .nlyticalchallengesmain {
-    width: 90%; /* use more width on smaller screens */
-    max-width: 1200px; /* limit max width */
+    width: 100%;
+    max-width: 1600px;
     margin: auto;
     display: flex;
-    flex-direction: column; /* stack left and right on mobile */
+    flex-direction: column;
     gap: 2rem;
+    transition: 0.3s ease;
+}
+
+/* CUSTOM RESPONSIVE WIDTHS */
+@media (min-width: 1600px) {
+    .nlyticalchallengesmain { width: 67%; }
+}
+@media (min-width: 1280px) and (max-width: 1599px) {
+    .nlyticalchallengesmain { width: 90%; }
+}
+@media (min-width: 1024px) and (max-width: 1279px) {
+    .nlyticalchallengesmain { width: 90%; }
+}
+@media (min-width: 769px) and (max-width: 1023px) {
+    .nlyticalchallengesmain { width: 95%; }
+}
+@media (min-width: 481px) and (max-width: 768px) {
+    .nlyticalchallengesmain { width: 95%; }
+}
+@media (max-width: 480px) {
+    .nlyticalchallengesmain { width: 95%; }
 }
 
 /* LEFT SIDE */
@@ -15113,36 +15642,31 @@ border-radius: 0.75rem 0 0 0.75rem;
 /* GRID CONTAINER FOR CARDS */
 .cards-grid {
     display: grid;
-    grid-template-columns: 1fr; /* 1 card per row by default */
+    grid-template-columns: 1fr;
     gap: 1.5rem;
 }
 
 @media screen and (min-width: 768px) {
     .cards-grid {
-        grid-template-columns: 1fr 1fr; /* 2 cards per row on tablet */
+        grid-template-columns: 1fr 1fr;
     }
 }
 
-@media screen and (min-width: 1024px) {
-    .cards-grid {
-        grid-template-columns: 1fr 1fr; /* 2 cards per row on desktop */
-    }
-}
-
-/* RIGHT SIDE - background image */
+/* RIGHT SIDE (BG IMAGE) */
 .nlyticalchallengesmainrightside {
     width: 100%;
-    min-height: 250px;
+    min-height: 260px;
     background-image: url('./images/mobilebgimagewithbg.webp');
     background-size: cover;
     background-position: center;
     border-radius: 12px;
-    margin-top: 2rem;
 }
 
+/* Desktop split layout */
 @media screen and (min-width: 1024px) {
     .nlyticalchallengesmain {
-        flex-direction: row; /* row on large screens */
+        flex-direction: row;
+        align-items: stretch;
     }
     .nlyticalchallengesmainleftside {
         flex: 0 0 70%;
@@ -15153,7 +15677,7 @@ border-radius: 0.75rem 0 0 0.75rem;
     }
 }
 
-/* CARD STYLING */
+/* CARD DESIGN */
 .nlyticalchallengesmainleftsidecardmain {
     background: rgba(2, 59, 226, 0.04);
     border-radius: 1rem;
@@ -15170,24 +15694,20 @@ border-radius: 0.75rem 0 0 0.75rem;
     box-shadow: 0 15px 25px rgba(0,0,0,0.15);
 }
 
-/* ICON AND NUMBER */
+/* ICON + NUMBER */
 .iconwithcontent {
     display: flex;
-    align-items: center;
-    gap: 1rem;
-    width: 100%;
     justify-content: space-between;
+    align-items: center;
 }
 
 .innercontentnuber {
-    border: none;
-    font-weight: 700;
     font-size: 2rem;
     background: linear-gradient(181.39deg, rgba(2, 59, 226, 0.37) 23.73%, rgba(0, 161, 197, 0.01) 75.3%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     -webkit-text-stroke: 1px rgba(2, 59, 226, 0.35);
-    cursor: default;
+    border: none;
 }
 
 .circlewithimage {
@@ -15207,45 +15727,582 @@ border-radius: 0.75rem 0 0 0.75rem;
     object-fit: contain;
 }
 
-/* CARD TEXT */
+/* TEXT STYLES */
 .nlyticalchallengesmainleftsidecardmainheading {
     font-weight: 600;
     font-size: 1.4rem;
     color: #0146AE;
-    margin: 0;
 }
 
 .nlyticalchallengesmainleftsidecardmaindes {
-    color: #555555;
-    font-weight: 400;
-    font-size: 0.95rem;
-    margin: 0;
-    line-height: 1.4rem;
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.5rem;
 }
 
-/* RESPONSIVE TEXT SIZES */
+/* RESPONSIVE TYPO SCALE */
 @media screen and (min-width: 768px) {
-    .innercontentnuber {
-        font-size: 2.2rem;
-    }
-    .nlyticalchallengesmainleftsidecardmainheading {
-        font-size: 1.5rem;
-    }
-    .nlyticalchallengesmainleftsidecardmaindes {
-        font-size: 1rem;
-        line-height: 1.5rem;
-    }
+    .innercontentnuber { font-size: 2.2rem; }
+    .nlyticalchallengesmainleftsidecardmainheading { font-size: 1.5rem; }
 }
 
 @media screen and (min-width: 1024px) {
-    .innercontentnuber {
-        font-size: 2.5rem;
+    .innercontentnuber { font-size: 2.5rem; }
+    .nlyticalchallengesmainleftsidecardmainheading { font-size: 1.6rem; }
+}
+
+
+
+
+
+.fade-in {
+  opacity: 1;
+  animation: fadeAnimation 0.4s ease forwards;
+}
+
+@keyframes fadeAnimation {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+
+
+/* ============================================================================================================================================================ */
+/* ======================================================================== NLYTICAL    APP DARK AND LIGHT MODE   ====================================================================== */
+/* ============================================================================================================================================================ */
+
+
+.theme-sectionsubtittle , .theme-sectionsubdescription{
+    color: white !important;
+}
+
+
+.blaclcolorheading{
+    color: black !important;
+}
+
+
+
+
+.theme-section {
+  width: 100%;
+  padding: 4rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: background 0.1s linear;
+  height: 820px;
+  box-sizing: border-box;
+  overflow: hidden;
+  background: linear-gradient(to bottom, #0146AE 30%, transparent 30%);
+  color: white;
+  font-size: 1.5rem;
+  user-select: none;
+  cursor: ns-resize;
+  margin-top: 3rem;
+}
+
+
+
+
+.theme-section-maincontent {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90%;
+}
+
+.theme-image-wrapper {
+  position: relative;
+  max-width: 800px;
+  width: 100%;
+  height: 100%;
+}
+
+.light-container,
+.dark-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.theme-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 12px;
+  transition: opacity 0.2s ease-in-out;
+}
+
+/* Initial opacity */
+.light-img { opacity: 1; }
+.dark-img { opacity: 1; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ============================================================================================================================================================ */
+/* ======================================================================== NLYTICAL     APP PORTFOLIO  HOVER CARD DESING   ====================================================================== */
+/* ============================================================================================================================================================ */
+
+
+
+/* Default (just in case) */
+.appportfolio-new-listingcard {
+    width: 67%;
+    margin: auto;
+}
+
+/* -------------------------------------------------------- */
+/* -------- EXTRA LARGE SCREENS (>=1600px) ---------------- */
+/* -------------------------------------------------------- */
+@media (min-width: 1600px) {
+    .appportfolio-new-listingcard {
+        width: 67%;
     }
-    .nlyticalchallengesmainleftsidecardmainheading {
-        font-size: 1.6rem;
+}
+
+/* -------------------------------------------------------- */
+/* -------- LARGE DESKTOPS (1280px - 1599px) -------------- */
+/* -------------------------------------------------------- */
+@media (min-width: 1280px) and (max-width: 1599px) {
+    .appportfolio-new-listingcard {
+        width: 80%;
     }
-    .nlyticalchallengesmainleftsidecardmaindes {
-        font-size: 1.05rem;
-        line-height: 1.6rem;
+}
+
+/* -------------------------------------------------------- */
+/* -------- LAPTOP / MEDIUM SCREENS (1024px - 1279px) ----- */
+/* -------------------------------------------------------- */
+@media (min-width: 1024px) and (max-width: 1279px) {
+    .appportfolio-new-listingcard {
+        width: 80%;
+    }
+}
+
+/* -------------------------------------------------------- */
+/* -------- TABLET (769px - 1023px) ----------------------- */
+/* -------------------------------------------------------- */
+@media (min-width: 769px) and (max-width: 1023px) {
+    .appportfolio-new-listingcard {
+        width: 85%;
+    }
+}
+
+/* -------------------------------------------------------- */
+/* -------- MOBILE (481px - 768px) ------------------------ */
+/* -------------------------------------------------------- */
+@media (min-width: 481px) and (max-width: 768px) {
+    .appportfolio-new-listingcard {
+        width: 95%;
+    }
+}
+
+/* -------------------------------------------------------- */
+/* -------- SMALL MOBILE (<=480px) ------------------------ */
+/* -------------------------------------------------------- */
+@media (max-width: 480px) {
+    .appportfolio-new-listingcard {
+        width: 100%;
+    }
+}
+
+
+/* MAIN CONTAINER */
+.appportfolio-new-placebirdcardmain {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;     
+    gap: 1.5rem;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+/* CARD */
+.appportfolio-new-placebirdcardmaincard {
+    background: rgba(255, 255, 255, 0.32);
+    backdrop-filter: blur(15px);
+    height: 450px;
+    width: 220px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    transition:
+        transform 0.4s ease,
+        width 0.6s cubic-bezier(0.23, 1, 0.32, 1),
+        background 0.4s ease;
+}
+
+/* PSEUDO ELEMENT FOR BG IMAGE */
+.appportfolio-new-placebirdcardmaincard::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-image: url('./images/bgimagesimple.webp'); 
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    border-radius: 1rem;
+    z-index: 0;
+}
+
+/* CONTENT INSIDE CARD */
+.appportfolio-new-placebirdcardmaincard > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* EXPANSION & BG IMAGE ON HOVER */
+.appportfolio-new-placebirdcardmaincard:hover {
+    width: 380px;
+    transform: translateY(-5px);
+    background: white;
+}
+
+.appportfolio-new-placebirdcardmaincard:hover::before {
+    opacity: 1;
+}
+
+/* TEXT CONTENT */
+.appportfolio-new-card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    transition:
+        opacity 0.4s ease,
+        transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+    z-index: 2;
+    color: white;
+}
+
+.appportfolio-new-numbercontent {
+    font-size: 18rem;
+    font-weight: bold;
+    background: linear-gradient(181.18deg, #FFFFFF -68.97%, rgba(255, 255, 255, 0) 98.99%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-right: -8rem;
+}
+
+.appportfolio-new-contentwhite {
+    font-size: 1.5rem;
+    font-weight: 500;
+    text-align: center;
+    font-family: var(--font-body);
+    color: white;
+    padding-top: 3rem;
+}
+.appportfolio-new-card-image {
+    position: absolute;
+    bottom: 0;              /* start from bottom */
+    left: 50%;
+       transform: translateX(-50%) scale(0.4); /* only horizontal centering */
+
+    width: auto;            /* keep aspect ratio */
+    height: 100%;           /* match parent height */
+    object-fit: cover;    /* maintain aspect ratio */
+    opacity: 0;
+   
+    z-index: 1;
+}
+
+
+/* HOVER EFFECTS: hide text, show image */
+.appportfolio-new-placebirdcardmaincard:hover .appportfolio-new-card-content {
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(0);
+}
+
+.appportfolio-new-placebirdcardmaincard:hover .appportfolio-new-card-image {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+    top:80%;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .appportfolio-new-placebirdcardmaincard {
+        width: 100%;
+    }
+
+    .appportfolio-new-placebirdcardmaincard:hover {
+        width: 100%;
+    }
+
+    .appportfolio-new-placebirdcardmaincard:hover .appportfolio-new-card-content {
+        opacity: 1;
+        transform: scale(1);
+        position: relative;
+        top: 0;
+        left: 0;
+        align-items: center;
+        text-align: center;
+        pointer-events: auto;
+        color: white;
+    }
+
+    .appportfolio-new-placebirdcardmaincard:hover .appportfolio-new-contentwhite {
+        color: white !important;
+    }
+}
+
+/* =========================
+   HIDE content-web-nlytical BY DEFAULT
+========================= */
+.appportfolio-content-web-nlytical {
+    position: absolute;
+    top: 10%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    pointer-events: none;
+    text-align: center;
+    z-index: 2;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* =========================
+   SHOW ON HOVER
+========================= */
+.appportfolio-new-placebirdcardmaincard:hover .appportfolio-content-web-nlytical {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+/* =========================
+   NUMBERSHADO COLOR (Gradient + Stroke)
+========================= */
+.appportfolio-numbershadocolor {
+    font-weight: 700;
+    font-size: 3rem;
+    background: linear-gradient(181.39deg, rgba(2, 59, 226, 0.37) 23.73%, rgba(0, 161, 197, 0.01) 75.3%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 2px rgba(2, 59, 226, 0.37);
+    display: inline-block;
+}
+
+/* =========================
+   LINEAR COLOR TEXT (Gradient)
+========================= */
+.appportfolio-linearcolorvalues {
+    font-weight: 600;
+    font-size: 1.2rem;
+    background: linear-gradient(90.38deg, #023BE2 2.06%, #00A1C5 99.67%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    font-family: var(--font-body);
+}
+
+
+
+
+
+
+
+/* ============================================================================================================================================================ */
+/* ======================================================================== NLYTICAL     APP PORTFOLIO  HOVER CARD DESING  SECOND  ====================================================================== */
+/* ============================================================================================================================================================ */
+
+
+
+.appmockup-nlyticalgemaincardmain {
+    width: 67%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+/* Responsive: single column for mobile */
+@media (max-width: 768px) {
+    .appmockup-nlyticalgemaincardmain {
+        grid-template-columns: 1fr;
+    }
+}
+
+.appmockup-nlyticalgemaincardmaincard {
+    background: #023BE20A;
+    border-radius: 1rem;
+    padding: 2rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    backdrop-filter: blur(4.8px);
+    overflow: hidden;
+}
+
+.appmockup-startimagevalues {
+    position: absolute;
+    right: -2.8rem;
+    top: 5%;
+}
+
+.appmockup-startimagevalues img {
+    width: 100px;
+}
+
+.appmockup-startimagevaluessecond {
+    position: absolute;
+    left: -3rem;
+    bottom: 4%;
+    z-index: 1200;
+}
+
+.appmockup-startimagevaluessecond img {
+    width: 100px;
+}
+
+.appmockup-nlyticalgemaincardmaincard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 25px rgba(0,0,0,0.1);
+    background: linear-gradient(
+        90.38deg, 
+        rgba(2, 59, 226, 0.7) 2.06%, 
+        rgba(0, 161, 197, 0.7) 99.67%
+    );
+    backdrop-filter: blur(8px);
+}
+
+.appmockup-card-number-title {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.appmockup-card-number {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #86b8ff;
+}
+
+.appmockup-card-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #023BE2;
+}
+
+.appmockup-card-image img {
+    width: 100%;              /* Image takes full width of container */
+    max-width: 500px;         /* Max width limit */
+height: 300px; /* or any fixed height */
+    border-radius: 0.75rem;   /* Rounded corners */
+    margin-bottom: 1.5rem;    
+    display: block;           /* Remove inline spacing issues */
+    object-fit: contain;      /* Keep entire image visible without cropping */
+    object-position: center;  /* Center the image in the container */
+}
+
+
+.appmockup-card-description {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #555555;
+    line-height: 1.6;
+    font-family: var(--font-body);
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+/* Change text color on hover */
+.appmockup-nlyticalgemaincardmaincard:hover .appmockup-card-number,
+.appmockup-nlyticalgemaincardmaincard:hover .appmockup-card-title,
+.appmockup-nlyticalgemaincardmaincard:hover .appmockup-card-description {
+    color: white !important;
+}
+
+/* Media Queries */
+@media (min-width: 1600px) {
+    .appmockup-nlyticalgemaincardmain { width: 67%; }
+}
+
+@media (min-width: 1280px) and (max-width: 1599px) {
+    .appmockup-nlyticalgemaincardmain { width: 80%; }
+}
+
+@media (min-width: 1024px) and (max-width: 1279px) {
+    .appmockup-nlyticalgemaincardmain { width: 80%; }
+}
+
+@media (min-width: 769px) and (max-width: 1023px) {
+    .appmockup-nlyticalgemaincardmain { width: 85%; }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+    .appmockup-nlyticalgemaincardmain {
+        width: 95%;
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .appmockup-nlyticalgemaincardmain {
+        width: 90%;
+        grid-template-columns: 1fr;
+        gap: 20px;
     }
 }
