@@ -16613,12 +16613,12 @@ height: 300px; /* or any fixed height */
 -------------------------------- */
 @media (min-width: 769px) and (max-width: 1023px) {
     .partnewshipfisrtsection {
-        height: 420px;
+        height: 520px;
         padding: 70px 30px;
         background-position: center;
     }
     .partnewshipfisrtsectioninnnercontent {
-        width: 70%;
+        width: 90%;
         gap: 30px;
     }
     .partnewshipfisrtsectioninnnercontentheading {
@@ -16677,7 +16677,7 @@ height: 300px; /* or any fixed height */
         font-size: 90px;
     }
     .partnewshipfisrtsectioninnnercontentheadingsub {
-        font-size: 28px;
+        font-size: 25px;
     }
 }
 
@@ -16735,19 +16735,19 @@ height: 300px; /* or any fixed height */
     width: 50%;
     background: #eff2ff;
     border-radius: 1rem;
-    padding: 30px;
+    padding: 35px 30px;
     display: flex;
-    align-items: center;      /* vertical center */
-    justify-content: center;  /* horizontal center */
+    align-items: center;
+    justify-content: center;
     text-align: center;
 }
 
 .actionoverwordsectioninnenrcontentcenter p {
-     font-family: var(--font-body);
-     color: #000;
-     font-size: 20px;
-     font-weight: 400;
-     line-height: 1.6;
+    font-family: var(--font-body);
+    color: #000;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.6;
 }
 
 /* ------------ RIGHT COLUMN ------------ */
@@ -16762,56 +16762,109 @@ height: 300px; /* or any fixed height */
 
 /* ------------ CARDS ------------ */
 .action-card {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  padding: 12px;
-  border-radius: 1rem;
-  background: var(--gradient-blue);
-  width: 100%;
-  cursor: pointer;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-  transition: 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 14px;
+    border-radius: 1rem;
+    background: var(--gradient-blue);
+    width: 100%;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transition: 0.3s ease;
 }
 
 .action-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.15);
 }
 
 .action-card-img img {
-  width: 50px;
-  height: 50px;
-  object-fit: contain;
+    width: 55px;
+    height: 55px;
+    object-fit: contain;
 }
 
 .action-number {
-  font-size: 50px;
-  font-weight: 700;
-  color: #fff;
-  font-family: var(--font-heading);
+    font-size: 54px;
+    font-weight: 700;
+    color: #fff;
+    font-family: var(--font-heading);
 }
 
 .action-text {
-  font-size: 18px;
-  font-weight: 500;
-  color: #f0f4f9;
+    font-size: 18px;
+    font-weight: 500;
+    color: #f0f4f9;
 }
 
-/* ------------ FULL RESPONSIVE ------------ */
 
-/* TABLET RESPONSIVE */
-@media (max-width: 1024px) {
+
+/* ======================================================
+     EXTRA LARGE SCREENS 1600px ↓ 
+====================================================== */
+@media (max-width: 1600px) {
+    .actionoverwordsectioninnenrcontent {
+        width: 80%;
+    }
+}
+
+/* ======================================================
+     LAPTOP / LARGE SCREENS 1200px ↓ 
+====================================================== */
+@media (max-width: 1200px) {
     .actionoverwordsectioninnenrcontent {
         width: 85%;
+        gap: 15px;
+    }
+
+    .action-number {
+        font-size: 48px;
+    }
+
+    .action-card-img img {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+/* ======================================================
+     TABLETS 1024px ↓ (iPad Landscape)
+====================================================== */
+@media (max-width: 1024px) {
+    .actionoverwordsectioninnenrcontent {
+      flex-direction: column;
+        width: 90%;
+        align-items: center;
+        text-align: center;
+        gap: 30px;
     }
 
     .actionoverwordsectioninnenrcontentcenter p {
-        font-size: 20px;
+        font-size: 19px;
+    }
+
+    .actionoverwordsectioninnenrcontentleftside , .actionoverwordsectioninnenrcontentrightside{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    /* Slightly reduce widths for balance */
+    .actionoverwordsectioninnenrcontentleftside,
+    .actionoverwordsectioninnenrcontentrightside {
+        width: 100%;
+    }
+
+    .actionoverwordsectioninnenrcontentcenter {
+        width: 100%;
     }
 }
 
-/* MOBILE RESPONSIVE */
+/* ======================================================
+     TABLETS 768px ↓ (iPad Portrait)
+====================================================== */
 @media (max-width: 768px) {
     .actionoverwordsectioninnenrcontent {
         flex-direction: column;
@@ -16820,15 +16873,17 @@ height: 300px; /* or any fixed height */
         text-align: center;
     }
 
-    /* full width for all columns */
+    /* Full width columns */
     .actionoverwordsectioninnenrcontentleftside,
     .actionoverwordsectioninnenrcontentrightside,
     .actionoverwordsectioninnenrcontentcenter {
         width: 100%;
         align-items: center;
+        display: flex;
+        flex-direction: column;
     }
 
-    /* center right cards instead of aligning right */
+    /* Center cards instead of right side */
     .actionoverwordsectioninnenrcontentrightside {
         align-items: center;
         justify-content: flex-start;
@@ -16843,10 +16898,12 @@ height: 300px; /* or any fixed height */
     }
 }
 
-/* SMALL MOBILE (EXTRA SAFE LAYOUT) */
+/* ======================================================
+     MOBILE 480px ↓ 
+====================================================== */
 @media (max-width: 480px) {
     .action-number {
-        font-size: 36px;
+        font-size: 38px;
     }
 
     .action-card-img img {
@@ -16857,18 +16914,37 @@ height: 300px; /* or any fixed height */
     .action-text {
         font-size: 16px;
     }
-}
 
+    .action-card {
+        padding: 12px;
+    }
 
+    .actionoverwordsectioninnenrcontentcenter {
+        padding: 25px 20px;
+    }
 
-/* For screens 1506px and below */
-@media (max-width: 1600px) {
-    .actionoverwordsectioninnenrcontent {
-        width: 87% !important;
+    .actionoverwordsectioninnenrcontentcenter p {
+        font-size: 17px;
     }
 }
 
+/* ======================================================
+     EXTRA SMALL / 360px ↓  
+====================================================== */
+@media (max-width: 360px) {
+    .action-number {
+        font-size: 32px;
+    }
 
+    .action-card-img img {
+        width: 45px;
+        height: 45px;
+    }
+
+    .action-text {
+        font-size: 15px;
+    }
+}
 
 
 
@@ -16969,47 +17045,54 @@ height: 300px; /* or any fixed height */
 }
 
 
-/* MAIN CARD BG */
+
+/* =====================================================
+   MAIN CARD BG
+===================================================== */
 .partner-card,
 .partner-card-reverse {
     width: 100%;
-    background: linear-gradient(90deg, rgba(2, 60, 226, 0) 0%, rgba(2, 103, 214, 0.06) 53.65%, rgba(1, 145, 202, 0) 100%);
+    background: linear-gradient(
+        90deg,
+        rgba(2, 60, 226, 0) 0%,
+        rgba(2, 103, 214, 0.06) 55%,
+        rgba(1, 145, 202, 0) 100%
+    );
+    padding: 20px 0;
 }
 
 
-/* INNER CARD */
+/* =====================================================
+   INNER CARD
+===================================================== */
 .partner-card-inner {
     width: 67%;
     margin: auto;
-    padding: 20px;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
     gap: 30px;
+    padding: 25px;
     border-radius: 14px;
 }
 
-
-
 @media (max-width: 1600px) {
     .partner-card-inner {
-        width: 78% !important;
+        width: 78%;
     }
 }
 
 
-/* LEFT SIDE */
+/* =====================================================
+   LEFT SECTION (IMAGE + CONTENT)
+===================================================== */
 .partner-card__left {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     gap: 25px;
     width: 75%;
-    justify-content: center;
-    align-items: center;
 }
 
-
-/* IMAGE */
 .partner-card__image-wrapper {
     width: 280px;
     height: 160px;
@@ -17023,8 +17106,6 @@ height: 300px; /* or any fixed height */
     object-fit: cover;
 }
 
-
-/* CONTENT */
 .partner-card__content {
     display: flex;
     flex-direction: column;
@@ -17069,7 +17150,9 @@ height: 300px; /* or any fixed height */
 }
 
 
-/* RIGHT SIDE */
+/* =====================================================
+   RIGHT SECTION (NUMBER)
+===================================================== */
 .partner-card__right {
     width: 25%;
     display: flex;
@@ -17083,91 +17166,83 @@ height: 300px; /* or any fixed height */
     background: var(--gradient-blue);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-
-    line-height: 1;          /* FIX EXTRA HEIGHT */
-    display: inline-block;   /* PREVENT EXTRA SPACING */
+    line-height: 1;
+    display: inline-block;
 }
 
 
 
-/* ============================================= */
-/* RESPONSIVE MEDIA QUERIES */
-/* ============================================= */
+/* ===========================================================
+   FINAL RESPONSIVE VERSION
+   iPad (1024px ↓) behaves EXACTLY like MOBILE
+=========================================================== */
 
+/* MOBILE + IPAD SAME LAYOUT (1024px ↓) */
 
-/* TABLET (991px ↓) */
-@media (max-width: 991px) {
-
-    .partner-card-inner {
-        width: 85%;
-        padding: 25px;
-        gap: 20px;
-    }
-
-    .partner-card__image-wrapper {
-        width: 230px;
-        height: 130px;
-    }
-
-    .partner-card__title {
-        font-size: 24px;
-    }
-
-    .partner-card__description {
-        font-size: 17px;
-        width: 100%;
-    }
-
-    .partner-card__count {
-        font-size: 120px;
-    }
-}
-
-
-/* MOBILE REVERSE ORDER (767px ↓) */
-@media (max-width: 767px) {
+@media (max-width: 1024px) {
 
     .partner-card-inner {
-        display: flex;
-        flex-direction: column-reverse;   /* reverse the order */
+        flex-direction: column;
         align-items: center;
         text-align: center;
+        gap: 25px;
+        width: 90%;
     }
 
+    /* NUMBER FIRST */
     .partner-card__right {
+        order: 1;
         width: 100%;
-        display: flex;
-        justify-content: center;          /* center number */
+        justify-content: center;
     }
 
     .partner-card__count {
         font-size: 90px;
-        line-height: 1;
     }
 
-    .partner-card__left {
+    /* IMAGE SECOND */
+    .partner-card__image-wrapper {
+        order: 2;
         width: 100%;
-        align-items: flex-start;
-        text-align: left;
+        height: 200px;
+    }
+
+    /* CONTENT THIRD */
+    .partner-card__left {
+        order: 3;
+        width: 100%;
         flex-direction: column;
+        align-items: center;
+    }
+
+    .partner-card__content {
+        text-align: left;
+        align-items: flex-start;
+        order: 4;
+        width: 95%;
+    }
+
+    /* DESCRIPTION MUST BE LAST */
+    .partner-card__description {
+        order: 99;   /* Always last */
+        width: 95%;
+        text-align: left;
     }
 }
 
 
 
-/* SMALL MOBILE (480px ↓) */
+/* ==========================================
+   SMALL MOBILE (480px ↓)
+========================================== */
 @media (max-width: 480px) {
 
     .partner-card-inner {
-        padding-top: 18px;
-        padding-bottom: 18px;
-        padding-left: 1px;
-        padding-right: 1px;
+        padding: 15px 5px;
     }
 
     .partner-card__image-wrapper {
-        height: 160px;
-        width: 100%;
+        height: 150px;
     }
 
     .partner-card__title {
@@ -17187,67 +17262,712 @@ height: 300px; /* or any fixed height */
 
 
 
-/*  partner-card-revercard-d   */
+/*   New Card Desing Reverse card  */
 
 
-.partner-card-revercard-d  , .partner-card-reverse-d{
+/* ===========================
+   MAIN CARD WRAPPER
+=========================== */
+.partner-card-newcard {
     width: 100%;
-    background: linear-gradient(90deg, rgba(2, 60, 226, 0) 0%, rgba(2, 103, 214, 0.06) 53.65%, rgba(1, 145, 202, 0) 100%);
+    padding: 25px;
+    border-radius: 16px;
+    background: linear-gradient(
+        270deg,
+        rgba(2, 60, 226, 0) 0%,
+        rgba(2, 103, 214, 0.08) 50%,
+        rgba(1, 145, 202, 0) 100%
+    );
 }
 
 
-
-
-
-
-
-
-.carddetailpatner{
-    width: 60%;
+/* ===========================
+   FLEX LAYOUT (IMAGE — CONTENT — NUMBER)
+=========================== */
+.partner-card-inner-newcard {
+    width: 67%;
     margin: auto;
     display: flex;
+    align-items: center;
     justify-content: space-between;
     gap: 30px;
-    margin-top: 3rem;
-  
+}
+
+
+.globallinedot{
+    display: -webkit-box;
+    -webkit-line-clamp: 3;      /* limit to 3 lines */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+/* ===========================
+   RIGHT SIDE NUMBER
+=========================== */
+.partner-card-number {
+    display: flex;
+    align-items: center;
+}
+
+.partner-card__count-newcard {
+    font-family: var(--font-heading);
+    font-size: 150px;
+    font-weight: 800;
+    background: var(--gradient-blue);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 1;
+}
+
+
+/* ===========================
+   CONTENT MIDDLE
+=========================== */
+.partner-card-content-wrapper {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.partner-card__content_rightside {
+    max-width: 620px;
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+/* TITLE ROW */
+.partner-card__title-row_rightside {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 12px;
+}
+
+
+/* ICON CIRCLE */
+.partner-card__circle_rightside {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: var(--gradient-blue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.partner-card__circle_rightside img {
+    width: 24px;
+}
+
+
+/* TITLE */
+.partner-card__title_rightside {
+    font-family: var(--font-heading);
+    font-size: 28px;
+    font-weight: 600;
+    background: var(--gradient-blue);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* DESCRIPTION */
+.partner-card__description_rightside {
+    font-family: var(--font-body);
+    font-size: 18px;
+    color: #555;
+    line-height: 1.5;
+}
+
+
+/* ===========================
+   IMAGE LEFT SIDE
+=========================== */
+.partner-card__image-wrapper_rightside {
+    width: 180px;
+    height: 160px;
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+.partner-card__image_rightside {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* ===========================
+   ★ RESPONSIVE DESIGN ★
+=========================== */
+
+/* ---------- TABLET (1024px) ---------- */
+@media (max-width: 1024px) {
+    .partner-card-inner-newcard {
+        width: 90% !important;
+        gap: 20px;
+    }
+ 
+    .partner-card__count-newcard {
+        font-size: 110px;
+    }
+
+    .partner-card__image-wrapper_rightside {
+        width: 150px;
+        height: 130px;
+    }
+}
+
+/* ---------- MOBILE (768px) ---------- */
+/* FINAL: NUMBER → IMAGE → CONTENT */
+@media (max-width: 768px) {
+
+    .partner-card-inner-newcard {
+        flex-direction: column;
+        text-align: center;
+        gap: 25px;
+    }
+
+    /* NUMBER FIRST */
+    .partner-card-number {
+        order: 1;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .partner-card__count-newcard {
+        font-size: 80px;
+    }
+
+    /* IMAGE SECOND */
+    .partner-card__image-wrapper_rightside {
+        order: 2;
+        width: 100%;
+        height: 180px;
+        margin: auto;
+    }
+
+    /* CONTENT THIRD */
+    .partner-card-content-wrapper {
+        order: 3;
+        width: 100%;
+    }
+
+    .partner-card__content_rightside {
+               text-align: left;
+        align-items: start;
+    }
+
+    .partner-card__title-row_rightside {
+        justify-content: center;
+    }
+}
+
+/* ---------- SMALL MOBILE (480px) ---------- */
+@media (max-width: 480px) {
+    .partner-card-newcard {
+        padding: 18px;
+    }
+
+    .partner-card__count-newcard {
+        font-size: 65px;
+    }
+
+    .partner-card__title_rightside {
+        font-size: 20px;
+    }
+
+    .partner-card__description_rightside {
+        font-size: 15px;
+    }
 }
 
 
 
-.aws-card {
-    width: 350px;
-    background: #ffffff;
-    border-radius: 20px;
-    padding: 40px 35px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+@media (max-width: 1600px) {
+    .partner-card-inner-newcard {
+        width: 78%;
+    }
+}
+
+
+
+
+
+
+
+
+
+/* ==========================
+   SLIDER CONTAINER
+========================== */
+.Benefits-Primocys-slider {
+    width: 90%;
+    max-width: 1300px;
+    margin: 3rem auto;
+    padding: 90px 40px 90px 40px; /* top right bottom left */
+    background: rgba(2, 59, 226, 0.04);
+    border-radius: 14px;
+    position: relative;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    backdrop-filter: blur(4.8px);
+}
+
+/* ==========================
+   SLIDER ARROWS
+========================== */
+.arrowlefticon,
+.arrowrighticon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.arrowlefticon {
+    left: -8px;
+}
+
+.arrowrighticon {
+    right: -15px;
+
+}
+
+
+
+
+/* Tablet */
+@media (min-width: 640px) {
+    .arrowlefticon {
+        left: 10px;
+    }
+    .arrowrighticon {
+        right: 10px;
+    }
+}
+
+/* Laptop / Medium screens */
+@media (min-width: 1024px) {
+    .arrowlefticon {
+        left: 15px;
+    }
+    .arrowrighticon {
+        right: 15px;
+    }
+}
+
+/* Large / Desktop */
+@media (min-width: 1280px) {
+    .arrowlefticon {
+        left: 8px;
+    }
+    .arrowrighticon {
+        right: -10px;
+    }
+}
+
+/* Extra Large screens */
+@media (min-width: 1536px) {
+    .arrowlefticon {
+        left: 5px;
+    }
+    .arrowrighticon {
+        right: -15px;
+    }
+}
+
+.arrowlefticon img,
+.arrowrighticon img {
+    width: 90%;
+    height: 90%;
+    object-fit: contain;
+}
+
+/* ==========================
+   CARD OUTER GRADIENT BORDER
+========================== */
+.Benefits-Primocys-slider-card {
+    height: 280px;
+    width: 100%;
+    border-radius: 1rem;
+    background: linear-gradient(90deg, #023BE2, #00A1C5);
+    padding: 2px; /* small padding for gradient border */
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.Benefits-Primocys-slider-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 25px rgba(0,0,0,0.1);
+}
+
+/* ==========================
+   INNER WHITE CARD
+========================== */
+.Benefits-Primocys-slider-card-inner {
+    background: #fff;
+    height: 100%;
+    border-radius: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
     text-align: center;
-    transition: all 0.3s ease;
+    padding: 50px 20px 20px 20px; /* top padding for circle */
+    position: relative;
 }
 
-.aws-card:hover {
+/* ==========================
+   CIRCLE IMAGE
+========================== */
+.Benefitscardcircle {
+    position: absolute;
+    top: -35px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: linear-gradient(90deg, #023be2, #00a1c5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3px;
+}
+
+.circle-border {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.circle-border img {
+    width: 60%;
+    height: 60%;
+    object-fit: contain;
+}
+
+/* ==========================
+   HEADING
+========================== */
+.heading-image-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.consultingheading {
+    font-family: var(--font-heading);
+    font-size: 24px;
+    font-weight: 600;
+    background: var(--gradient-blue);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 5px;
+}
+
+/* UNDERLINE FOR HEADING */
+.heading-underline {
+    width: 50%;
+    height: 4px;
+    background: linear-gradient(90deg, #023BE2, #00A1C5);
+    border-radius: 2px;
+}
+
+/* ==========================
+   DESCRIPTION
+========================== */
+.consultingdescription {
+    font-family: var(--font-body);
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.55;
+    color: #555555;
+    margin-top: 15px;
+}
+
+/* ==========================
+   RESPONSIVE
+========================== */
+@media screen and (max-width: 1024px) {
+    .Benefits-Primocys-slider {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+
+    .consultingheading {
+        font-size: 22px;
+    }
+
+    .Benefits-Primocys-slider-card {
+        height: 260px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .Benefits-Primocys-slider {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        padding: 50px 20px 50px 20px;
+    }
+
+    .Benefits-Primocys-slider-card {
+        height: 240px;
+    }
+
+    .consultingheading {
+        font-size: 20px;
+    }
+
+    .heading-underline {
+        width: 60%;
+    }
+}
+/* ==========================
+   SLIDER TRACK
+========================== */
+.Benefits-Primocys-slider-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    gap: 20px;
+    will-change: transform;
+}
+
+/* Hide scrollbar */
+.Benefits-Primocys-slider-track::-webkit-scrollbar {
+    display: none;
+}
+.Benefits-Primocys-slider-track {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+/* ==========================
+   CARD WIDTH RESPONSIVE
+========================== */
+.Benefits-Primocys-slider-card {
+    flex: 0 0 100%; /* default mobile: 1 card */
+    max-width: 100%;
+}
+
+@media screen and (min-width: 640px) { /* iPad / medium */
+    .Benefits-Primocys-slider-card {
+        flex: 0 0 50%; /* 2 cards */
+        max-width: 50%;
+    }
+}
+
+@media screen and (min-width: 1024px) { /* Laptop / large */
+    .Benefits-Primocys-slider-card {
+        flex: 0 0 33.3333%; /* 3 cards */
+        max-width: 33.3333%;
+    }
+}
+
+@media screen and (min-width: 1280px) { /* Extra large */
+    .Benefits-Primocys-slider-card {
+        flex: 0 0 24.2%; /* 4 cards */
+        max-width: 24.2%;
+    }
+}
+
+
+.partnershipsbtn{
+    margin: 1rem auto 12px !important;
+    height: 60px !important;
+    padding: 0 2.5rem !important;
+}
+
+
+
+
+
+
+
+
+
+
+/*  TechnovationPartnership  last css */
+
+.TechnovationPartnership{
+    background: #023BE205;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+
+
+
+/* ============================
+   MAIN WRAPPER
+============================ */
+.TechnovationPartnershipmain {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+}
+
+
+/* ============================
+   CARD DEFAULT (XL & LG)
+============================ */
+.TechnovationPartnershipmaincard {
+    flex: 1 1 calc(33.33% - 2rem);
+    max-width: calc(33.33% - 2rem);
+    height: 400px;
+    border-radius: 20px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 25px;
+    background: linear-gradient(-8deg, #f5f7ff 56%, #ffffff 56%);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    transition: all .3s ease;
+    cursor: pointer;
+}
+
+/* Hover */
+.TechnovationPartnershipmaincard:hover {
     transform: translateY(-5px);
     box-shadow: 0 15px 35px rgba(0,0,0,0.12);
 }
 
-.aws-card-logo img {
-    width: 140px;
+
+/* ============================
+   INNER CONTENT
+============================ */
+.partner-logo {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.partner-logo img {
+    width: 200px;
+    height: 80px;
     object-fit: contain;
-    display: block;
-    margin: 0 auto 20px;
 }
 
-.aws-card-title {
-    font-size: 24px;
-    font-weight: 700;
+.TechnovationPartnershipmaincardcontent {
+    height: 50%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+
+/* Heading */
+.TechnovationPartnershipmaincardheading {
+    font-size: 1.6rem;
+    font-weight: 600;
     color: #000;
-    margin-bottom: 15px;
-    font-family: var(--font-heading);
 }
 
-.aws-card-text {
-    font-size: 16px;
+/* Description */
+.TechnovationPartnershipmaincarddescription {
+    font-size: 1rem;
+    color: #515151;
     line-height: 1.6;
-    color: #555;
-    font-family: var(--font-body)
 }
 
+
+/* ============================
+   DIAGONAL BACKGROUND CARDS
+============================ */
+.diagonalcardfirst {
+    background: linear-gradient(9deg, #f5f7ff 56%, #ffffff 56%);
+}
+
+.diagonalcard {
+    background: linear-gradient(11deg, #f5f7ff 56%, #ffffff 56%);
+}
+
+.diagonal-card {
+    background: linear-gradient(170deg, #f5f7ff 45%, #ffffff 45%);
+}
+
+
+/* ============================
+   RESPONSIVE BREAKPOINTS
+============================ */
+
+/* XXL Screens (≥1600px) - 3 cards centered */
+@media (min-width: 1600px) {
+    .TechnovationPartnershipmain {
+        width: 67%;
+    }
+}
+
+/* Medium Screens - Tablets (768px–1023px) → 2 Cards */
+@media (max-width: 1023px) {
+    .TechnovationPartnershipmaincard {
+        flex: 1 1 calc(50% - 2rem);
+        max-width: calc(50% - 2rem);
+        height: 380px;
+    }
+}
+
+/* Mobile Screens (<768px) → 1 Card */
+@media (max-width: 768px) {
+    .TechnovationPartnershipmain {
+        width: 90%;
+    }
+
+    .TechnovationPartnershipmaincard {
+        flex: 1 1 100%;
+        max-width: 100%;
+        height: 300px;
+        padding: 25px;
+    }
+
+    .partner-logo img {
+        width: 150px;
+        height: 65px;
+    }
+
+    .TechnovationPartnershipmaincardheading {
+        font-size: 1.4rem;
+    }
+
+    .TechnovationPartnershipmaincarddescription {
+        font-size: .95rem;
+    }
+}
+
+/* Extra Small Mobile (<480px) */
+@media (max-width: 480px) {
+    .TechnovationPartnershipmaincard {
+        padding: 20px;
+    }
+
+    .partner-logo img {
+        width: 191px;
+        height: 55px;
+    }
+
+    .TechnovationPartnershipmaincardheading {
+        font-size: 1.2rem;
+    }
+}
