@@ -1814,6 +1814,7 @@ body {
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
 }
 
+
 /* Mobile & iPad (1024px and below) */
 @media (max-width: 1024px) {
     .tabs-sidebar {
@@ -1826,7 +1827,13 @@ body {
         /* prevents items from wrapping */
         flex-wrap: nowrap;
     }
+
+     .tab-item.active {
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
+
 
 /* =================== Tabs Detail =================== */
 .tabs-sidebar_detail {
@@ -2696,11 +2703,13 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 5rem 0;       /* top-bottom padding 5rem, left-right 0 */
     width: 100%;
     position: relative;
     height: auto;          /* height adjusts according to content */
+    padding-top: 3rem;
     box-sizing: border-box; /* ensures padding is included in height */
+   
+
 }
 
 
@@ -2891,6 +2900,7 @@ body {
 
     .showcase-section {
         align-items: start;
+         padding-bottom: 6rem;
     }
 
     .showcase-card-left {
@@ -6600,7 +6610,7 @@ label {
 
 @media (max-width: 480px) {
     .Mobile_App_Development_Services {
-        padding: 40px 0;
+        padding: 0px 0;
         /* Reduce section padding on very small screens */
     }
 
@@ -11297,15 +11307,42 @@ html {
 /* ======================================================================== <<<< HIRE PAGE certifiedhiredeveloper >>>> ====================================================================== */
 /* ============================================================================================================================================================ */
 
+
 .certifiedhiredeveloper {
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 3rem;
-    margin-bottom: 3rem;
     flex-direction: column;
+    margin-top: 3rem; /* Default top margin */
+    margin-bottom: 3rem; /* Default bottom margin */
 }
+
+/* Small devices (phones, <768px) */
+@media (max-width: 767px) {
+    .certifiedhiredeveloper {
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+}
+
+/* Medium devices (tablets, 768px - 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .certifiedhiredeveloper {
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+    }
+}
+
+/* Large devices (desktops, >1024px) */
+@media (min-width: 1025px) {
+    .certifiedhiredeveloper {
+        margin-top: 4rem;
+        margin-bottom: 4rem;
+    }
+}
+
+
 
 .certifiedhiredeveloperHeading {
     width: 69% !important;
@@ -11324,14 +11361,14 @@ html {
         width: 100% !important;
         align-items: flex-start !important; /* content start from LEFT */
         text-align: left !important; /* text left */
-        padding: 0 16px; /* add small side padding */
+        padding: 0 9px; /* add small side padding */
     }
 }
 
 
 .certifiedhiredevelopermain {
     width: 70%;                 /* Default width for large screens */
-    margin: 3rem auto 0 auto;   /* Center horizontally, top margin 3rem */
+    margin: 1rem auto 0 auto;   /* Center horizontally, top margin 3rem */
     display: flex;
     gap: 20px;                  /* Gap between child elements */
     flex-direction: row;         /* Side by side on large screens */
@@ -11516,7 +11553,7 @@ html {
 /* For screens 1506px and below */
 @media (max-width: 1600px) {
     .HireCustomeDeveloperAppDevelopemtmaincontent {
-        width: 87% !important;
+        width: 87%;
     }
 }
 
@@ -11526,7 +11563,7 @@ html {
     background: linear-gradient(90deg, #023be2, #00a1c5);
     padding: 2px;
     border-radius: 1rem;
-    margin-top: 3rem;
+    margin-top: 2rem;
 }
 
 /* INNER CARD CONTENT */
@@ -11737,7 +11774,8 @@ html {
 /* For screens 1506px and below */
 @media (max-width: 1600px) {
     .hire-banner-section {
-        width: 87% !important;
+        width: 87% ;
+
     }
 }
 
@@ -11792,7 +11830,7 @@ html {
 /* MOBILE RESPONSIVE */
 @media (max-width: 480px) {
     .hire-banner-section {
-        width: 90%;
+        width: 95%;
         height: auto;
         padding: 40px 20px;
     }
@@ -11840,7 +11878,7 @@ html {
 /* For screens 1506px and below */
 @media (max-width: 1600px) {
     .hireskillscardmain {
-        width: 87% !important;
+        width: 87%;
     }
 }
 
@@ -12256,6 +12294,285 @@ html {
     }
 }
 
+
+
+
+
+/* ============================================================================================================================================================ */
+/* ======================================================================== <<<< Hire android App Developer as per your Need  >>>> ====================================================================== */
+/* ============================================================================================================================================================ */
+
+
+
+
+/* =========================================================
+   MAIN SECTION WRAPPER
+========================================================= */
+.hiredevelopernedd {
+    position: relative;
+    width: 100%;
+    padding-top: 140px;
+    padding-bottom: 120px;
+    overflow: hidden;
+}
+
+/* BG SHAPE WITH CLIP-PATH */
+.hiredevelopernedd-bg-shape {
+    background: linear-gradient(90deg, #023BE2 2%, #00A1C5 99%);
+    height: 550px;
+    width: 100%;
+    clip-path: polygon(
+        49% 40%,
+        100% 0,
+        100% 100%,
+        0% 100%,
+        0 48%,
+        0 0
+    );
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+
+/* =========================================================
+   CARD LISTING AREA
+========================================================= */
+.hiredeveloperneddcardlisting {
+    width: 67%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    position: relative;
+    z-index: 5;
+    top: -100px;
+}
+
+
+/* =========================================================
+   CARD OUTER WRAPPER (GRADIENT BORDER)
+========================================================= */
+.hiredeveloperneddcard {
+    width: 30%;
+    height: 350px;
+    padding: 3px;
+    border-radius: 1.2rem;
+    background: linear-gradient(90deg, #023BE2, #00A1C5);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    transition: transform .3s ease, box-shadow .3s ease;
+    cursor: pointer;
+}
+
+.hiredeveloperneddcard:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.25);
+}
+
+
+/* CARD INNER */
+.hiredeveloperneddcardinner {
+    background: #fff;
+    height: 100%;
+    width: 100%;
+    border-radius: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 0;
+    text-align: center;
+}
+
+
+/* PRICE BLOCK */
+.pricehiredeveloper {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.pricedeveloper {
+    font-family: var(--font-heading);
+    color: #023BE2;
+    font-size: 60px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.timedevelper {
+    font-family: var(--font-body);
+    font-weight: 500;
+    color: #000;
+    font-size: 22px;
+    margin: 0;
+}
+
+
+/* DESCRIPTION BLOCK */
+.hiredeveloperdes {
+    background: rgba(2, 59, 226, 0.08);
+    padding: 35px 20px;
+    border-radius: 10px;
+    width: 100%;
+}
+
+.developerdes {
+    font-family: var(--font-body);
+    color: #000;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+    margin: 0;
+}
+
+
+
+/* =========================================================
+   XXL — EXTRA LARGE SCREENS (1600px+)
+========================================================= */
+@media (min-width: 1600px) {
+    .hiredeveloperneddcardlisting { width: 67%; gap: 40px; }
+    .hiredeveloperneddcard { width: 28%; height: 380px; }
+    .pricedeveloper { font-size: 70px; }
+    .developerdes { font-size: 20px; line-height: 28px; }
+}
+
+
+/* =========================================================
+   XL — LARGE DESKTOPS (1280px - 1599px)
+========================================================= */
+@media (max-width: 1599px) and (min-width: 1280px) {
+    .hiredeveloperneddcardlisting { width: 70%; gap: 30px; }
+    .hiredeveloperneddcard { width: 30%; height: 360px; }
+    .pricedeveloper { font-size: 60px; }
+    .developerdes { font-size: 18px; line-height: 26px; }
+    .hiredeveloperneddbtnbt{
+        left: 39% !important;
+    }
+}
+
+
+/* =========================================================
+   LG — LAPTOPS (1024px - 1279px)
+========================================================= */
+@media (max-width: 1279px) and (min-width: 1024px) {
+    .hiredeveloperneddcardlisting { width: 80%; gap: 25px; }
+    .hiredeveloperneddcard { width: 32%; height: 330px; }
+    .pricedeveloper { font-size: 50px; }
+}
+
+
+/* =========================================================
+   MD — TABLETS (769px - 1023px)
+========================================================= */
+@media (max-width: 1023px) and (min-width: 769px) {
+    .hiredeveloperneddcardlisting { width: 90%; gap: 25px; top: -80px; }
+    .hiredeveloperneddcard { width: 45%; height: 330px; }
+    .pricedeveloper { font-size: 45px; }
+    .timedevelper { font-size: 20px; }
+    .developerdes { font-size: 16px; line-height: 24px; }
+}
+
+
+/* =========================================================
+   SM — MOBILE (481px - 768px)
+========================================================= */
+@media (max-width: 768px) and (min-width: 481px) {
+    .hiredeveloperneddcardlisting { width: 95%; gap: 20px; top: -60px; }
+    .hiredeveloperneddcard { width: 48%; height: 320px; }
+    .pricedeveloper { font-size: 40px; }
+    .timedevelper { font-size: 18px; }
+    .developerdes { font-size: 15px; }
+}
+
+
+/* =========================================================
+   XS — SMALL MOBILE (<=480px)
+========================================================= */
+@media (max-width: 480px) {
+    .hiredeveloperneddcardlisting {
+        width: 100%;
+        gap: 20px;
+        top: -50px;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .hiredevelopernedd-bg-shape{
+        height: 1030px;
+    }
+
+    
+    .hiredeveloperneddbtnbt{
+        left: 15% !important;
+        bottom: 95px !important;
+    }
+
+    .hiredeveloperneddcard {
+        width: 90%;
+        height: auto;
+    }
+
+    .hiredeveloperneddcardinner {
+        padding: 30px 20px;
+    }
+
+    .pricedeveloper {
+        font-size: 36px;
+    }
+
+    .timedevelper {
+        font-size: 16px;
+    }
+
+    .developerdes {
+        font-size: 14px;
+        line-height: 22px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.hiredeveloperneddbtnbt{
+    z-index: 5 !important;
+    position: absolute;
+    left: 41%;
+    bottom: 120px;
+}
+
+
+
+
+
 /* ============================================================================================================================================================ */
 /* ======================================================================== <<<< HIRE   COMPETITORS  >>>> ====================================================================== */
 /* ============================================================================================================================================================ */
@@ -12269,7 +12586,11 @@ html {
     text-align: center; /* Center text */
     background-color: #5d5d5d08;
     padding-top: 2rem;
-    padding-bottom: 2rem;
+}
+
+
+.hiredeveloperasneed{
+    background: transparent !important;
 }
 
 .hirecompetitorsCard {
@@ -12277,7 +12598,7 @@ html {
     margin: auto;
     display: flex;
     justify-content: space-between;
-    gap: 30px 70px; /* 30px = Y direction, 70px = X direction */
+    gap: 30px 70px;
     flex-wrap: wrap; /* allow wrapping */
 }
 
@@ -12626,10 +12947,11 @@ html {
         padding: 20px;
     }
 
-    .leftsidecontent {
+ .leftsidecontent {
         align-items: center;
         text-align: center;
         padding-right: 0;
+        display: none;
     }
 
     .leftsidecontentheading {
@@ -16722,13 +17044,6 @@ height: 300px; /* or any fixed height */
     padding: 40px 0;
 }
 
-/* ------------ LEFT SIDE COLUMN ------------ */
-.actionoverwordsectioninnenrcontentleftside {
-    width: 25%;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
 
 /* ------------ CENTER CONTENT ------------ */
 .actionoverwordsectioninnenrcontentcenter {
@@ -16750,6 +17065,16 @@ height: 300px; /* or any fixed height */
     line-height: 1.6;
 }
 
+
+
+/* ------------ LEFT SIDE COLUMN ------------ */
+.actionoverwordsectioninnenrcontentleftside {
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
 /* ------------ RIGHT COLUMN ------------ */
 .actionoverwordsectioninnenrcontentrightside {
     width: 25%;
@@ -16761,6 +17086,9 @@ height: 300px; /* or any fixed height */
 }
 
 /* ------------ CARDS ------------ */
+
+
+/* ========================= BASE CARD STYLE ========================= */
 .action-card {
     display: flex;
     align-items: center;
@@ -16770,14 +17098,49 @@ height: 300px; /* or any fixed height */
     background: var(--gradient-blue);
     width: 100%;
     cursor: pointer;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-    transition: 0.3s ease;
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.10);
+    transition: box-shadow 0.25s ease;
+
+    /* smooth transform */
+    transform: translateZ(0);
+    will-change: transform;
 }
 
-.action-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+/* ========================= AUTO ANIMATION ========================= */
+@keyframes cardBob {
+    0%   { transform: translateY(0); }
+    50%  { transform: translateY(-12px); }
+    100% { transform: translateY(0); }
 }
+
+/* ========================= DESKTOP ONLY (remove if not needed) ========================= */
+@media (min-width: 1024px) {
+
+    .action-card {
+        animation-name: cardBob;
+        animation-duration: 1.5s;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: infinite;
+    }
+
+    /* Stagger animation timings for 4 cards */
+    .actionoverwordsectioninnenrcontentleftside .action-card:nth-child(1) {
+        animation-delay: 0s;
+    }
+    .actionoverwordsectioninnenrcontentleftside .action-card:nth-child(2) {
+        animation-delay: 0.3s;
+    }
+
+    .actionoverwordsectioninnenrcontentrightside .action-card:nth-child(1) {
+        animation-delay: 0.6s;
+    }
+    .actionoverwordsectioninnenrcontentrightside .action-card:nth-child(2) {
+        animation-delay: 0.9s;
+    }
+}
+
+
 
 .action-card-img img {
     width: 55px;

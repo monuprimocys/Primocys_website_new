@@ -99,23 +99,71 @@ const counterObserver = new IntersectionObserver((entries, observer) => {
 }, observerOptions);
 
 document.addEventListener("DOMContentLoaded", () => {
-    document.querySelectorAll(".happy-customer-card").forEach((card) => counterObserver.observe(card));
-
-    // Hover effect for happy customer cards
+    /* ===========================
+       COUNTER ANIMATION
+    ============================ */
     document.querySelectorAll(".happy-customer-card").forEach((card) => {
-        card.addEventListener("mouseenter", () => (card.style.transform = "translateY(-5px) scale(1.02)"));
-        card.addEventListener("mouseleave", () => (card.style.transform = "translateY(0) scale(1)"));
+        counterObserver.observe(card);
     });
 
-    // Tab functionality
+    /* ===========================
+       HOVER EFFECT FOR CARDS
+    ============================ */
+    document.querySelectorAll(".happy-customer-card").forEach((card) => {
+        card.addEventListener("mouseenter", () => {
+            card.style.transform = "translateY(-5px) scale(1.02)";
+            card.style.transition = "transform 0.3s ease";
+        });
+        card.addEventListener("mouseleave", () => {
+            card.style.transform = "translateY(0) scale(1)";
+            card.style.transition = "transform 0.3s ease";
+        });
+    });
+
+    /* ===========================
+       TABS FUNCTIONALITY WITH ANIMATION
+    ============================ */
+    const tabsSidebar = document.querySelector(".tabs-sidebar");
+
     document.querySelectorAll(".tab-item").forEach((btn) => {
         btn.addEventListener("click", () => {
             const target = document.getElementById(btn.dataset.tab);
             if (!target) return;
+
+            // Remove active class from tabs and content
             document.querySelectorAll(".tab-item").forEach((b) => b.classList.remove("active"));
-            document.querySelectorAll(".tab-content").forEach((c) => c.classList.remove("active"));
+            document.querySelectorAll(".tab-content").forEach((c) => {
+                c.classList.remove("active");
+                c.style.opacity = 0;
+                c.style.transform = "translateY(20px)";
+                c.style.transition = "none";
+            });
+
+            // Add active class to clicked tab
             btn.classList.add("active");
+
+            // Animate content
             target.classList.add("active");
+            target.style.opacity = 0;
+            target.style.transform = "translateY(20px)";
+            target.style.transition = "opacity 0.4s ease, transform 0.4s ease";
+            requestAnimationFrame(() => {
+                target.style.opacity = 1;
+                target.style.transform = "translateY(0)";
+            });
+
+            // ===== AUTO CENTER ACTIVE TAB ON MOBILE =====
+            if (window.innerWidth <= 1024 && tabsSidebar) {
+                const tabRect = btn.getBoundingClientRect();
+                const sidebarRect = tabsSidebar.getBoundingClientRect();
+
+                const scrollPosition = tabRect.left - sidebarRect.left - (sidebarRect.width / 2 - tabRect.width / 2);
+
+                tabsSidebar.scrollTo({
+                    left: tabsSidebar.scrollLeft + scrollPosition,
+                    behavior: "smooth",
+                });
+            }
         });
     });
 });
