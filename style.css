@@ -2337,6 +2337,16 @@ body {
     text-align: center;
 }
 
+
+
+@media (max-width: 480px) {
+    .responsivemobile {
+        margin: 0 auto -40px !important;
+    }
+}
+
+
+
 .Why_Choose_Us_Tittle_slider {
     width: 70%;
     margin: 0 auto 60px;
@@ -13150,9 +13160,7 @@ html {
 /* MAIN WRAPPER */
 .webportfolioMain {
     width: 100%;
-    display: flex;
-    justify-content: center;
-  padding: 80px 0 0 0;
+    padding: 80px 0 0 0;
     box-sizing: border-box;
     background-image: url("./images/WebPortfolio.webp");
     background-size: cover;
@@ -13160,7 +13168,103 @@ html {
     background-repeat: no-repeat;
 }
 
-/* BACKGROUND SECTION */
+
+
+
+/*  for mobile  screnn  */
+
+
+
+/* ========================================================= */
+/* BASE STYLE (Hidden on Large Screens by Default)           */
+/* ========================================================= */
+.webportfolio-mobile {
+    width: 84%;
+    min-height: 650px;
+    display: none; /* HIDE on large screens */
+    justify-content: space-between;
+    align-items: flex-start;
+    border-radius: 20px;
+    padding: 60px 0 60px 10px;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    margin-left: auto;
+}
+
+
+/* ========================================================= */
+/* SHOW ONLY ON TABLET + MOBILE (<=1024px)                   */
+/* ========================================================= */
+@media (max-width: 1024px) {
+    .webportfolio-mobile {
+        display: flex; /* SHOW */
+    }
+}
+
+
+/* -------------------------------------------------------- */
+/* -------- EXTRA LARGE SCREENS (>=1600px) ---------------- */
+/* (HIDDEN because display:none applied above)              */
+/* -------------------------------------------------------- */
+@media (min-width: 1600px) {
+    .webportfolio-mobile {
+        width: 84%;
+    }
+}
+
+/* -------------------------------------------------------- */
+/* -------- LARGE DESKTOPS (1280px - 1599px) -------------- */
+/* (HIDDEN because display:none applied above)              */
+/* -------------------------------------------------------- */
+@media (min-width: 1280px) and (max-width: 1599px) {
+    .webportfolio-mobile {
+        width: 96%;
+    }
+}
+
+/* -------------------------------------------------------- */
+/* -------- LAPTOP (1025px - 1279px) ---------------------- */
+/* (HIDDEN because larger than 1024px)                      */
+/* -------------------------------------------------------- */
+@media (min-width: 1025px) and (max-width: 1279px) {
+    .webportfolio-mobile {
+        width: 90%;
+    }
+}
+
+/* -------------------------------------------------------- */
+/* -------- TABLET (769px - 1024px) ----------------------- */
+/* (VISIBLE)                                                */
+/* -------------------------------------------------------- */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .webportfolio-mobile {
+        width: 100%;
+    }
+}
+
+/* -------------------------------------------------------- */
+/* -------- MOBILE (481px - 768px) ------------------------ */
+/* (VISIBLE)                                                */
+/* -------------------------------------------------------- */
+@media (min-width: 481px) and (max-width: 768px) {
+    .webportfolio-mobile {
+        width: 95%;
+    }
+}
+
+/* -------------------------------------------------------- */
+/* -------- SMALL MOBILE (<=480px) ------------------------ */
+/* (VISIBLE)                                                */
+/* -------------------------------------------------------- */
+@media (max-width: 480px) {
+    .webportfolio-mobile {
+        width: 100%;
+    }
+}
+/* -------------------------------------------------------- */
+/* -------------------- BACKGROUND SECTION ----------------- */
+/* -------------------------------------------------------- */
+
 .webportfolio {
     width: 84%;
     min-height: 650px;
@@ -13174,13 +13278,29 @@ html {
     margin-left: auto;
 }
 
+/* -------------------------------------------------------- */
+/* ----------------- VISIBILITY CONTROL -------------------- */
+/* -------- SHOW ONLY ON LARGE SCREENS (>=1024px) ---------- */
+/* -------------------------------------------------------- */
 
+/* Hide on mobile + tablet (0px – 1023px) */
+@media (max-width: 1023px) {
+    .webportfolio {
+        display: none !important;
+    }
+}
 
-
+/* Show on laptop + desktop (>=1024px) */
+@media (min-width: 1024px) {
+    .webportfolio {
+        display: flex !important;
+    }
+}
 
 /* -------------------------------------------------------- */
 /* -------- EXTRA LARGE SCREENS (>=1600px) ---------------- */
 /* -------------------------------------------------------- */
+
 @media (min-width: 1600px) {
     .webportfolio {
         width: 84%;
@@ -13190,6 +13310,7 @@ html {
 /* -------------------------------------------------------- */
 /* -------- LARGE DESKTOPS (1280px - 1599px) -------------- */
 /* -------------------------------------------------------- */
+
 @media (min-width: 1280px) and (max-width: 1599px) {
     .webportfolio {
         width: 96%;
@@ -13199,6 +13320,7 @@ html {
 /* -------------------------------------------------------- */
 /* -------- LAPTOP / MEDIUM SCREENS (1024px - 1279px) ----- */
 /* -------------------------------------------------------- */
+
 @media (min-width: 1024px) and (max-width: 1279px) {
     .webportfolio {
         width: 90%;
@@ -13208,6 +13330,7 @@ html {
 /* -------------------------------------------------------- */
 /* -------- TABLET (769px - 1023px) ----------------------- */
 /* -------------------------------------------------------- */
+
 @media (min-width: 769px) and (max-width: 1023px) {
     .webportfolio {
         width: 90%;
@@ -13217,6 +13340,7 @@ html {
 /* -------------------------------------------------------- */
 /* -------- MOBILE (481px - 768px) ------------------------ */
 /* -------------------------------------------------------- */
+
 @media (min-width: 481px) and (max-width: 768px) {
     .webportfolio {
         width: 95%;
@@ -13226,6 +13350,7 @@ html {
 /* -------------------------------------------------------- */
 /* -------- SMALL MOBILE (<=480px) ------------------------ */
 /* -------------------------------------------------------- */
+
 @media (max-width: 480px) {
     .webportfolio {
         width: 100%;
@@ -13293,6 +13418,12 @@ html {
     padding: 2px;
     background: transparent;
 }
+
+
+
+
+
+
 
 .feature-box-wrapper::before {
     content: "";
@@ -13369,7 +13500,7 @@ html {
     }
     .right-image {
         width: 45%;
-        min-height: 400px;
+        min-height: 300px;
     }
     .feature-box-wrapper {
         grid-template-columns: 1fr 1fr;
@@ -13386,7 +13517,7 @@ html {
     }
     .left-content,
     .right-image {
-        width: 100%;
+        width: 97%;
     }
     .right-image {
         min-height: 300px;
@@ -13409,7 +13540,7 @@ html {
     .feature-box-wrapper {
         grid-template-columns: 1fr;
         gap: 15px;
-        width: 100% !important;
+        width: 97% !important;
     }
 }
 
@@ -13429,6 +13560,27 @@ html {
         padding: 8px 16px;
     }
 }
+
+
+
+
+
+.hideonmobilescrenn{
+    display: none;
+    
+}
+
+@media (max-width: 768px) {
+    .hideonmobilescrenn{
+        display: block;
+        
+    }
+}
+
+
+
+
+
 
 /* ============================================================================================================================================================ */
 /* ======================================================================== WEB PORTFOLIO NLYTICAL STORE BG IMAGE  ====================================================================== */
@@ -13640,6 +13792,8 @@ html {
     .nlyticalbgimageadmin {
         width: 95%;
         height: 35vh;
+        background-position: center;
+        background-size: contain;
     }
 }
 
@@ -14568,6 +14722,7 @@ html {
         width: 95%;
         flex-direction: column;
         gap: 2rem;
+        margin-bottom: 1rem;
     }
 }
 
@@ -15153,6 +15308,11 @@ html {
     color: white !important;
 } 
 
+
+.responsiveheadingvalues{
+    margin:  0 auto 30px  !important;
+}
+
 .descolor{
     color: #FFFFFFA8 !important;
 }
@@ -15661,6 +15821,15 @@ html {
     background-position: center;
     border-radius: 12px;
 }
+
+
+/* Mobile screens (max-width: 640px) */
+@media (max-width: 640px) {
+    .nlyticalchallengesmainrightside {
+        min-height: 400px !important;
+    }
+}
+
 
 /* Desktop split layout */
 @media screen and (min-width: 1024px) {
@@ -16306,3 +16475,779 @@ height: 300px; /* or any fixed height */
         gap: 20px;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ============================================================================================================================================================ */
+/* ======================================================================== Partnership page  ====================================================================== */
+/* ============================================================================================================================================================ */
+
+
+/* ==============================
+   OUTER SECTION
+============================== */
+.partnewshipfisrtsection {
+    width: 100%;
+    padding: 80px 0;
+    box-sizing: border-box;
+    background-image: url("./images/partnership.webp");
+    background-size: cover;         
+    background-position: bottom center;    
+    background-repeat: no-repeat;   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 450px;                  
+    margin-top: 5rem;
+    border-radius: 12px;            
+}
+
+/* ==============================
+   INNER CONTENT
+============================== */
+.partnewshipfisrtsectioninnnercontent {
+    margin: auto;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+}
+
+.partnewshipfisrtsectioninnnercontentheading {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 90px;
+    line-height: 1.1;
+    background: var(--gradient-blue);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    text-align: center;
+}
+
+.partnewshipfisrtsectioninnnercontentheading span {
+    background: none !important;
+    -webkit-text-fill-color: black !important;
+    color: black !important;
+}
+
+.partnewshipfisrtsectioninnnercontentheadingsub {
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-size: 26px;
+    color: #555555;
+    line-height: 1.7;
+    text-align: center;
+}
+
+
+
+
+
+/* ==============================
+   RESPONSIVE BREAKPOINTS
+============================== */
+
+/* -------------------------------
+   SMALL MOBILE (<=480px)
+-------------------------------- */
+@media (max-width: 480px) {
+    .partnewshipfisrtsection {
+        height: 360px;
+        padding: 29px 15px;
+        background-position: center top;
+    }
+    .partnewshipfisrtsectioninnnercontent {
+        width: 97%;
+        gap: 11px;
+    }
+    .partnewshipfisrtsectioninnnercontentheading {
+        font-size: 36px;
+    }
+    .partnewshipfisrtsectioninnnercontentheadingsub {
+        font-size: 18px;
+    }
+   
+}
+
+/* -------------------------------
+   MOBILE (481px - 768px)
+-------------------------------- */
+@media (min-width: 481px) and (max-width: 768px) {
+    .partnewshipfisrtsection {
+        height: 350px;
+        padding: 50px 20px;
+        background-position: center top;
+    }
+    .partnewshipfisrtsectioninnnercontent {
+        width: 85%;
+        gap: 25px;
+    }
+    .partnewshipfisrtsectioninnnercontentheading {
+        font-size: 50px;
+    }
+    .partnewshipfisrtsectioninnnercontentheadingsub {
+        font-size: 20px;
+    }
+   
+}
+
+/* -------------------------------
+   TABLET (769px - 1023px)
+-------------------------------- */
+@media (min-width: 769px) and (max-width: 1023px) {
+    .partnewshipfisrtsection {
+        height: 420px;
+        padding: 70px 30px;
+        background-position: center;
+    }
+    .partnewshipfisrtsectioninnnercontent {
+        width: 70%;
+        gap: 30px;
+    }
+    .partnewshipfisrtsectioninnnercontentheading {
+        font-size: 70px;
+    }
+    .partnewshipfisrtsectioninnnercontentheadingsub {
+        font-size: 24px;
+    }
+    
+}
+
+/* -------------------------------
+   LAPTOP / MEDIUM SCREENS (1024px - 1279px)
+-------------------------------- */
+@media (min-width: 1024px) and (max-width: 1279px) {
+    .partnewshipfisrtsection {
+        height: 550px;
+        padding: 80px 40px;
+        background-position: center center;
+    }
+    .partnewshipfisrtsectioninnnercontent {
+        width: 60%;
+        gap: 35px;
+    }
+    .partnewshipfisrtsectioninnnercontentheading {
+        font-size: 80px;
+    }
+    .partnewshipfisrtsectioninnnercontentheadingsub {
+        font-size: 26px;
+    }
+}
+
+/* -------------------------------
+   LARGE DESKTOPS (1280px - 1599px)
+-------------------------------- */
+@media (min-width: 1280px) and (max-width: 1599px) {
+    .partnewshipfisrtsection {
+        height: 550px;
+    }
+    .partnewshipfisrtsectioninnnercontentheading {
+        font-size: 85px;
+    }
+    .partnewshipfisrtsectioninnnercontentheadingsub {
+        font-size: 28px;
+    }
+}
+
+/* -------------------------------
+   EXTRA LARGE SCREENS (>=1600px)
+-------------------------------- */
+@media (min-width: 1600px) {
+    .partnewshipfisrtsection {
+        height: 600px;
+    }
+    .partnewshipfisrtsectioninnnercontentheading {
+        font-size: 90px;
+    }
+    .partnewshipfisrtsectioninnnercontentheadingsub {
+        font-size: 28px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* ============================================================================================================================================================ */
+/* ======================================================================== Partnership  second page card design page   ====================================================================== */
+/* ============================================================================================================================================================ */
+
+
+
+.actionoverwordsection{
+     width: 100%;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     flex-direction: column;
+}
+
+
+
+
+
+
+/* ------------ MAIN WRAPPER ------------ */
+.actionoverwordsectioninnenrcontent {
+    margin: auto;
+    width: 67%;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 20px;
+    padding: 40px 0;
+}
+
+/* ------------ LEFT SIDE COLUMN ------------ */
+.actionoverwordsectioninnenrcontentleftside {
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* ------------ CENTER CONTENT ------------ */
+.actionoverwordsectioninnenrcontentcenter {
+    width: 50%;
+    background: #eff2ff;
+    border-radius: 1rem;
+    padding: 30px;
+    display: flex;
+    align-items: center;      /* vertical center */
+    justify-content: center;  /* horizontal center */
+    text-align: center;
+}
+
+.actionoverwordsectioninnenrcontentcenter p {
+     font-family: var(--font-body);
+     color: #000;
+     font-size: 20px;
+     font-weight: 400;
+     line-height: 1.6;
+}
+
+/* ------------ RIGHT COLUMN ------------ */
+.actionoverwordsectioninnenrcontentrightside {
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+/* ------------ CARDS ------------ */
+.action-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 12px;
+  border-radius: 1rem;
+  background: var(--gradient-blue);
+  width: 100%;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transition: 0.3s ease;
+}
+
+.action-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+.action-card-img img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+.action-number {
+  font-size: 50px;
+  font-weight: 700;
+  color: #fff;
+  font-family: var(--font-heading);
+}
+
+.action-text {
+  font-size: 18px;
+  font-weight: 500;
+  color: #f0f4f9;
+}
+
+/* ------------ FULL RESPONSIVE ------------ */
+
+/* TABLET RESPONSIVE */
+@media (max-width: 1024px) {
+    .actionoverwordsectioninnenrcontent {
+        width: 85%;
+    }
+
+    .actionoverwordsectioninnenrcontentcenter p {
+        font-size: 20px;
+    }
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 768px) {
+    .actionoverwordsectioninnenrcontent {
+        flex-direction: column;
+        width: 90%;
+        align-items: center;
+        text-align: center;
+    }
+
+    /* full width for all columns */
+    .actionoverwordsectioninnenrcontentleftside,
+    .actionoverwordsectioninnenrcontentrightside,
+    .actionoverwordsectioninnenrcontentcenter {
+        width: 100%;
+        align-items: center;
+    }
+
+    /* center right cards instead of aligning right */
+    .actionoverwordsectioninnenrcontentrightside {
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    .action-card {
+        justify-content: center;
+    }
+
+    .actionoverwordsectioninnenrcontentcenter p {
+        font-size: 18px;
+    }
+}
+
+/* SMALL MOBILE (EXTRA SAFE LAYOUT) */
+@media (max-width: 480px) {
+    .action-number {
+        font-size: 36px;
+    }
+
+    .action-card-img img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .action-text {
+        font-size: 16px;
+    }
+}
+
+
+
+/* For screens 1506px and below */
+@media (max-width: 1600px) {
+    .actionoverwordsectioninnenrcontent {
+        width: 87% !important;
+    }
+}
+
+
+
+
+
+
+
+/*    partnership heading  and sub heading  values globayl */
+
+
+
+/* MAIN WRAPPER */
+.partnership {
+    width: 55%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+}
+
+/* HEADING */
+.partnershipheading {
+    font-family: var(--font-heading);
+    color: #000;
+    font-weight: 600;
+    font-size: 70px;
+    line-height: 1.2;
+}
+
+/* SUBHEADING */
+.partnershipsubheading {
+    font-family: var(--font-body);
+    color: #515151;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 1.6;
+}
+
+
+
+/* ===========================
+   RESPONSIVE
+   =========================== */
+
+/* LARGE SCREENS (1200px ↓) */
+@media (max-width: 1200px) {
+    .partnership { width: 65%; }
+    .partnershipheading { font-size: 60px; }
+    .partnershipsubheading { font-size: 22px; }
+}
+
+/* TABLETS (992px ↓) */
+@media (max-width: 992px) {
+    .partnership { width: 75%; }
+    .partnershipheading { font-size: 50px; }
+    .partnershipsubheading { font-size: 20px; }
+}
+
+/* SMALL TABLETS (768px ↓) */
+@media (max-width: 768px) {
+    .partnership { width: 85%; }
+    .partnershipheading { font-size: 40px; }
+    .partnershipsubheading { font-size: 18px; }
+}
+
+/* MOBILE (576px ↓) */
+@media (max-width: 576px) {
+    .partnership { width: 90%; }
+    .partnershipheading { font-size: 32px; }
+    .partnershipsubheading { font-size: 16px; }
+}
+
+/* SMALL MOBILE (400px ↓) */
+@media (max-width: 400px) {
+    .partnershipheading { font-size: 28px; }
+    .partnershipsubheading { font-size: 15px; }
+}
+
+
+
+
+
+
+
+/* ============================================================================================================================================================ */
+/* ======================================================================== Partnership   primocys patner  card list values   ====================================================================== */
+/* ============================================================================================================================================================ */
+
+
+
+/* MAIN WRAPPER */
+.primocyspartnernamecardlist {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+
+/* MAIN CARD BG */
+.partner-card,
+.partner-card-reverse {
+    width: 100%;
+    background: linear-gradient(90deg, rgba(2, 60, 226, 0) 0%, rgba(2, 103, 214, 0.06) 53.65%, rgba(1, 145, 202, 0) 100%);
+}
+
+
+/* INNER CARD */
+.partner-card-inner {
+    width: 67%;
+    margin: auto;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    border-radius: 14px;
+}
+
+
+
+@media (max-width: 1600px) {
+    .partner-card-inner {
+        width: 78% !important;
+    }
+}
+
+
+/* LEFT SIDE */
+.partner-card__left {
+    display: flex;
+    align-items: flex-start;
+    gap: 25px;
+    width: 75%;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* IMAGE */
+.partner-card__image-wrapper {
+    width: 280px;
+    height: 160px;
+    overflow: hidden;
+    border-radius: 14px;
+}
+
+.partner-card__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* CONTENT */
+.partner-card__content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.partner-card__title-row {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.partner-card__circle {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: var(--gradient-blue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.partner-card__circle img {
+    width: 24px;
+}
+
+.partner-card__title {
+    font-family: var(--font-heading);
+    font-size: 28px;
+    font-weight: 600;
+    background: var(--gradient-blue);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.partner-card__description {
+    font-family: var(--font-body);
+    font-size: 18px;
+    color: #555;
+    line-height: 1.4;
+    width: 90%;
+}
+
+
+/* RIGHT SIDE */
+.partner-card__right {
+    width: 25%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.partner-card__count {
+    font-family: var(--font-heading);
+    font-size: 150px;
+    font-weight: 800;
+    background: var(--gradient-blue);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    line-height: 1;          /* FIX EXTRA HEIGHT */
+    display: inline-block;   /* PREVENT EXTRA SPACING */
+}
+
+
+
+/* ============================================= */
+/* RESPONSIVE MEDIA QUERIES */
+/* ============================================= */
+
+
+/* TABLET (991px ↓) */
+@media (max-width: 991px) {
+
+    .partner-card-inner {
+        width: 85%;
+        padding: 25px;
+        gap: 20px;
+    }
+
+    .partner-card__image-wrapper {
+        width: 230px;
+        height: 130px;
+    }
+
+    .partner-card__title {
+        font-size: 24px;
+    }
+
+    .partner-card__description {
+        font-size: 17px;
+        width: 100%;
+    }
+
+    .partner-card__count {
+        font-size: 120px;
+    }
+}
+
+
+/* MOBILE REVERSE ORDER (767px ↓) */
+@media (max-width: 767px) {
+
+    .partner-card-inner {
+        display: flex;
+        flex-direction: column-reverse;   /* reverse the order */
+        align-items: center;
+        text-align: center;
+    }
+
+    .partner-card__right {
+        width: 100%;
+        display: flex;
+        justify-content: center;          /* center number */
+    }
+
+    .partner-card__count {
+        font-size: 90px;
+        line-height: 1;
+    }
+
+    .partner-card__left {
+        width: 100%;
+        align-items: flex-start;
+        text-align: left;
+        flex-direction: column;
+    }
+}
+
+
+
+/* SMALL MOBILE (480px ↓) */
+@media (max-width: 480px) {
+
+    .partner-card-inner {
+        padding-top: 18px;
+        padding-bottom: 18px;
+        padding-left: 1px;
+        padding-right: 1px;
+    }
+
+    .partner-card__image-wrapper {
+        height: 160px;
+        width: 100%;
+    }
+
+    .partner-card__title {
+        font-size: 20px;
+    }
+
+    .partner-card__description {
+        font-size: 15px;
+    }
+
+    .partner-card__count {
+        font-size: 60px;
+    }
+}
+
+
+
+
+
+/*  partner-card-revercard-d   */
+
+
+.partner-card-revercard-d  , .partner-card-reverse-d{
+    width: 100%;
+    background: linear-gradient(90deg, rgba(2, 60, 226, 0) 0%, rgba(2, 103, 214, 0.06) 53.65%, rgba(1, 145, 202, 0) 100%);
+}
+
+
+
+
+
+
+
+
+.carddetailpatner{
+    width: 60%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    margin-top: 3rem;
+  
+}
+
+
+
+.aws-card {
+    width: 350px;
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 40px 35px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.aws-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+}
+
+.aws-card-logo img {
+    width: 140px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto 20px;
+}
+
+.aws-card-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 15px;
+    font-family: var(--font-heading);
+}
+
+.aws-card-text {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
+    font-family: var(--font-body)
+}
+
