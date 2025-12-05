@@ -2903,6 +2903,10 @@ body {
          padding-bottom: 6rem;
     }
 
+    .showcardvalues{
+        padding-bottom: 0.5rem !important;
+    }
+
     .showcase-card-left {
         padding: 0rem !important;
     }
@@ -6543,6 +6547,25 @@ label {
     align-items: center;
 }
 
+
+
+.Schedulecallbtn{
+    width: 30% !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 1rem;
+}
+
+
+.Schedulecallmainsection{
+    width: 100%;
+    background-color: #5d5d5d08;
+    padding: 35px 0 !important;
+    text-align: center;
+    margin-top: 3rem;
+}
+
 .happy_customer_btn {
     display: flex;
     justify-content: center;
@@ -6575,6 +6598,12 @@ label {
     .happy_customer_btn {
         width: 100%;
     }
+
+    .Schedulecallbtn{
+    width: 87% !important;
+    padding-bottom: 1rem;
+
+}
 
     .Mobile_App_Development_Platform_SubmitBtn {
         font-size: 12px;
@@ -8722,7 +8751,10 @@ label {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 10rem 1rem 3rem;
+   
+    margin: 10rem 0 3rem;
+
+
     background-color: #f9fafc;
 }
 
@@ -13773,8 +13805,8 @@ html {
 }
 
 .feature-box-circle {
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     background: rgba(0, 154, 199, 0.08);
     display: flex;
@@ -13784,8 +13816,8 @@ html {
 }
 
 .feature-box-circle img {
-    width: 60%;
-    height: 60%;
+    width: 46%;
+    height: 46%;
     object-fit: contain;
 }
 
@@ -13800,12 +13832,12 @@ html {
 /* RIGHT IMAGE */
 .right-image {
     width: 50%;
-    min-height: 500px;
+    min-height: 580px;
     background-image: url("./images/nlyticalhomebg.webp");
-    background-size: cover;
+    background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
-    border-radius: 20px;
+    border-radius: 30px;
     min-width: 280px;
     margin-top: 3rem;
 }
@@ -14243,6 +14275,10 @@ html {
     flex-direction: column;
     margin-top: 3rem;
 }
+
+
+
+
 
 .webtechstackmain {
     width: 67%;
@@ -14723,14 +14759,33 @@ html {
   padding-bottom: 6px;
 }
 
-/* Remove old underline style */
+/* Remove old underline style   add linear color on tiitle text  */
 .feature-title {
   font-weight: 700;
-  font-size: 28px;
+  font-size: 24px;
   color: #000;
   position: relative;
   margin: 0;
+  z-index: 1;
+  background: linear-gradient(90deg, #086ada 0%, #50b6ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  font-family: var(--font-body);
+
 }
+
+
+
+.feature-subtitle{
+     font-family: var(--font-body);
+     color: #000;
+     font-weight: 400;
+     font-size: 16px;
+     
+}
+
 
 /* Underline */
 .portfolio-underline {
@@ -15092,6 +15147,22 @@ html {
     justify-content: center;
     align-items: center;
 }
+
+/* Tablet */
+@media (min-width: 640px) {
+  .nlyticaltype-center {
+    width: 80%;
+  }
+}
+
+/* Laptop + Large screen (width becomes 40%) */
+@media (min-width: 1024px) {
+  .nlyticaltype-center {
+    width: 40%;
+  }
+}
+
+
 
 .nlyticaltype-image {
     width: 100%;
@@ -15956,8 +16027,11 @@ html {
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    position: relative;
     
 }
+
+
 
 .secondsectioncarddesingleft img {
     width: 100%;
@@ -16114,6 +16188,16 @@ html {
 }
 @media (max-width: 480px) {
     .nlyticalchallengesmain { width: 95%; }
+    @media (max-width: 480px) {
+  .nlyticalchallengesmain > div:nth-child(1) {
+    order: 2;
+  }
+
+  .nlyticalchallengesmain > div:nth-child(2) {
+    order: 1;
+  }
+}
+
 }
 
 /* LEFT SIDE */
@@ -18334,3 +18418,14 @@ height: 300px; /* or any fixed height */
         font-size: 1.2rem;
     }
 }
+
+
+
+
+
+
+/* ============================================================================================================================================================ */
+/* ======================================================================== Mobile UI Design  ====================================================================== */
+/* ============================================================================================================================================================ */
+
+
